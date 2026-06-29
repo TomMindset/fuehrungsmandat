@@ -1,0 +1,36 @@
+{
+  "source": "openai-web-search",
+  "researchMode": "scientific-web",
+  "queries": [
+    {
+      "id": "role-ambiguity-leadership",
+      "query": "recent scientific literature leadership role ambiguity responsibility authority management",
+      "cluster": "Führungsmandat",
+      "intent": "wissenschaftliche Themen zu unklarem Mandat und Rollenambiguität finden"
+    },
+    {
+      "id": "middle-managers-transformation",
+      "query": "scientific papers middle managers digital transformation leadership role conflict",
+      "cluster": "Führung in Transformation",
+      "intent": "wissenschaftliche Themen zu Führung in Veränderung finden"
+    },
+    {
+      "id": "informal-lateral-leadership",
+      "query": "scientific literature informal leadership shared leadership leading without authority stakeholder influence",
+      "cluster": "Laterale Führung",
+      "intent": "wissenschaftliche Themen zu Einfluss ohne formale Macht finden"
+    },
+    {
+      "id": "stakeholder-sensemaking",
+      "query": "scientific literature stakeholder management leadership sensemaking uncertainty organization",
+      "cluster": "Stakeholder und Wirkung",
+      "intent": "wissenschaftliche Themen zu Stakeholder-Führung und Sensemaking finden"
+    },
+    {
+      "id": "ai-leadership-role",
+      "query": "scientific literature artificial intelligence leadership role ambiguity digital transformation management",
+      "cluster": "KI und Führung",
+      "intent": "wissenschaftliche Themen zu KI, Digitalisierung und Führungsrolle finden"
+    }
+  ]
+}

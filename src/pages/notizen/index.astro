@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import ArticleCard from "@components/ArticleCard.astro";
+import Layout from "@layouts/Layout.astro";
+
+const notes = (await getCollection("notes"))
+  .filter((note) => !note.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout
+  title="Notizen zu Führungsmandat, Rolle und Wirkung | Fuehrungsmandat.de"
+  description="Alle Notizen von Thomas Hoffmann zu Führungsmandat, Rollenklärung, lateraler Führung, Transformation und Stakeholder-Wirkung."
+  canonical="/notizen"
+>
+  <main id="inhalt">
+    <section class="surface-grid bg-paper py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <p class="mb-5 text-sm font-semibold uppercase tracking-[0.16em] text-copper">Notizen</p>
+        <h1 class="text-balance text-4xl font-semibold leading-tight text-graphite sm:text-5xl">Gedanken zu Rolle, Mandat und Wirkung.</h1>
+        <p class="mt-7 max-w-3xl text-pretty text-lg leading-8 text-slategraph">
+          Kurze und längere Einordnungen zu Führungssituationen, in denen Verantwortung, Erwartung und Entscheidungsspielraum nicht vollständig zusammenpassen.
+        </p>
+      </div>
+    </section>
+    <section class="bg-paper py-16 sm:py-20">
+      <div class="mx-auto grid max-w-7xl gap-5 px-5 sm:px-8 lg:grid-cols-3">
+        {notes.map((note) => <ArticleCard note={note} />)}
+      </div>
+    </section>
+  </main>
+</Layout>

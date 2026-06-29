@@ -1,0 +1,59 @@
+name: Fuehrungsmandat Topic Research
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Research scientific topic ideas
+        run: pnpm content:research
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+
+      - name: Research scientific topic ideas with web search
+        run: pnpm content:research:web
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENAI_WEB_SEARCH_MODEL: ${{ vars.OPENAI_WEB_SEARCH_MODEL }}
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Research Fuehrungsmandat topic ideas"
+          title: "Fuehrungsmandat scientific topic research"
+          body: |
+            Automatisch erzeugte wissenschaftliche Themenrecherche für Fuehrungsmandat.de.
+
+            Bitte redaktionell prüfen:
+            - Passen die Themen zu Rolle, Mandat, Verantwortung und Wirkung?
+            - Sind die Quellen tragfähig genug für eine Evidenznotiz?
+            - Werden Forschungshinweise nicht überdehnt?
+            - Welche Ideen sollen in `content-plan.json` übernommen werden?
+            - Welche Quellen dürfen als Briefing für Artikelentwürfe genutzt werden?
+          branch: automation/fuehrungsmandat-topic-research
+          delete-branch: true

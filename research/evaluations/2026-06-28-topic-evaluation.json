@@ -1,0 +1,144 @@
+{
+  "generatedAt": "2026-06-28T17:03:34.307Z",
+  "schemaVersion": "1.0",
+  "topics": [
+    {
+      "rank": 1,
+      "topic": "Wenn Schweigen ein Führungssignal ist",
+      "origin": "candidate",
+      "candidateId": "2026-06-28-schweigen-fuehrungssignal",
+      "status": "planned",
+      "decision": "proposed",
+      "cluster": "Rollenklärung",
+      "scores": {
+        "zielgruppenpassung": 4.3,
+        "mandatskern": 5,
+        "themenarchitektur": 4.4,
+        "such_und_leserintention": 4.3,
+        "coachingnaehe": 4,
+        "quellen_und_evidenz": 3.9,
+        "conversion_passung": 4.9,
+        "risiko_und_klarheit": 4.2
+      },
+      "total": 4.4,
+      "grade": "A",
+      "recommendation": "priorisieren",
+      "rationale": "starker Mandatskern; hohe Zielgruppenpassung; coachingnah formulierbar"
+    },
+    {
+      "rank": 2,
+      "topic": "Wenn Transformation das mittlere Management neu sortiert",
+      "origin": "candidate",
+      "candidateId": "2026-06-28-transformation-mittleres-management",
+      "status": "planned",
+      "decision": "proposed",
+      "cluster": "Führung in Transformation",
+      "scores": {
+        "zielgruppenpassung": 5,
+        "mandatskern": 3.3,
+        "themenarchitektur": 4.4,
+        "such_und_leserintention": 4.3,
+        "coachingnaehe": 3.6,
+        "quellen_und_evidenz": 4.5,
+        "conversion_passung": 4.9,
+        "risiko_und_klarheit": 4.2
+      },
+      "total": 4.2,
+      "grade": "A",
+      "recommendation": "priorisieren",
+      "rationale": "hohe Zielgruppenpassung; gute Quellenbasis"
+    },
+    {
+      "rank": 3,
+      "topic": "Wenn Rückendeckung unklar ist",
+      "origin": "content-plan",
+      "candidateId": null,
+      "status": "planned",
+      "decision": null,
+      "cluster": "Führungsmandat",
+      "scores": {
+        "zielgruppenpassung": 3.3,
+        "mandatskern": 3.3,
+        "themenarchitektur": 4.4,
+        "such_und_leserintention": 4.3,
+        "coachingnaehe": 2.7,
+        "quellen_und_evidenz": 3.2,
+        "conversion_passung": 4.2,
+        "risiko_und_klarheit": 4.7
+      },
+      "total": 3.6,
+      "grade": "B",
+      "recommendation": "einplanen",
+      "rationale": "Quellenbasis prüfen"
+    },
+    {
+      "rank": 4,
+      "topic": "KI und Führung: Warum nicht jede Erwartung ein Mandat ist",
+      "origin": "content-plan",
+      "candidateId": null,
+      "status": "planned",
+      "decision": null,
+      "cluster": "KI und Führung",
+      "scores": {
+        "zielgruppenpassung": 3.8,
+        "mandatskern": 2.9,
+        "themenarchitektur": 4.4,
+        "such_und_leserintention": 4.3,
+        "coachingnaehe": 2.7,
+        "quellen_und_evidenz": 2.2,
+        "conversion_passung": 4.2,
+        "risiko_und_klarheit": 3.8
+      },
+      "total": 3.5,
+      "grade": "C",
+      "recommendation": "schärfen",
+      "rationale": "Quellenbasis prüfen"
+    },
+    {
+      "rank": 5,
+      "topic": "Führung in Transformation: Warum das Mandat oft nachträglich entsteht",
+      "origin": "content-plan",
+      "candidateId": null,
+      "status": "planned",
+      "decision": null,
+      "cluster": "Führung in Transformation",
+      "scores": {
+        "zielgruppenpassung": 2.7,
+        "mandatskern": 2,
+        "themenarchitektur": 4.4,
+        "such_und_leserintention": 4.3,
+        "coachingnaehe": 3.2,
+        "quellen_und_evidenz": 2.2,
+        "conversion_passung": 4.2,
+        "risiko_und_klarheit": 3.8
+      },
+      "total": 3.2,
+      "grade": "C",
+      "recommendation": "schärfen",
+      "rationale": "Quellenbasis prüfen"
+    },
+    {
+      "rank": 6,
+      "topic": "Kritische Gespräche nach oben vorbereiten",
+      "origin": "content-plan",
+      "candidateId": null,
+      "status": "planned",
+      "decision": null,
+      "cluster": "Stakeholder und Wirkung",
+      "scores": {
+        "zielgruppenpassung": 2.2,
+        "mandatskern": 2,
+        "themenarchitektur": 4.4,
+        "such_und_leserintention": 3.5,
+        "coachingnaehe": 3.6,
+        "quellen_und_evidenz": 3.2,
+        "conversion_passung": 4.2,
+        "risiko_und_klarheit": 4.7
+      },
+      "total": 3.2,
+      "grade": "C",
+      "recommendation": "schärfen",
+      "rationale": "Quellenbasis prüfen"
+    }
+  ]
+}

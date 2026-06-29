@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import ArticleCard from "@components/ArticleCard.astro";
+import CTASection from "@components/CTASection.astro";
+import Layout from "@layouts/Layout.astro";
+import { topics } from "@data/topics";
+import { site } from "@data/site";
+
+const notes = (await getCollection("notes"))
+  .filter((note) => !note.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const featured = notes.filter((note) => note.data.featured).slice(0, 3);
+---
+
+<Layout
+  title="Fuehrungsmandat.de | Rolle, Verantwortung und Wirkung"
+  description="Persönlicher Fachblog von Thomas Hoffmann über Führungsmandate, Rollenklärung, laterale Führung und Wirkung in Veränderung."
+>
+  <main id="inhalt">
+    <section class="surface-grid bg-paper py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="max-w-4xl">
+          <p class="mb-5 text-sm font-semibold uppercase tracking-[0.16em] text-copper">Persönliche Fachpublikation</p>
+          <h1 class="text-balance text-4xl font-semibold leading-tight text-graphite sm:text-6xl">Führungsmandate klären, bevor Wirkung erwartet wird.</h1>
+          <p class="mt-7 max-w-3xl text-pretty text-lg leading-8 text-slategraph sm:text-xl">
+            Fuehrungsmandat.de sammelt Gedanken, Modelle und Einordnungen zu Führungssituationen, in denen Verantwortung sichtbar wird, aber Auftrag, Rückendeckung und Entscheidungsspielraum nicht vollständig geklärt sind.
+          </p>
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+            <a class="inline-flex min-h-12 items-center justify-center border border-copper bg-copper px-5 py-3 text-sm font-semibold text-white hover:bg-transparent hover:text-graphite" href="/notizen">
+              Notizen lesen
+            </a>
+            <a class="inline-flex min-h-12 items-center justify-center border border-graphite/18 px-5 py-3 text-sm font-semibold text-graphite hover:border-copper hover:text-copper" href={site.mandatWirkungUrl}>
+              Mandat & Wirkung
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-paper py-16 sm:py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-copper">Leitidee</p>
+          <h2 class="mt-4 text-balance text-3xl font-semibold leading-tight text-graphite sm:text-4xl">Ein Mandat ist mehr als eine Funktion.</h2>
+        </div>
+        <div class="space-y-5 text-lg leading-8 text-slategraph">
+          <p>
+            Ein Führungsmandat beschreibt nicht nur, wofür jemand zuständig ist. Es umfasst Auftrag, Erwartungen, Entscheidungsspielraum, Rückendeckung und die Wirkung, die in einer Organisation tatsächlich erwartet wird.
+          </p>
+          <p>
+            Diese Publikation fragt deshalb nicht nach allgemeinen Führungsrezepten. Sie sortiert Situationen, in denen Rollen anspruchsvoll werden: neue Verantwortung, laterale Abhängigkeiten, Transformation, kritische Gespräche und Führung unter Sichtbarkeit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-linen py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-copper">Themen</p>
+          <h2 class="mt-4 text-balance text-3xl font-semibold leading-tight text-graphite sm:text-4xl">Woran sich Führungsmandate klären lassen.</h2>
+        </div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {topics.map((topic) => (
+            <a class="border border-graphite/12 bg-white p-6 shadow-quiet hover:border-copper" href={`/themen#${topic.slug}`}>
+              <h3 class="text-xl font-semibold text-graphite">{topic.title}</h3>
+              <p class="mt-4 text-sm leading-7 text-slategraph">{topic.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-paper py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-copper">Ausgewählte Notizen</p>
+            <h2 class="mt-4 text-balance text-3xl font-semibold leading-tight text-graphite sm:text-4xl">Begriffe, Spannungen und Führungsfragen.</h2>
+          </div>
+          <a class="text-sm font-semibold text-petrol hover:text-copper" href="/notizen">Alle Notizen</a>
+        </div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          {featured.map((note) => <ArticleCard note={note} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-paper py-16 sm:py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-copper">Herausgeber</p>
+          <h2 class="mt-4 text-balance text-3xl font-semibold leading-tight text-graphite sm:text-4xl">Eine persönliche Fachpublikation von Thomas Hoffmann.</h2>
+        </div>
+        <div class="text-lg leading-8 text-slategraph">
+          <p>
+            Thomas Hoffmann schreibt über Führungsmandate, Rollenklärung und Wirkung in anspruchsvollen Veränderungssituationen. Über Mandat & Wirkung begleitet er Führungskräfte und Schlüsselpersonen in vertraulichem Coaching und Sparring.
+          </p>
+          <a class="mt-7 inline-flex text-sm font-semibold text-petrol hover:text-copper" href="/thomas-hoffmann">Zur Herausgeberseite</a>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+</Layout>

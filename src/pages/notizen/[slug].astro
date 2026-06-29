@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from "astro:content";
+import CTASection from "@components/CTASection.astro";
+import Layout from "@layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const notes = (await getCollection("notes")).filter((note) => !note.data.draft);
+
+  return Promise.all(
+    notes.map(async (entry) => {
+      const slug = entry.id.replace(/\.mdx?$/, "").replace(/\/index$/, "");
+      return {
+        params: { slug },
+        props: { entry }
+      };
+    })
+  );
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const date = entry.data.date.toLocaleDateString("de-DE", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric"
+});
+---
+
+<Layout
+  title={`${entry.data.title} | Fuehrungsmandat.de`}
+  description={entry.data.description}
+  canonical={`/notizen/${entry.id.replace(/\.mdx?$/, "").replace(/\/index$/, "")}`}
+  type="article"
+>
+  <main id="inhalt">
+    <article>
+      <header class="surface-grid bg-paper py-16 sm:py-24">
+        <div class="mx-auto max-w-4xl px-5 sm:px-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-copper">{entry.data.cluster} · {date}</p>
+          <h1 class="mt-5 text-balance text-4xl font-semibold leading-tight text-graphite sm:text-5xl">{entry.data.title}</h1>
+          <p class="mt-7 text-pretty text-lg leading-8 text-slategraph">{entry.data.description}</p>
+        </div>
+      </header>
+      <div class="bg-paper py-14 sm:py-18">
+        <div class="article mx-auto max-w-3xl px-5 sm:px-8">
+          <Content />
+        </div>
+      </div>
+    </article>
+    <CTASection />
+  </main>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import { legalNavigation } from "@data/navigation";
+import { site } from "@data/site";
+---
+
+<footer class="border-t border-mist/55 bg-paper text-graphite">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <p class="text-lg font-semibold text-graphite">Fuehrungsmandat.de</p>
+      <p class="mt-4 max-w-xl text-sm leading-7 text-slategraph">
+        Eine persönliche Fachpublikation von Thomas Hoffmann über Rolle, Mandat und Wirkung. Mandat & Wirkung ist das vertrauliche Coaching-Angebot für konkrete Führungsfragen.
+      </p>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-graphite">Kontakt</p>
+      <a class="mt-4 inline-block text-sm text-slategraph hover:text-copper" href={`mailto:${site.email}`}>{site.email}</a>
+      <a class="mt-3 block text-sm text-slategraph hover:text-copper" href={site.mandatWirkungContact}>Mandat & Wirkung kontaktieren</a>
+    </div>
+    <nav aria-label="Rechtliches">
+      <p class="text-sm font-semibold text-graphite">Rechtliches</p>
+      <ul class="mt-4 space-y-2 text-sm text-slategraph">
+        {legalNavigation.map((item) => <li><a class="hover:text-copper" href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+  <div class="border-t border-mist/55">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 text-sm text-slategraph sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <p>© {new Date().getFullYear()} Thomas Hoffmann</p>
+      <a class="hover:text-copper" href={site.mandatWirkungUrl}>Mandat & Wirkung</a>
+    </div>
+  </div>
+</footer>

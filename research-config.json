@@ -1,0 +1,44 @@
+{
+  "source": "openalex",
+  "yearsBack": 6,
+  "perQuery": 8,
+  "minCitationCount": 5,
+  "queries": [
+    {
+      "id": "role-ambiguity",
+      "query": "\"role ambiguity\" leadership management authority responsibility",
+      "cluster": "Führungsmandat",
+      "intent": "Mandat und Verantwortung klären"
+    },
+    {
+      "id": "middle-management-change",
+      "query": "\"middle managers\" change leadership transformation role conflict",
+      "cluster": "Führung in Transformation",
+      "intent": "Führung in Veränderung einordnen"
+    },
+    {
+      "id": "leading-without-authority",
+      "query": "informal leadership shared leadership authority influence stakeholders",
+      "cluster": "Laterale Führung",
+      "intent": "Einfluss ohne formale Macht verstehen"
+    },
+    {
+      "id": "stakeholder-sensemaking",
+      "query": "\"stakeholder management\" leadership sensemaking uncertainty",
+      "cluster": "Stakeholder und Wirkung",
+      "intent": "Stakeholder-Führung bei Unklarheit vorbereiten"
+    },
+    {
+      "id": "digital-ai-leadership",
+      "query": "\"artificial intelligence\" leadership digital transformation role ambiguity",
+      "cluster": "KI und Führung",
+      "intent": "Führungsrolle bei KI und Digitalisierung klären"
+    },
+    {
+      "id": "psychological-safety-uncertainty",
+      "query": "\"psychological safety\" leadership teams uncertainty decision making",
+      "cluster": "Rollenklärung",
+      "intent": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
+    }
+  ]
+}

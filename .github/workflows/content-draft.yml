@@ -1,0 +1,55 @@
+name: Fuehrungsmandat Auto Draft
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 7 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Generate next article draft
+        run: pnpm content:generate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+
+      - name: Check content
+        run: pnpm content:check
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Add Fuehrungsmandat content draft"
+          title: "Fuehrungsmandat content draft"
+          body: |
+            Automatisch erzeugter Content-Draft für Fuehrungsmandat.de.
+
+            Bitte vor Veröffentlichung prüfen:
+            - Tonalität und Markenpassung
+            - keine erfundenen Referenzen, Studien oder biografischen Angaben
+            - klare interne Verlinkung
+            - `draft: true` bewusst entfernen, wenn der Beitrag live gehen soll
+          branch: automation/fuehrungsmandat-content-draft
+          delete-branch: true

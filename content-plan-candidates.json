@@ -1,0 +1,93 @@
+[
+  {
+    "id": "2026-06-28-transformation-mittleres-management",
+    "decision": "proposed",
+    "radarPath": "research/radar/2026-06-28-themenradar.md",
+    "planEntry": {
+      "topic": "Wenn Transformation das mittlere Management neu sortiert",
+      "cluster": "Führung in Transformation",
+      "intent": "Rolle und Mandat in digitaler Transformation klären",
+      "primaryKeyword": "mittleres Management Transformation Führung",
+      "format": "Evidenznotiz",
+      "targetLength": 1300,
+      "briefing": "Digitale Transformation verändert die strategische Rolle des mittleren Managements. Der Artikel übersetzt diese Forschung vorsichtig in die Führungsfrage, wie Mandat, Erwartung und tatsächlicher Gestaltungsspielraum geklärt werden können.",
+      "mustInclude": [
+        "Unterscheidung zwischen strategischer Beteiligung und operativer Umsetzung",
+        "Mandatsfrage für Führungskräfte im mittleren Management",
+        "Hinweis, dass Transformation Rollen nachträglich verschieben kann"
+      ],
+      "avoid": [
+        "Transformationsroadmap versprechen",
+        "Organisation optimieren",
+        "KI- oder Digitalstrategie anbieten"
+      ],
+      "sourcePolicy": "approved-external",
+      "sources": [
+        {
+          "title": "An Exploratory Literature Study into Digital Transformation and Leadership: Toward Future-Proof Middle Managers",
+          "year": 2022,
+          "doi": "10.3390/su14020687",
+          "url": "https://doi.org/10.3390/su14020687",
+          "note": "Literaturstudie zu Führungsverhalten und Management unterhalb des Top-Managements in digitaler Transformation."
+        },
+        {
+          "title": "Opportunity or Threat? Exploring Middle Manager Roles in the Face of Digital Transformation",
+          "year": 2022,
+          "doi": "10.1111/joms.12880",
+          "url": "https://doi.org/10.1111/joms.12880",
+          "note": "Rollen-theoretischer Blick auf Middle Manager bei digitaler Automatisierung."
+        }
+      ],
+      "ctaType": "mandat-wirkung-soft",
+      "priority": 1,
+      "internalLinks": [
+        "/themen#transformation",
+        "https://www.mandat-wirkung.de/coaching-transformation-fuehrungskraft"
+      ],
+      "riskLevel": "medium",
+      "status": "planned"
+    }
+  },
+  {
+    "id": "2026-06-28-schweigen-fuehrungssignal",
+    "decision": "proposed",
+    "radarPath": "research/radar/2026-06-28-themenradar.md",
+    "planEntry": {
+      "topic": "Wenn Schweigen ein Führungssignal ist",
+      "cluster": "Rollenklärung",
+      "intent": "Schweigen, psychologische Sicherheit und Führungsmandat einordnen",
+      "primaryKeyword": "Schweigen im Team Führung",
+      "format": "Reflexionsartikel",
+      "targetLength": 1200,
+      "briefing": "Der Artikel betrachtet Schweigen im Team nicht als Kommunikationsproblem allein, sondern als mögliches Signal für unklare Wirkung, fehlende Rückendeckung oder unscharfes Führungsmandat.",
+      "mustInclude": [
+        "Unterscheidung zwischen Voice und Silence",
+        "Frage nach wahrgenommener Wirkung",
+        "Reflexionsfragen für Führungskräfte"
+      ],
+      "avoid": [
+        "psychologische Sicherheit als pauschales Kulturversprechen",
+        "Therapiesprache",
+        "Teamdiagnose ohne Quelle"
+      ],
+      "sourcePolicy": "approved-external",
+      "sources": [
+        {
+          "title": "Distinguishing Voice and Silence at Work: Unique Relationships with Perceived Impact, Psychological Safety, and Burnout",
+          "year": 2020,
+          "doi": "10.5465/amj.2018.1428",
+          "url": "https://doi.org/10.5465/amj.2018.1428",
+          "note": "Starke Grundlage, um Voice und Silence nicht als reine Gegensätze zu behandeln."
+        }
+      ],
+      "ctaType": "mandat-wirkung-soft",
+      "priority": 2,
+      "internalLinks": [
+        "/themen#rollenklaerung",
+        "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"
+      ],
+      "riskLevel": "medium",
+      "status": "planned"
+    }
+  }
+]

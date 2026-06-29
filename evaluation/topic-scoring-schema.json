@@ -1,0 +1,91 @@
+{
+  "version": "1.0",
+  "purpose": "Bewertung von Themen für Fuehrungsmandat.de nach Zielgruppenpassung, Mandat-&-Wirkung-Nähe und redaktioneller Produktionsreife.",
+  "targetAudience": [
+    "Führungskräfte mit neuer oder veränderter Rolle",
+    "Bereichs-, Abteilungs- und Teamleitungen in Transformation",
+    "Projekt- und Programmverantwortliche ohne volle Linienmacht",
+    "Schlüsselpersonen zwischen Fachbereich, IT, Daten, Marketing, Management oder Transformation",
+    "HR Business Partner, People & Culture, Executive Office als sekundäre Empfehlende"
+  ],
+  "coreThemes": [
+    "Führungsmandat",
+    "Rollenklärung",
+    "Laterale Führung",
+    "Führung in Transformation",
+    "Stakeholder und Wirkung",
+    "KI und Führung"
+  ],
+  "criteria": [
+    {
+      "id": "zielgruppenpassung",
+      "label": "Zielgruppenpassung",
+      "weight": 0.2,
+      "description": "Spricht das Thema reale Spannungen der Zielgruppen von Mandat & Wirkung an?"
+    },
+    {
+      "id": "mandatskern",
+      "label": "Mandatskern",
+      "weight": 0.18,
+      "description": "Ist Rolle, Mandat, Verantwortung, Rückendeckung oder Wirkung klar im Zentrum?"
+    },
+    {
+      "id": "themenarchitektur",
+      "label": "Themenarchitektur",
+      "weight": 0.14,
+      "description": "Passt das Thema sauber in einen der definierten Fuehrungsmandat-Cluster?"
+    },
+    {
+      "id": "such_und_leserintention",
+      "label": "Such-/Leserintention",
+      "weight": 0.12,
+      "description": "Ist die Leserfrage konkret genug für SEO und redaktionellen Nutzwert?"
+    },
+    {
+      "id": "coachingnaehe",
+      "label": "Coachingnähe",
+      "weight": 0.14,
+      "description": "Führt das Thema plausibel zu vertraulichem Sparring statt zu Unternehmensberatung?"
+    },
+    {
+      "id": "quellen_und_evidenz",
+      "label": "Quellen/Evidenz",
+      "weight": 0.1,
+      "description": "Sind Quellen vorhanden oder ist das Thema bewusst als reflexive Notiz risikoarm?"
+    },
+    {
+      "id": "conversion_passung",
+      "label": "Mandat-&-Wirkung-Brücke",
+      "weight": 0.07,
+      "description": "Lässt sich diskret und glaubwürdig auf Mandat & Wirkung verweisen?"
+    },
+    {
+      "id": "risiko_und_klarheit",
+      "label": "Risiko/Klarheit",
+      "weight": 0.05,
+      "description": "Ist das Thema mit vertretbarem Risiko sauber formulierbar?"
+    }
+  ],
+  "recommendations": [
+    {
+      "minScore": 4.2,
+      "label": "A",
+      "decision": "priorisieren"
+    },
+    {
+      "minScore": 3.6,
+      "label": "B",
+      "decision": "einplanen"
+    },
+    {
+      "minScore": 3,
+      "label": "C",
+      "decision": "schärfen"
+    },
+    {
+      "minScore": 0,
+      "label": "D",
+      "decision": "parken"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "topic": "Wenn Rückendeckung unklar ist",
+    "cluster": "Führungsmandat",
+    "intent": "Problem verstehen",
+    "primaryKeyword": "unklare Rückendeckung Führung",
+    "format": "Notiz",
+    "targetLength": 1000,
+    "internalLinks": ["/themen#fuehrungsmandat", "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"],
+    "riskLevel": "low",
+    "status": "planned"
+  },
+  {
+    "topic": "Kritische Gespräche nach oben vorbereiten",
+    "cluster": "Stakeholder und Wirkung",
+    "intent": "Gespräch vorbereiten",
+    "primaryKeyword": "kritisches Gespräch mit Vorgesetzten vorbereiten",
+    "format": "Reflexionsraster",
+    "targetLength": 1200,
+    "internalLinks": ["/themen#stakeholder-wirkung", "https://www.mandat-wirkung.de/kontakt"],
+    "riskLevel": "low",
+    "status": "planned"
+  },
+  {
+    "topic": "Führung in Transformation: Warum das Mandat oft nachträglich entsteht",
+    "cluster": "Führung in Transformation",
+    "intent": "Transformation einordnen",
+    "primaryKeyword": "Führung in Transformation",
+    "format": "Essay",
+    "targetLength": 1600,
+    "internalLinks": ["/themen#transformation", "https://www.mandat-wirkung.de/coaching-transformation-fuehrungskraft"],
+    "riskLevel": "medium",
+    "status": "planned"
+  },
+  {
+    "topic": "KI und Führung: Warum nicht jede Erwartung ein Mandat ist",
+    "cluster": "KI und Führung",
+    "intent": "KI-Führungsrolle klären",
+    "primaryKeyword": "KI und Führung",
+    "format": "Evidenznotiz",
+    "targetLength": 1200,
+    "internalLinks": ["/themen#ki-und-fuehrung", "https://www.mandat-wirkung.de/ki-transformation-fuehrung"],
+    "riskLevel": "medium",
+    "status": "planned"
+  }
+]
