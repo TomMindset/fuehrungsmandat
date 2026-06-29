@@ -40,7 +40,7 @@ jobs:
           OPENAI_WEB_SEARCH_MODEL: ${{ vars.OPENAI_WEB_SEARCH_MODEL }}
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: "Research Fuehrungsmandat topic ideas"
           title: "Fuehrungsmandat scientific topic research"
