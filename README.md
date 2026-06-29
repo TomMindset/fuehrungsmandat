@@ -77,12 +77,12 @@ Für den automatischen Draft-Workflow in GitHub:
 - Optional Repository Variable `OPENAI_WEB_SEARCH_MODEL` setzen.
 - Optional Repository Secret `OPENALEX_API_KEY` setzen, falls OpenAlex mit API-Key genutzt werden soll.
 - Der Workflow öffnet Pull Requests; er veröffentlicht nicht automatisch.
+- Wenn `OPENAI_API_KEY` fehlt, bricht der Workflow vor der Artikelerzeugung mit einem klaren Hinweis ab.
 
 Im aktuellen Monorepo sollten diese Workflows nicht an die Root-`.github`-Workflows verschoben werden, weil dort bereits Mandat & Wirkung über GitHub Pages deployed wird.
 
 ## Offene TODOs
 
 - Rechtliche Prüfung von Impressum und Datenschutz vor Livegang.
-- Ordnerinhalt in `TomMindset/fuehrungsmandat` übertragen.
-- DNS für `fuehrungsmandat.de` einrichten.
+- Repository Secret `OPENAI_API_KEY` in GitHub Actions setzen, damit `Fuehrungsmandat Auto Draft` automatisch Artikelentwürfe erzeugen kann.
 - Später entscheiden, ob Auto-Publish für risikoarme Notizen aktiviert wird.
