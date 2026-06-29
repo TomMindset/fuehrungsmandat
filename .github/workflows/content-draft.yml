@@ -27,7 +27,7 @@ jobs:
           version: 11
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Generate next article draft
         run: pnpm content:generate
