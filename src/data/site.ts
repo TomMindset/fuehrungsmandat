@@ -3,7 +3,7 @@ export const site = {
   title: "Fuehrungsmandat.de | Notizen zu Rolle, Verantwortung und Wirkung",
   description:
     "Persönliche Fachpublikation von Thomas Hoffmann über Führungsmandate, Rollenklärung, laterale Führung und Wirkung in Veränderung.",
-  url: "https://www.fuehrungsmandat.de",
+  url: "https://fuehrungsmandat.de",
   author: "Thomas Hoffmann",
   email: "anfrage@mandat-wirkung.de",
   mandatWirkungUrl: "https://www.mandat-wirkung.de",

@@ -62,7 +62,7 @@ Danach müssen `content:check` und `build` erfolgreich laufen, bevor committed u
 
 ## Deployment
 
-Die Site ist auf `https://www.fuehrungsmandat.de` ausgelegt. Der CNAME liegt in `public/CNAME`.
+Die Site ist auf `https://fuehrungsmandat.de` ausgelegt. Der CNAME liegt in `public/CNAME`.
 
 Der vorbereitete GitHub-Pages-Workflow liegt unter `.github/workflows/deploy.yml`. Er wird aktiv, wenn dieser Ordnerinhalt in das bestehende Repository `TomMindset/fuehrungsmandat` übernommen wird.
 
@@ -84,5 +84,5 @@ Im aktuellen Monorepo sollten diese Workflows nicht an die Root-`.github`-Workfl
 
 - Rechtliche Prüfung von Impressum und Datenschutz vor Livegang.
 - Ordnerinhalt in `TomMindset/fuehrungsmandat` übertragen.
-- DNS für `www.fuehrungsmandat.de` einrichten.
+- DNS für `fuehrungsmandat.de` einrichten.
 - Später entscheiden, ob Auto-Publish für risikoarme Notizen aktiviert wird.
