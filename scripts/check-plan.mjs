@@ -23,6 +23,14 @@ function normalize(value) {
   return String(value ?? "").trim().toLowerCase();
 }
 
+function isIsoDate(value) {
+  if (typeof value !== "string") return false;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+
+  const parsed = new Date(`${value}T00:00:00.000Z`);
+  return !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value;
+}
+
 function checkPlanEntry(entry, label, failures) {
   const required = ["topic", "cluster", "intent", "primaryKeyword", "format", "riskLevel", "status"];
 
@@ -63,6 +71,22 @@ function checkPlanEntry(entry, label, failures) {
 
   if (entry?.riskLevel === "high" && entry?.status === "planned") {
     failures.push(`${label}: riskLevel high darf nicht automatisch als planned verarbeitet werden`);
+  }
+
+  if (entry?.draftAfter && !isIsoDate(entry.draftAfter)) {
+    failures.push(`${label}: draftAfter muss ein Datum im Format YYYY-MM-DD sein`);
+  }
+
+  if (entry?.publishOn && !isIsoDate(entry.publishOn)) {
+    failures.push(`${label}: publishOn muss ein Datum im Format YYYY-MM-DD sein`);
+  }
+
+  if (entry?.publishOn && !entry?.draftAfter) {
+    failures.push(`${label}: publishOn darf nur mit draftAfter gesetzt werden`);
+  }
+
+  if (entry?.draftAfter && entry?.publishOn && entry.publishOn < entry.draftAfter) {
+    failures.push(`${label}: publishOn darf nicht vor draftAfter liegen`);
   }
 }
 
