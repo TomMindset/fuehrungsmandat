@@ -2,6 +2,8 @@ name: Fuehrungsmandat Topic Research
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "30 6 * * 1"
 
 permissions:
   contents: write
@@ -24,6 +26,15 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Validate OpenAI configuration
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "OPENAI_API_KEY fehlt. Bitte in GitHub unter Settings > Secrets and variables > Actions als Repository Secret setzen."
+            exit 1
+          fi
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Research scientific topic ideas
         run: pnpm content:research
