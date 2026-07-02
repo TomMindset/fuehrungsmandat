@@ -6,9 +6,15 @@
     "primaryKeyword": "unklare Rückendeckung Führung",
     "format": "Notiz",
     "targetLength": 1000,
-    "internalLinks": ["/themen#fuehrungsmandat", "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"],
+    "internalLinks": [
+      "/themen#fuehrungsmandat",
+      "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"
+    ],
     "riskLevel": "low",
-    "status": "planned"
+    "status": "drafted",
+    "draftPath": "src/content/notes/wenn-ruckendeckung-unklar-ist.md",
+    "draftedAt": "2026-07-02",
+    "generatedWith": "gpt-4.1"
   },
   {
     "topic": "Kritische Gespräche nach oben vorbereiten",
@@ -17,7 +23,10 @@
     "primaryKeyword": "kritisches Gespräch mit Vorgesetzten vorbereiten",
     "format": "Reflexionsraster",
     "targetLength": 1200,
-    "internalLinks": ["/themen#stakeholder-wirkung", "https://www.mandat-wirkung.de/kontakt"],
+    "internalLinks": [
+      "/themen#stakeholder-wirkung",
+      "https://www.mandat-wirkung.de/kontakt"
+    ],
     "riskLevel": "low",
     "status": "planned"
   },
@@ -28,7 +37,10 @@
     "primaryKeyword": "Führung in Transformation",
     "format": "Essay",
     "targetLength": 1600,
-    "internalLinks": ["/themen#transformation", "https://www.mandat-wirkung.de/coaching-transformation-fuehrungskraft"],
+    "internalLinks": [
+      "/themen#transformation",
+      "https://www.mandat-wirkung.de/coaching-transformation-fuehrungskraft"
+    ],
     "riskLevel": "medium",
     "status": "planned"
   },
@@ -39,7 +51,10 @@
     "primaryKeyword": "KI und Führung",
     "format": "Evidenznotiz",
     "targetLength": 1200,
-    "internalLinks": ["/themen#ki-und-fuehrung", "https://www.mandat-wirkung.de/ki-transformation-fuehrung"],
+    "internalLinks": [
+      "/themen#ki-und-fuehrung",
+      "https://www.mandat-wirkung.de/ki-transformation-fuehrung"
+    ],
     "riskLevel": "medium",
     "status": "planned"
   }
