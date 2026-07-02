@@ -74,6 +74,11 @@ function stripCodeFence(value) {
     .trim();
 }
 
+function isDueForDraft(entry, today) {
+  if (!entry.draftAfter) return false;
+  return entry.draftAfter <= today;
+}
+
 function assertGeneratedArticle(markdown, item) {
   const failures = [];
 
@@ -112,22 +117,23 @@ async function loadReferenceArticles(limit = 3) {
 }
 
 const plan = JSON.parse(await readFile(planPath, "utf8"));
+const today = new Date().toISOString().slice(0, 10);
 const item = plan.find((entry) => {
   if (entry.status !== "planned") return false;
   if (entry.riskLevel === "high") return false;
+  if (!isDueForDraft(entry, today)) return false;
 
   const slug = slugify(entry.topic);
   return !existsSync(path.join(notesDir, `${slug}.md`));
 });
 
 if (!item) {
-  console.log("Keine geplanten Themen gefunden.");
+  console.log("Keine fälligen geplanten Themen gefunden.");
   process.exit(0);
 }
 
 const slug = slugify(item.topic);
 const outputPath = path.join(notesDir, `${slug}.md`);
-const today = new Date().toISOString().slice(0, 10);
 const model = process.env.OPENAI_MODEL || "gpt-4.1";
 
 const [styleRules, systemPrompt, userPromptTemplate, referenceArticles] = await Promise.all([
