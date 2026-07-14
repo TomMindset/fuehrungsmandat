@@ -1,7 +1,7 @@
 ---
 title: "Der Unterschied zwischen Auftrag, Erwartung und Mandat"
 description: "Viele Führungsrollen werden anspruchsvoll, weil Auftrag, Erwartung und Mandat nicht deckungsgleich sind."
-date: 2026-06-28
+date: 2026-07-02
 author: "Thomas Hoffmann"
 cluster: "Führungsmandat"
 tags: ["Auftrag", "Erwartung", "Mandat"]
