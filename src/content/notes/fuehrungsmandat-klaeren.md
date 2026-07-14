@@ -2,6 +2,7 @@
 title: "Was ist ein Führungsmandat?"
 description: "Ein Führungsmandat beschreibt mehr als eine Position: Auftrag, Erwartungen, Entscheidungsspielraum, Rückendeckung und Wirkung müssen zusammenpassen."
 date: 2026-06-28
+updated: "2026-07-14T08:02:00+02:00"
 author: "Thomas Hoffmann"
 cluster: "Führungsmandat"
 tags: ["Führungsmandat", "Rollenklärung", "Verantwortung"]
