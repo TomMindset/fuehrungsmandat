@@ -1,7 +1,7 @@
 ---
 title: "Führen ohne formale Macht: Wie viel Mandat braucht laterale Führung?"
 description: "Laterale Führung braucht mehr als Einfluss. Sie braucht ein geklärtes Mandat, damit Wirkung ohne Rollenüberdehnung möglich wird."
-date: 2026-06-28
+date: 2026-07-14
 author: "Thomas Hoffmann"
 cluster: "Laterale Führung"
 tags: ["laterale Führung", "führen ohne formale Macht", "Stakeholder"]
