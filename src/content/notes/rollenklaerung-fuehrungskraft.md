@@ -1,7 +1,7 @@
 ---
 title: "Rollenklärung für Führungskräfte: Was vor der Wirkung geklärt sein muss"
 description: "Rollenklärung ist keine Vorarbeit neben der Führung. Sie ist Teil der Führungsarbeit, besonders in neuen oder veränderten Mandaten."
-date: 2026-06-28
+date: 2026-07-08
 author: "Thomas Hoffmann"
 cluster: "Rollenklärung"
 tags: ["Rollenklärung", "Führungskraft", "neue Rolle"]
