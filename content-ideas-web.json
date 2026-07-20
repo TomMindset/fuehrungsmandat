@@ -1,6 +1,209 @@
 {
-  "generatedAt": null,
-  "status": "empty",
-  "method": "Wird durch pnpm content:research:web erzeugt.",
-  "ideas": []
+  "generatedAt": "2026-07-20T09:42:49.241Z",
+  "status": "web_research_draft",
+  "method": "OpenAI web_search mit wissenschaftlichem Fokus",
+  "ideas": [
+    {
+      "title": "Rollenambiguität und Führungsmandat klären",
+      "cluster": "Führungsmandat",
+      "intent": "Leserinnen und Leser erkennen, wie unklare Rollen ihre Führungswirkung beeinträchtigen können",
+      "primaryKeyword": "Rollenambiguität Führung",
+      "format": "Evidenznotiz",
+      "riskLevel": "low",
+      "priority": 1,
+      "mandateQuestion": "Wie beeinflusst Rollenambiguität Ihre Wahrnehmung als Führungskraft und Ihre Wirkung?",
+      "briefing": "Rollenambiguität schwächt Führungseffektivität – evidenzbasiert zeigen, wie Klarheit und Gruppenprototypikalität die Wirkung stärken können.",
+      "mustInclude": [
+        "Studie Cicero et al. (2010) zur Wechselwirkung von Rollenambiguität und Gruppenprototypikalität",
+        "Meta-Analyse zu Rollenambiguität und Rollenkonflikt (Jackson & Schuler, 1985)"
+      ],
+      "avoid": [
+        "Übertreibung der Evidenz",
+        "Unternehmensberatungssprache"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Leadership and Uncertainty: How Role Ambiguity Affects the Relationship between Leader Group Prototypicality and Leadership Effectiveness",
+          "year": 2010,
+          "doi": "10.1111/j.1467-8551.2009.00648.x",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1467-8551.2009.00648.x",
+          "sourceType": "journal",
+          "note": "Zeigt empirisch, wie Rollenambiguität Führungseffektivität über Gruppenprototypikalität beeinflusst"
+        },
+        {
+          "title": "A meta‑analysis and conceptual critique of research on role ambiguity and role conflict in work settings",
+          "year": 1985,
+          "doi": "10.1016/0749-5978(85)90020-2",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/0749597885900202",
+          "sourceType": "journal",
+          "note": "Meta‑Analyse zu Rollenambiguität und Rollenkonflikt als theoretische Grundlage"
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "Middle Manager im digitalen Wandel: Rolle und Verantwortung",
+      "cluster": "Führung in Transformation",
+      "intent": "Leserinnen und Leser verstehen, wie mittlere Führungskräfte digitale Transformation gestalten",
+      "primaryKeyword": "Middle Manager digitale Transformation",
+      "format": "Reflexionsartikel",
+      "riskLevel": "medium",
+      "priority": 2,
+      "mandateQuestion": "Wie können Sie als mittlere Führungskraft Ihre Rolle im digitalen Wandel aktiv gestalten?",
+      "briefing": "Mittlere Führungskräfte sind nicht nur Umsetzer, sondern gestalten digitale Strategien – evidenzbasiert aufzeigen, wie sie intervenieren können.",
+      "mustInclude": [
+        "Henderikx et al. (2023) zu Führungsverhalten in digitaler Transformation",
+        "Journal of Strategic Information Systems (2026) zur strategischen Rolle"
+      ],
+      "avoid": [
+        "Technologie‑Buzzwords ohne Kontext"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Digital transformation and middle managers’ leadership skills and behavior: a group concept mapping approach",
+          "year": 2023,
+          "doi": "10.3389/fpsyg.2023.1147002",
+          "url": "https://doaj.org/article/acbfad6ec17f4a9d9cb95f18dc490bd8",
+          "sourceType": "journal",
+          "note": "Empirische Studie zu Führungsverhalten mittlerer Führungskräfte im digitalen Wandel"
+        },
+        {
+          "title": "Strategizing beyond the boardroom: how middle managers shape digital strategy",
+          "year": 2026,
+          "doi": "10.1016/j.jsis.2026.101972",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0963868726000193",
+          "sourceType": "journal",
+          "note": "Zeigt Wege auf, wie mittlere Führungskräfte digitale Strategien beeinflussen"
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrung-in-transformation",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "Laterale Führung: Einfluss ohne formale Autorität",
+      "cluster": "Laterale Führung",
+      "intent": "Leserinnen und Leser reflektieren, wie sie informell führen können",
+      "primaryKeyword": "Laterale Führung Einfluss ohne Autorität",
+      "format": "Reflexionsraster",
+      "riskLevel": "low",
+      "priority": 3,
+      "mandateQuestion": "Wie können Sie Einfluss nehmen, wenn Sie keine formale Autorität besitzen?",
+      "briefing": "Informelle Führung ist real und wirksam – auf Basis integrativer Literatur zeigen, wie sie entsteht und wirkt.",
+      "mustInclude": [
+        "Integrative Übersicht zu informeller Führung (Uwasa, 2022)",
+        "Shared Leadership Konzept (Carson et al., 2007)"
+      ],
+      "avoid": [
+        "Populäre Blog‑Definitionen ohne wissenschaftliche Basis"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Informal Leadership : An Integrative View and Future Research",
+          "year": 2022,
+          "doi": null,
+          "url": "https://osuva.uwasa.fi/server/api/core/bitstreams/fe3b169c-d4c5-47b8-bf86-aa79760bfa8b/content",
+          "sourceType": "university",
+          "note": "Integrative Sicht auf informelle Führung ohne formale Autorität"
+        },
+        {
+          "title": "Shared leadership",
+          "year": 2007,
+          "doi": null,
+          "url": "https://en.wikipedia.org/wiki/Shared_leadership",
+          "sourceType": "other",
+          "note": "Konzeptualisierung von Shared Leadership als geteilte Einflussnahme"
+        }
+      ],
+      "internalLinks": [
+        "/themen#laterale-fuehrung",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "Stakeholder-Führung durch Sensemaking in unsicheren Situationen",
+      "cluster": "Stakeholder und Wirkung",
+      "intent": "Leserinnen und Leser erkennen, wie sie Unsicherheit durch Sinnstiftung managen können",
+      "primaryKeyword": "Sensemaking Stakeholder Führung",
+      "format": "Essay",
+      "riskLevel": "medium",
+      "priority": 4,
+      "mandateQuestion": "Wie können Sie Unsicherheit in Stakeholder-Kontexten durch Sinnstiftung managen?",
+      "briefing": "Sensemaking ist ein bewährter Ansatz, um Unsicherheit zu strukturieren – zeigen, wie Führungskräfte Stakeholder durch Sinnstiftung führen.",
+      "mustInclude": [
+        "Weick’s Sensemaking‑Ansatz",
+        "Organizational Information Theory Kontext"
+      ],
+      "avoid": [
+        "Vage Buzzwords wie ‚Purpose‘ ohne Bezug"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Sensemaking",
+          "year": 2025,
+          "doi": null,
+          "url": "https://en.wikipedia.org/wiki/Sensemaking",
+          "sourceType": "other",
+          "note": "Grundlagen des Sensemaking‑Ansatzes zur Bewältigung von Unsicherheit"
+        },
+        {
+          "title": "Organizational information theory",
+          "year": 2025,
+          "doi": null,
+          "url": "https://en.wikipedia.org/wiki/Organizational_information_theory",
+          "sourceType": "other",
+          "note": "Theoretischer Rahmen zur Informationsverarbeitung in Organisationen"
+        }
+      ],
+      "internalLinks": [
+        "/themen#stakeholder-und-wirkung",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "KI und Führungsrolle: Ambiguität und Selbstwirksamkeit",
+      "cluster": "KI und Führung",
+      "intent": "Leserinnen und Leser verstehen, wie KI Rollenambiguität beeinflussen kann",
+      "primaryKeyword": "KI Rollenambiguität Führung",
+      "format": "Evidenznotiz",
+      "riskLevel": "medium",
+      "priority": 5,
+      "mandateQuestion": "Wie verändert KI Ihre Rolle als Führungskraft – verstärkt sie Ambiguität oder stärkt sie Selbstwirksamkeit?",
+      "briefing": "KI kann Rollenambiguität beeinflussen – evidenzbasiert aufzeigen, wie Selbstwirksamkeit und Führungseffektivität vermittelt werden.",
+      "mustInclude": [
+        "Studie zu KI‑Anwendung, Rollenambiguität und Führungseffektivität (2025)"
+      ],
+      "avoid": [
+        "Technologie‑Hype ohne empirische Basis"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Dual influencing paths of AI application on leadership effectiveness: evidence from China",
+          "year": 2025,
+          "doi": "10.1108/LODJ-10-2024-0693",
+          "url": "https://www.sciencedirect.com/org/science/article/pii/S0143773925000301",
+          "sourceType": "journal",
+          "note": "Empirische Untersuchung zu KI‑Anwendung, Rollenambiguität und Führungseffektivität"
+        }
+      ],
+      "internalLinks": [
+        "/themen#ki-und-fuehrung",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    }
+  ]
 }
