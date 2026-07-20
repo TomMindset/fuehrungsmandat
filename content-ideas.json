@@ -1,6 +1,277 @@
 {
-  "generatedAt": null,
-  "status": "empty",
-  "method": "Wird durch pnpm content:research erzeugt.",
-  "ideas": []
+  "generatedAt": "2026-07-20T09:42:24.950Z",
+  "status": "research_draft",
+  "method": "OpenAlex-Recherche plus redaktionelle Verdichtung",
+  "ideas": [
+    {
+      "title": "Rollenunklarheit als Führungsherausforderung: Wie viel Klarheit braucht souveräne Führung?",
+      "cluster": "Führungsmandat | Rollenklärung",
+      "intent": "Führungskräfte suchen Orientierung im Umgang mit Rollenunklarheit und deren Auswirkungen auf Team und eigene Wirksamkeit.",
+      "primaryKeyword": "Rollenklärung Führung",
+      "format": "Reflexionsartikel",
+      "riskLevel": "medium",
+      "priority": 1,
+      "mandateQuestion": "Wie kann ich als Führungskraft Rollenunklarheit erkennen und gezielt adressieren, um meine Wirkung zu stärken?",
+      "briefing": "Forschung zeigt, dass Rollenunklarheit (role ambiguity) die Arbeitszufriedenheit und Leistung beeinflussen kann. Die Klärung der eigenen Rolle ist ein wesentlicher Schritt, um Verantwortung zu sortieren und souverän zu führen.",
+      "mustInclude": [
+        "Zusammenhang zwischen Rollenunklarheit und Arbeitszufriedenheit",
+        "Hinweis auf Auswirkungen auf Teamleistung"
+      ],
+      "avoid": [
+        "Versprechen, dass Rollenklärung automatisch zu höherer Produktivität führt"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Role Ambiguity and Job Performance of Employees in the Service Sector SMEs in Malaysia",
+          "year": 2020,
+          "doi": "10.32890/mmj.15.2011.8971",
+          "url": "https://doi.org/10.32890/mmj.15.2011.8971",
+          "note": "Zeigt Zusammenhang zwischen Rollenunklarheit und Arbeitsleistung."
+        },
+        {
+          "title": "Impact of Role Conflict and Role Ambiguity on Job Satisfaction the Mediating Effect of Job Stress and Moderating Effect of Islamic Work Ethics",
+          "year": 2021,
+          "doi": "10.24018/ejbmr.2021.6.4.895",
+          "url": "https://doi.org/10.24018/ejbmr.2021.6.4.895",
+          "note": "Betont die Bedeutung von Rollenstressoren für die Arbeitszufriedenheit."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    },
+    {
+      "title": "Laterale Führung: Einfluss nehmen ohne formale Macht",
+      "cluster": "Laterale Führung",
+      "intent": "Führungskräfte in Matrix- oder Projektstrukturen suchen nach Wegen, auch ohne disziplinarische Macht wirksam zu führen.",
+      "primaryKeyword": "laterale Führung",
+      "format": "Evidenznotiz",
+      "riskLevel": "low",
+      "priority": 2,
+      "mandateQuestion": "Wie kann ich als Führungskraft in lateralen Strukturen Einfluss nehmen, wenn mir formale Autorität fehlt?",
+      "briefing": "Studien zu lateraler Führung zeigen, dass Einflussnahme und Wirksamkeit nicht zwingend an formale Macht gebunden sind. Vertrauensvolle Beziehungen und geteilte Verantwortung gewinnen an Bedeutung.",
+      "mustInclude": [
+        "Bedeutung von Vertrauen und Beziehungsgestaltung",
+        "Abgrenzung zu klassischer hierarchischer Führung"
+      ],
+      "avoid": [
+        "Versprechen von schnellen Erfolgen durch laterale Führung"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "E-Leadership and Teleworking in Times of COVID-19 and Beyond: What We Know and Where Do We Go",
+          "year": 2020,
+          "doi": "10.3389/fpsyg.2020.590271",
+          "url": "https://doi.org/10.3389/fpsyg.2020.590271",
+          "note": "Beschreibt Anforderungen an Führung ohne klassische Hierarchie."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    },
+    {
+      "title": "Mandat schärfen in der Transformation: Die Rolle von mittleren Führungskräften im Wandel",
+      "cluster": "Führung in Transformation",
+      "intent": "Mittlere Führungskräfte suchen Orientierung, wie sie ihr Mandat in Veränderungsprozessen klären und behaupten.",
+      "primaryKeyword": "Führung Transformation Mandat",
+      "format": "Reflexionsartikel",
+      "riskLevel": "medium",
+      "priority": 3,
+      "mandateQuestion": "Wie kann ich mein Führungsmandat in Transformationsprozessen schärfen und meine Rolle zwischen Strategie und Umsetzung klären?",
+      "briefing": "Forschung zu Open Strategy und Digitalisierung zeigt, dass mittlere Führungskräfte ihr Mandat in partizipativen Prozessen neu verhandeln müssen. Die eigene Rolle wird dabei immer wieder herausgefordert.",
+      "mustInclude": [
+        "Spannungsfeld zwischen Strategie und Umsetzung",
+        "Dynamik der Rollenklärung in Veränderungsprozessen"
+      ],
+      "avoid": [
+        "Versprechen, dass Transformation ohne Rollenkonflikte gelingt"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Middle Managers' Struggle Over Their Subject Position in Open Strategy Processes",
+          "year": 2021,
+          "doi": "10.1111/joms.12776",
+          "url": "https://doi.org/10.1111/joms.12776",
+          "note": "Beschreibt die Herausforderungen für mittlere Führungskräfte in partizipativen Strategieprozessen."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    },
+    {
+      "title": "Stakeholder führen: Zwischen Engagement und Interessensausgleich",
+      "cluster": "Stakeholder und Wirkung",
+      "intent": "Führungskräfte suchen nach Wegen, unterschiedliche Stakeholder in Projekten oder Veränderungssituationen einzubinden und auszubalancieren.",
+      "primaryKeyword": "Stakeholder Führung",
+      "format": "Evidenznotiz",
+      "riskLevel": "medium",
+      "priority": 4,
+      "mandateQuestion": "Wie kann ich als Führungskraft Stakeholder wirksam einbinden, ohne die eigene Handlungsfähigkeit zu verlieren?",
+      "briefing": "Aktuelle Forschung betont die Bedeutung von Stakeholder-Engagement über reines Stakeholder-Management hinaus. Die Balance zwischen Inklusion und Entscheidungsfähigkeit bleibt eine zentrale Führungsfrage.",
+      "mustInclude": [
+        "Unterschied zwischen Stakeholder-Management und -Engagement",
+        "Spannungsfeld zwischen Inklusion und Steuerung"
+      ],
+      "avoid": [
+        "Versprechen, dass alle Interessen immer vollständig ausgleichbar sind"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Stakeholder engagement: Theoretical and methodological directions for project scholarship",
+          "year": 2024,
+          "doi": "10.1016/j.ijproman.2024.102649",
+          "url": "https://doi.org/10.1016/j.ijproman.2024.102649",
+          "note": "Diskutiert Herausforderungen und Chancen von Stakeholder-Engagement in temporären Organisationen."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    },
+    {
+      "title": "Verantwortung sortieren: Mandat, Rollenkonflikte und persönliche Grenzen",
+      "cluster": "Führungsmandat | Rollenklärung",
+      "intent": "Führungskräfte reflektieren, wie sie Verantwortung im Spannungsfeld von Mandat, Rollenkonflikten und persönlichen Grenzen einordnen.",
+      "primaryKeyword": "Verantwortung Führung",
+      "format": "Reflexionsraster",
+      "riskLevel": "medium",
+      "priority": 5,
+      "mandateQuestion": "Wie kann ich Verantwortung im Spannungsfeld von Mandat, Rollenkonflikten und persönlichen Grenzen sortieren?",
+      "briefing": "Forschung zeigt, dass Rollenkonflikte und Ambiguität die Wahrnehmung und Übernahme von Verantwortung beeinflussen. Ein bewusster Umgang mit diesen Spannungen kann helfen, die eigene Wirksamkeit zu stärken.",
+      "mustInclude": [
+        "Zusammenhang zwischen Rollenkonflikt und Verantwortungsübernahme",
+        "Reflexionsfragen zur eigenen Positionierung"
+      ],
+      "avoid": [
+        "Versprechen, dass Rollenkonflikte vollständig auflösbar sind"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Role Ambiguity of School Principals",
+          "year": 2020,
+          "doi": "10.14689/enad.25.15",
+          "url": "https://doi.org/10.14689/enad.25.15",
+          "note": "Beschreibt Faktoren und Lösungspfade für Rollenkonflikte in Leitungsfunktionen."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    },
+    {
+      "title": "Flexible Arbeitsmodelle: Zwischen Empowerment und Rollenunklarheit",
+      "cluster": "Führungsmandat | Wirkung",
+      "intent": "Führungskräfte reflektieren die Chancen und Risiken flexibler Arbeitsmodelle für Führung und Teamleistung.",
+      "primaryKeyword": "Flexible Arbeit Führung",
+      "format": "Evidenznotiz",
+      "riskLevel": "medium",
+      "priority": 6,
+      "mandateQuestion": "Wie kann ich als Führungskraft flexible Arbeitsmodelle gestalten, ohne dass Rollenunklarheit die Innovationskraft meines Teams mindert?",
+      "briefing": "Empirische Forschung zeigt, dass flexible Arbeitsmodelle sowohl Empowerment als auch Rollenunklarheit fördern können. Die Wirkung auf Innovation und Leistung ist ambivalent und hängt von individuellen und strukturellen Faktoren ab.",
+      "mustInclude": [
+        "Doppelwirkung flexibler Arbeitsmodelle",
+        "Hinweis auf Bedeutung individueller Selbstwirksamkeit"
+      ],
+      "avoid": [
+        "Versprechen, dass Flexibilität immer zu mehr Innovation führt"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Double-Edged Sword Effect of Flexible Work Arrangements on Employee Innovation Performance",
+          "year": 2023,
+          "doi": "10.3390/su151310159",
+          "url": "https://doi.org/10.3390/su151310159",
+          "note": "Zeigt die ambivalenten Effekte flexibler Arbeitsmodelle auf Rollenwahrnehmung und Innovation."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    },
+    {
+      "title": "Digitale Führung: Mandat und Wirkung im Zeitalter von KI",
+      "cluster": "KI und Führung | Führung in Transformation",
+      "intent": "Führungskräfte suchen Orientierung, wie sich Führungsmandat und Wirkung im Kontext von KI-getriebener Transformation verändern.",
+      "primaryKeyword": "digitale Führung KI",
+      "format": "Reflexionsartikel",
+      "riskLevel": "medium",
+      "priority": 7,
+      "mandateQuestion": "Wie kann ich mein Führungsmandat im Spannungsfeld von KI, Automatisierung und menschlicher Wirkung neu justieren?",
+      "briefing": "Forschung zu KI und Führung betont, dass Führungskräfte ihr Mandat und ihre Wirkung neu definieren müssen, wenn KI Routinetätigkeiten übernimmt und neue Formen der Zusammenarbeit entstehen.",
+      "mustInclude": [
+        "Veränderung des Führungsmandats durch KI",
+        "Abgrenzung menschlicher Wirkung gegenüber Automatisierung"
+      ],
+      "avoid": [
+        "Versprechen, dass KI die Führungsrolle ersetzt oder vollständig automatisiert"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Artificial Intelligence and Business Value: a Literature Review",
+          "year": 2021,
+          "doi": "10.1007/s10796-021-10186-w",
+          "url": "https://doi.org/10.1007/s10796-021-10186-w",
+          "note": "Analysiert, wie KI das Führungsverständnis und die Wertschöpfung verändert."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    },
+    {
+      "title": "Jobautonomie und Rollenklärung: Wie viel Freiheit verträgt die Organisation?",
+      "cluster": "Führungsmandat | Wirkung",
+      "intent": "Führungskräfte reflektieren, wie sie Autonomie ermöglichen und gleichzeitig für Klarheit und Wirksamkeit sorgen.",
+      "primaryKeyword": "Jobautonomie Führung",
+      "format": "Evidenznotiz",
+      "riskLevel": "medium",
+      "priority": 8,
+      "mandateQuestion": "Wie kann ich im Team Autonomie fördern, ohne dass Rollenunklarheit die Veränderungsbereitschaft hemmt?",
+      "briefing": "Forschung zeigt, dass Autonomie nur dann zu mehr Veränderungsbereitschaft führt, wenn Rollen klar sind und Gerechtigkeit erlebt wird. Die Balance zwischen Freiheit und Klarheit bleibt eine Führungsaufgabe.",
+      "mustInclude": [
+        "Zusammenhang zwischen Autonomie, Rollenklärung und Veränderungsbereitschaft"
+      ],
+      "avoid": [
+        "Versprechen, dass Autonomie immer zu mehr Innovation führt"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Job Autonomy, Role Ambiguity, and Procedural Justice: A Multi-Conditional Process Model of Change-Oriented Organizational Citizenship Behavior in Public Organizations",
+          "year": 2023,
+          "doi": "10.1177/0734371x231214978",
+          "url": "https://doi.org/10.1177/0734371x231214978",
+          "note": "Zeigt, dass Autonomie nur bei klaren Rollen und erlebter Gerechtigkeit wirksam ist."
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "research_idea"
+    }
+  ]
 }
