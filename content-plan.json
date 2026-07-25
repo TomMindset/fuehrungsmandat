@@ -8,7 +8,29 @@
     "targetLength": 1000,
     "internalLinks": ["/themen#fuehrungsmandat", "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"],
     "riskLevel": "low",
-    "status": "planned"
+    "status": "drafted",
+    "draftPath": "src/content/notes/wenn-rueckendeckung-unklar-ist.md",
+    "draftedAt": "2026-07-24",
+    "date": "2026-07-27",
+    "draftAfter": "2026-07-27",
+    "sources": [
+      {
+        "title": "Role Conflict and Ambiguity in Complex Organizations",
+        "authors": "John R. Rizzo, Robert J. House, Sidney I. Lirtzman",
+        "year": 1970,
+        "doi": "10.2307/2391486",
+        "url": "https://doi.org/10.2307/2391486",
+        "note": "Begriffs- und Messgrundlage für Rollenambiguität; keine kausale Handlungsanweisung für Einzelfälle."
+      },
+      {
+        "title": "Psychological Safety and Learning Behavior in Work Teams",
+        "authors": "Amy C. Edmondson",
+        "year": 1999,
+        "doi": "10.2307/2666999",
+        "url": "https://doi.org/10.2307/2666999",
+        "note": "Feldstudie mit 51 Arbeitsteams zu psychologischer Sicherheit und Lernverhalten; kein Nachweis für formale Mandatsklarheit."
+      }
+    ]
   },
   {
     "topic": "Kritische Gespräche nach oben vorbereiten",
