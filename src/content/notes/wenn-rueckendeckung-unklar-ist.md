@@ -41,7 +41,7 @@ Diese Fragen sind keine Absicherung gegen Verantwortung. Sie verhindern, dass Ve
 
 **Der Befund zur Ansprechbarkeit von Risiken:** Edmondson untersuchte in einer multimethodischen Feldstudie 51 Arbeitsteams eines Produktionsunternehmens. Geteilte psychologische Sicherheit war mit Lernverhalten wie dem Ansprechen von Fehlern, dem Einholen von Feedback und der Bitte um Hilfe verbunden ([Edmondson, 1999](https://doi.org/10.2307/2666999)).
 
-**Die Grenze und der Transfer:** Der Befund betrifft das Klima und Lernverhalten in Teams eines einzelnen Unternehmens. Er belegt weder formale Mandatsklarheit noch Rückendeckung durch eine vorgesetzte Ebene. Für ein Gespräch nach oben ist daher nur der vorsichtige Transfer tragfähig: Wenn Risiken und Einwände ansprechbar sind, wird Klärung wahrscheinlicher. Wer entscheiden darf und wer die Folgen im Konflikt mitträgt, muss dennoch konkret vereinbart werden.
+**Die Grenze und der Transfer:** Der Befund betrifft das Klima und Lernverhalten in Teams eines einzelnen Unternehmens. Edmondson bezeichnet die 51 Teams zudem als kleine Stichprobe für multivariate Analysen und mahnt bei der Übertragung auf andere Organisationen zur Vorsicht. Die Studie belegt weder formale Mandatsklarheit noch Rückendeckung durch eine vorgesetzte Ebene. Für ein Gespräch nach oben ist daher nur der vorsichtige Transfer tragfähig: Wenn Risiken und Einwände ansprechbar sind, wird Klärung wahrscheinlicher. Wer entscheiden darf und wer die Folgen im Konflikt mitträgt, muss dennoch konkret vereinbart werden.
 
 ## Das Gespräch nach oben vorbereiten
 
@@ -79,3 +79,4 @@ So wird aus diffusem Druck eine klärbare Führungsfrage. Die Rolle bleibt anspr
 - Welchen eng begrenzten nächsten Schritt kann ich verantworten, und was muss ich davor nach oben klären?
 
 Weitere Perspektiven zur [Klärung von Führungsmandaten](/themen#fuehrungsmandat) ordnen die Frage ein. Wenn aus dieser Frage eine konkrete Führungs- oder Veränderungssituation wird, bietet [Mandat & Wirkung](https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft) einen vertraulichen Coaching-Rahmen.
+
