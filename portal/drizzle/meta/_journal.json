@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1785186259251,
+      "tag": "0000_curved_spacker_dave",
+      "breakpoints": true
+    }
+  ]
+}

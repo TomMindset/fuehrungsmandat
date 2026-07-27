@@ -5,9 +5,16 @@ import path from "node:path";
 const root = process.cwd();
 const notesDir = path.join(root, "src", "content", "notes");
 const args = process.argv.slice(2);
-const slugArg = args.find((arg) => arg.startsWith("--slug="));
-const confirmArg = args.find((arg) => arg.startsWith("--confirm="));
 const dryRun = args.includes("--dry-run");
+
+function argValue(name) {
+  const inline = args.find((arg) => arg.startsWith(`${name}=`));
+  if (inline) return inline.slice(name.length + 1);
+
+  const index = args.indexOf(name);
+  if (index !== -1) return args[index + 1];
+  return undefined;
+}
 
 function frontmatterValue(content, key) {
   const match = content.match(new RegExp(`\\n${key}:\\s*(.+)`));
@@ -21,6 +28,16 @@ function replaceFrontmatterValue(content, key, value) {
   }
 
   return content.replace(pattern, `$1${value}`);
+}
+
+function upsertFrontmatterValue(content, key, value) {
+  const pattern = new RegExp(`(\\n${key}:\\s*).+`);
+  if (pattern.test(content)) return content.replace(pattern, `$1${value}`);
+
+  const frontmatterEnd = content.indexOf("\n---", 4);
+  if (frontmatterEnd === -1) throw new Error("Frontmatter-Ende nicht gefunden.");
+
+  return `${content.slice(0, frontmatterEnd)}\n${key}: ${value}${content.slice(frontmatterEnd)}`;
 }
 
 function removeDraftH1(content, title) {
@@ -81,15 +98,19 @@ function assertReleaseReady(content, file) {
   }
 }
 
-if (!slugArg) {
+const slug = argValue("--slug");
+const confirm = argValue("--confirm") ?? process.env.FUEHRUNGSMANDAT_CONFIRM;
+const approvedSlug = argValue("--approved-slug") ?? process.env.FUEHRUNGSMANDAT_APPROVED_SLUG;
+const releasedAt = argValue("--released-at");
+const image = argValue("--image");
+
+if (!slug) {
   throw new Error("Bitte --slug=<artikel-slug> angeben.");
 }
 
-const slug = slugArg.slice("--slug=".length);
 const expectedConfirm = `Freigegeben für Veröffentlichung: ${slug}`;
-const confirm = confirmArg?.slice("--confirm=".length);
 
-if (confirm !== expectedConfirm) {
+if (confirm !== expectedConfirm && approvedSlug !== slug) {
   throw new Error(`Exakte Freigabe fehlt. Erwartet: --confirm="${expectedConfirm}"`);
 }
 
@@ -104,6 +125,22 @@ if (!existsSync(articlePath)) {
 const original = await readFile(articlePath, "utf8");
 
 if (/\ndraft:\s*false\b/.test(original)) {
+  if (releasedAt || image) {
+    let updated = original;
+    if (releasedAt) updated = upsertFrontmatterValue(updated, "updated", `"${releasedAt}"`);
+    if (image) updated = upsertFrontmatterValue(updated, "image", `"${image}"`);
+    assertReleaseReady(updated, file);
+
+    if (dryRun) {
+      console.log(`Dry run: ${file} ist bereits veröffentlicht; Metadaten würden aktualisiert.`);
+      process.exit(0);
+    }
+
+    await writeFile(articlePath, `${updated.trim()}\n`, "utf8");
+    console.log(`Artikel bereits veröffentlicht; Zeitstempel aktualisiert: ${articlePath}`);
+    process.exit(0);
+  }
+
   console.log(`${file} ist bereits veröffentlicht.`);
   process.exit(0);
 }
@@ -114,6 +151,8 @@ if (!/\ndraft:\s*true\b/.test(original)) {
 
 const title = frontmatterValue(original, "title");
 let updated = replaceFrontmatterValue(original, "draft", "false");
+if (releasedAt) updated = upsertFrontmatterValue(updated, "updated", `"${releasedAt}"`);
+if (image) updated = upsertFrontmatterValue(updated, "image", `"${image}"`);
 updated = removeDraftH1(updated, title);
 assertReleaseReady(updated, file);
 
