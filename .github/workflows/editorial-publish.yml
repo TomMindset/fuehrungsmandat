@@ -1,0 +1,256 @@
+name: Fuehrungsmandat approved multichannel publication
+
+on:
+  repository_dispatch:
+    types: [fuehrungsmandat-review-approved]
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      review_id:
+        description: "ID einer bereits im Portal freigegebenen Version"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: fuehrungsmandat-publication
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Verify approval, release and build
+    if: vars.EDITORIAL_AUTOMATION_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: content-production
+    outputs:
+      should_continue: ${{ steps.review.outputs.should_continue }}
+      article_url: ${{ steps.approved.outputs.article_url }}
+      image_path: ${{ steps.approved.outputs.image_path }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Resolve one approved review
+        id: review
+        env:
+          REQUESTED_REVIEW_ID: ${{ github.event.client_payload.review_id || inputs.review_id }}
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+        run: node redaktion/scripts/resolve-approved-review.mjs
+
+      - name: Fetch and verify the approved package
+        id: approved
+        if: steps.review.outputs.should_continue == 'true'
+        env:
+          REVIEW_ID: ${{ steps.review.outputs.review_id }}
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+          META_GRAPH_API_VERSION: ${{ vars.META_GRAPH_API_VERSION }}
+          META_PAGE_ID: ${{ vars.META_PAGE_ID }}
+          META_INSTAGRAM_ACCOUNT_ID: ${{ vars.META_INSTAGRAM_ACCOUNT_ID }}
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}
+          LINKEDIN_AUTHOR_URN: ${{ vars.LINKEDIN_AUTHOR_URN }}
+        run: |
+          node redaktion/scripts/fetch-approved-package.mjs \
+            --review-id "$REVIEW_ID" \
+            --output-dir "$RUNNER_TEMP/fuehrungsmandat-publication"
+
+      - name: Validate credentials for every approved social channel
+        if: steps.review.outputs.should_continue == 'true'
+        env:
+          CHANNELS: ${{ steps.approved.outputs.channels }}
+          META_GRAPH_API_VERSION: ${{ vars.META_GRAPH_API_VERSION }}
+          META_PAGE_ID: ${{ vars.META_PAGE_ID }}
+          META_INSTAGRAM_ACCOUNT_ID: ${{ vars.META_INSTAGRAM_ACCOUNT_ID }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}
+          LINKEDIN_AUTHOR_URN: ${{ vars.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          missing=()
+          if [[ ",$CHANNELS," == *",facebook,"* || ",$CHANNELS," == *",instagram,"* ]]; then
+            for name in META_GRAPH_API_VERSION META_PAGE_ACCESS_TOKEN; do
+              if [ -z "${!name}" ]; then missing+=("$name"); fi
+            done
+          fi
+          if [[ ",$CHANNELS," == *",facebook,"* && -z "$META_PAGE_ID" ]]; then
+            missing+=("META_PAGE_ID")
+          fi
+          if [[ ",$CHANNELS," == *",instagram,"* && -z "$META_INSTAGRAM_ACCOUNT_ID" ]]; then
+            missing+=("META_INSTAGRAM_ACCOUNT_ID")
+          fi
+          if [[ ",$CHANNELS," == *",linkedin,"* ]]; then
+            for name in LINKEDIN_VERSION LINKEDIN_AUTHOR_URN LINKEDIN_ACCESS_TOKEN; do
+              if [ -z "${!name}" ]; then missing+=("$name"); fi
+            done
+          fi
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "Fehlende Konfiguration für freigegebene Kanäle: ${missing[*]}"
+            exit 1
+          fi
+
+      - name: Render the approved social card
+        if: steps.review.outputs.should_continue == 'true'
+        env:
+          PACKAGE_PATH: ${{ steps.approved.outputs.package_path }}
+          IMAGE_PATH: ${{ steps.approved.outputs.image_path }}
+        run: |
+          node redaktion/scripts/render-social-card.mjs \
+            --package "$PACKAGE_PATH" \
+            --output "public$IMAGE_PATH"
+
+      - name: Release the approved article
+        id: release
+        if: steps.review.outputs.should_continue == 'true'
+        env:
+          SLUG: ${{ steps.approved.outputs.slug }}
+          IMAGE_PATH: ${{ steps.approved.outputs.image_path }}
+        run: |
+          RELEASED_AT="$(date --iso-8601=seconds)"
+          node scripts/release-article.mjs \
+            --slug "$SLUG" \
+            --approved-slug "$SLUG" \
+            --released-at "$RELEASED_AT" \
+            --image "$IMAGE_PATH"
+          node redaktion/scripts/mark-plan-published.mjs \
+            --slug "$SLUG" \
+            --published-at "$RELEASED_AT"
+          echo "released_at=$RELEASED_AT" >> "$GITHUB_OUTPUT"
+
+      - name: Check content and Astro
+        if: steps.review.outputs.should_continue == 'true'
+        run: |
+          pnpm content:check
+          pnpm check
+          pnpm build
+
+      - name: Commit exactly the released publication
+        if: steps.review.outputs.should_continue == 'true'
+        env:
+          SLUG: ${{ steps.approved.outputs.slug }}
+          IMAGE_PATH: ${{ steps.approved.outputs.image_path }}
+        run: |
+          git config user.name "Fuehrungsmandat Redaktion"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- "src/content/notes/$SLUG.md" "public$IMAGE_PATH" "content-plan.json"
+          if git diff --cached --quiet; then
+            echo "Freigegebener Stand ist bereits committed."
+          else
+            git commit -m "Publish $SLUG"
+            git push origin HEAD:main
+          fi
+
+      - name: Upload Pages artifact
+        if: steps.review.outputs.should_continue == 'true'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./dist
+
+      - name: Preserve the verified publication context
+        if: steps.review.outputs.should_continue == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuehrungsmandat-publication-context
+          path: ${{ steps.approved.outputs.package_path }}
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    name: Deploy Fuehrungsmandat.de
+    needs: release
+    if: needs.release.outputs.should_continue == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+  social:
+    name: Confirm website and publish approved social channels
+    needs: [release, deploy]
+    if: needs.release.outputs.should_continue == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout the released main branch
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Download verified publication context
+        uses: actions/download-artifact@v4
+        with:
+          name: fuehrungsmandat-publication-context
+          path: ${{ runner.temp }}/fuehrungsmandat-publication
+
+      - name: Confirm the public article and OpenGraph image
+        env:
+          PACKAGE_PATH: ${{ runner.temp }}/fuehrungsmandat-publication/approved-package.json
+        run: |
+          node redaktion/scripts/wait-for-live.mjs \
+            --package "$PACKAGE_PATH" \
+            --timeout-seconds 600
+
+      - name: Record the successful website publication
+        env:
+          PACKAGE_PATH: ${{ runner.temp }}/fuehrungsmandat-publication/approved-package.json
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+        run: node redaktion/scripts/confirm-website-live.mjs --package "$PACKAGE_PATH"
+
+      - name: Publish only the approved social channels
+        env:
+          PACKAGE_PATH: ${{ runner.temp }}/fuehrungsmandat-publication/approved-package.json
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+          META_GRAPH_API_VERSION: ${{ vars.META_GRAPH_API_VERSION }}
+          META_PAGE_ID: ${{ vars.META_PAGE_ID }}
+          META_INSTAGRAM_ACCOUNT_ID: ${{ vars.META_INSTAGRAM_ACCOUNT_ID }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}
+          LINKEDIN_AUTHOR_URN: ${{ vars.LINKEDIN_AUTHOR_URN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          node redaktion/scripts/publish-social.mjs \
+            --package "$PACKAGE_PATH" \
+            --article-url "${{ needs.release.outputs.article_url }}" \
+            --image-url "https://fuehrungsmandat.de${{ needs.release.outputs.image_path }}"

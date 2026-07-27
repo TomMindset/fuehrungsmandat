@@ -1,0 +1,55 @@
+{
+  "brand": {
+    "name": "Fuehrungsmandat.de",
+    "editorialDisplayName": "Führungsmandat Redaktion",
+    "author": "Thomas Hoffmann",
+    "siteUrl": "https://fuehrungsmandat.de"
+  },
+  "approval": {
+    "live": false,
+    "portalBaseUrl": "https://fuehrungsmandat-freigabe.hoffmann877528.chatgpt.site",
+    "reviewerAddress": null,
+    "tokenValidDays": 7,
+    "requireChannelSelection": true,
+    "requireContentHashMatch": true,
+    "storeTokenAsSha256Only": true
+  },
+  "mail": {
+    "live": false,
+    "senderAddress": null,
+    "recipientAddress": null,
+    "subjectPrefix": "[Führungsmandat-Freigabe]"
+  },
+  "publishing": {
+    "live": false,
+    "websiteFirst": true,
+    "duplicatePublicationProtection": true,
+    "ambiguousResultsRequireManualCheck": true,
+    "liveUrlTimeoutSeconds": 600
+  },
+  "channels": {
+    "website": {
+      "live": false
+    },
+    "facebook": {
+      "live": false,
+      "pageId": "1302500569602973"
+    },
+    "instagram": {
+      "live": false,
+      "accountId": "17841439839407567"
+    },
+    "linkedin": {
+      "live": false,
+      "authorUrn": null,
+      "mode": null
+    }
+  },
+  "socialCard": {
+    "width": 1080,
+    "height": 1350,
+    "format": "jpeg",
+    "quality": 92,
+    "pathPrefix": "/assets/notizen"
+  }
+}

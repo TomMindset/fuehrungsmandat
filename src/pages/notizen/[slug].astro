@@ -31,6 +31,7 @@ const date = entry.data.date.toLocaleDateString("de-DE", {
   description={entry.data.description}
   canonical={`/notizen/${entry.id.replace(/\.mdx?$/, "").replace(/\/index$/, "")}`}
   type="article"
+  image={entry.data.image}
 >
   <main id="inhalt">
     <article>
