@@ -8,7 +8,7 @@
     "targetLength": 1000,
     "internalLinks": ["/themen#fuehrungsmandat", "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"],
     "riskLevel": "low",
-    "status": "drafted",
+    "status": "published",
     "draftPath": "src/content/notes/wenn-rueckendeckung-unklar-ist.md",
     "draftedAt": "2026-07-24",
     "date": "2026-07-27",
@@ -41,7 +41,29 @@
     "targetLength": 1200,
     "internalLinks": ["/themen#stakeholder-wirkung", "https://www.mandat-wirkung.de/kontakt"],
     "riskLevel": "low",
-    "status": "planned"
+    "status": "drafted",
+    "draftPath": "src/content/notes/kritisches-gespraech-mit-vorgesetzten-vorbereiten.md",
+    "draftedAt": "2026-07-30",
+    "date": "2026-08-03",
+    "draftAfter": "2026-08-03",
+    "sources": [
+      {
+        "title": "An Exploratory Study of Employee Silence: Issues that Employees Don’t Communicate Upward and Why",
+        "authors": "Frances J. Milliken, Elizabeth W. Morrison, Patricia F. Hewlin",
+        "year": 2003,
+        "doi": "10.1111/1467-6486.00387",
+        "url": "https://doi.org/10.1111/1467-6486.00387",
+        "note": "Explorative Interviews mit 40 Beschäftigten; zeigt Motive und Deutungsmuster, aber keine Prävalenz oder Kausalität."
+      },
+      {
+        "title": "Leadership Behavior and Employee Voice: Is the Door Really Open?",
+        "authors": "James R. Detert, Ethan R. Burris",
+        "year": 2007,
+        "doi": "10.5465/amj.2007.26279183",
+        "url": "https://doi.org/10.5465/amj.2007.26279183",
+        "note": "Zweiphasige Studie in einer Restaurantkette; Zusammenhang von wahrgenommener Offenheit, psychologischer Sicherheit und verbesserungsorientiertem Ansprechen, keine universelle Gesprächsanleitung."
+      }
+    ]
   },
   {
     "topic": "Führung in Transformation: Warum das Mandat oft nachträglich entsteht",
