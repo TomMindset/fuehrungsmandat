@@ -119,13 +119,15 @@ export default async function ReviewPage({ params }: Props) {
                   <strong>Alt-Text:</strong> {pkg.payload.instagram.altText}
                 </p>
               </article>
-              <article className="channel-copy">
-                <header>
-                  <h3>LinkedIn</h3>
-                  <small>{pkg.payload.linkedin.text.length} Zeichen</small>
-                </header>
-                <p>{pkg.payload.linkedin.text}</p>
-              </article>
+              {pkg.availableChannels.includes("linkedin") && (
+                <article className="channel-copy">
+                  <header>
+                    <h3>LinkedIn</h3>
+                    <small>{pkg.payload.linkedin.text.length} Zeichen</small>
+                  </header>
+                  <p>{pkg.payload.linkedin.text}</p>
+                </article>
+              )}
             </div>
           </section>
 

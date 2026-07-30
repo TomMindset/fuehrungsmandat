@@ -32,6 +32,7 @@ export async function claimPublication(
     contentHash?: unknown;
     packageHash?: unknown;
     workflowRunId?: unknown;
+    confirmManualRetry?: unknown;
   },
 ): Promise<Response> {
   await ensureSchema();
@@ -83,7 +84,11 @@ export async function claimPublication(
       { headers: { "Cache-Control": "no-store" } },
     );
   }
-  if (publication.status !== "pending") {
+  const confirmManualRetry = body.confirmManualRetry === true;
+  if (
+    publication.status !== "pending" &&
+    !(publication.status === "manual_check_required" && confirmManualRetry)
+  ) {
     return jsonError(
       publication.status === "manual_check_required"
         ? "Der Kanal ist bis zur manuellen Prüfung gesperrt."
@@ -91,6 +96,10 @@ export async function claimPublication(
       409,
     );
   }
+  const claimableStatus =
+    publication.status === "manual_check_required"
+      ? "manual_check_required"
+      : "pending";
 
   const claimToken = randomToken(32);
   const claimTokenHash = await sha256(claimToken);
@@ -99,7 +108,7 @@ export async function claimPublication(
     `UPDATE publications
      SET status = 'claimed', claim_token_hash = ?, claimed_at = ?,
        workflow_run_id = ?, reason = NULL
-     WHERE review_id = ? AND channel = ? AND status = 'pending'`,
+     WHERE review_id = ? AND channel = ? AND status = ?`,
   )
     .bind(
       claimTokenHash,
@@ -107,6 +116,7 @@ export async function claimPublication(
       workflowRunId,
       context.reviewId,
       context.channel,
+      claimableStatus,
     )
     .run();
   if (!result.meta.changes) {

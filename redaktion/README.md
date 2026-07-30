@@ -1,14 +1,16 @@
 # Führungsmandat Mehrkanal-Redaktion
 
 Dieser Ordner überträgt das Freigabeprinzip der OSTEA-Redaktion auf
-`fuehrungsmandat.de` und ergänzt LinkedIn als vierten Kanal.
+`fuehrungsmandat.de`. Website, Facebook und Instagram sind vorbereitet;
+LinkedIn bleibt bis zur späteren Anbindung pausiert und wird im Portal nicht
+zur Freigabe angeboten.
 
 ## Leitprinzip
 
 Der redigierte Artikel ist die einzige inhaltliche Quelle. Facebook,
-Instagram und LinkedIn erhalten jeweils eine eigenständige, vor der Freigabe
-sichtbare Fassung. Die Social-Texte dürfen keine neue fachliche Behauptung
-ergänzen.
+Instagram und perspektivisch LinkedIn erhalten jeweils eine eigenständige,
+vor der Freigabe sichtbare Fassung. Die Social-Texte dürfen keine neue
+fachliche Behauptung ergänzen.
 
 Ohne eine formal gültige, versions- und hashgebundene Portalentscheidung wird
 nichts veröffentlicht. Die Website geht immer zuerst live. Erst wenn die
@@ -24,7 +26,7 @@ Social-Kanäle folgen.
    - vollständiger Artikel,
    - Facebook-Fassung,
    - Instagram-Caption und Alt-Text,
-   - LinkedIn-Fassung,
+   - vorbereitete, derzeit nicht auswählbare LinkedIn-Fassung,
    - deterministische Markenkarte im Format 1080 × 1350 Pixel,
    - Inhalts-Hash, Version und Quellenlinks.
 4. Das Portal zeigt alle Fassungen und lässt die Kanäle einzeln auswählen.
@@ -33,12 +35,14 @@ Social-Kanäle folgen.
 6. Der Workflow prüft Freigabe-ID, Version und Inhalts-Hash erneut, setzt den
    Artikel über `content:release` live, baut die Site und pusht nur Artikel,
    Markenkarte und Planstatus.
-7. Nach bestätigter Erreichbarkeit der Artikel-URL werden Facebook,
-   Instagram und LinkedIn über getrennte Provider veröffentlicht.
+7. Nach bestätigter Erreichbarkeit der Artikel-URL laufen Facebook und
+   Instagram in unabhängigen Jobs mit 15 beziehungsweise 20 Minuten Abstand.
+   Ein Fehler auf einem Kanal blockiert den anderen nicht.
 8. Vor jedem Social-Aufruf reserviert das Portal den Kanal. Ein erfolgreicher
    Versand wird mit der externen Beitrags-ID abgeschlossen. Bei einem
    uneindeutigen Ergebnis wird `manual_check_required` gesetzt und nicht
-   automatisch erneut gepostet.
+   automatisch erneut gepostet. Nach externer Plattformprüfung kann ein
+   manueller Workflow ausschließlich den betroffenen Social-Kanal wiederholen.
 
 ## Sperrschalter
 
@@ -46,18 +50,16 @@ Alle Schalter in `config.json` stehen bewusst auf `false`. Die Workflows
 überspringen externe Aktionen zusätzlich, solange die Repository-Variable
 `EDITORIAL_AUTOMATION_ENABLED` nicht exakt `true` ist.
 
-Stand 27. Juli 2026 ist im GitHub-Repository nur das Secret
-`OPENAI_API_KEY` vorhanden. Das Environment `github-pages` existiert;
-`content-production` und alle Portal-, Mail-, Meta- und LinkedIn-Einstellungen
-fehlen noch. Damit ist die Strecke vorbereitet, aber absichtlich nicht
-aktivierbar.
+Portal, bestätigte Meta-IDs, Systemnutzer-Token und das Environment
+`content-production` sind eingerichtet. Der Token liegt ausschließlich als
+GitHub-Secret vor. Mailversand, Live-Schalter und LinkedIn bleiben offen; damit
+ist die Strecke weiterhin absichtlich nicht publikationsaktiv.
 
 Erst aktivieren, wenn:
 
 - ein eigenes Führungsmandat-Freigabeportal bereitsteht;
 - Freigabemail und Rückkanal Ende-zu-Ende getestet sind;
 - Facebook-Seite und Instagram-Business-Konto eindeutig verbunden sind;
-- das LinkedIn-Ziel als persönliches Profil oder Organisationsseite feststeht;
 - alle Schreibtests nicht öffentlich oder mit bewusstem Testinhalt bestanden
   sind;
 - GitHub Environment `content-production` mit dem gewünschten Reviewer
@@ -88,6 +90,18 @@ Repository-Secrets:
 Keine ID ist geheim. Tokens, App-Secrets, OAuth-Codes, Freigabelinks und
 Gmail-App-Passwörter gehören ausschließlich in Secret Stores.
 
+## Gezielter Social-Retry
+
+`editorial-publish.yml` kann manuell mit einer konkreten `review_id` und
+`retry_channels` (`facebook`, `instagram` oder beide) gestartet werden. Wenn
+das Portal zuvor `manual_check_required` gesetzt hat, muss erst auf der
+Plattform geprüft werden, ob doch ein Beitrag entstanden ist. Nur wenn kein
+Beitrag existiert, darf `confirm_manual_retry` aktiviert werden.
+
+Der Schalter `skip_offsets` ist ausschließlich für einen solchen bestätigten
+Retry vorgesehen. Ein `dry_run` prüft Freigabe, Hashes, Ziel-IDs und
+Zugangsdaten, führt aber keine Veröffentlichung aus.
+
 ## LinkedIn-Ziel
 
 Der Publisher unterstützt beide von der Posts API vorgesehenen Autor-Typen:
@@ -96,8 +110,9 @@ Der Publisher unterstützt beide von der Posts API vorgesehenen Autor-Typen:
 - Organisationsseite: `urn:li:organization:<id>` mit
   `w_organization_social` und passender Seitenrolle.
 
-`config.json` und `LINKEDIN_AUTHOR_URN` bleiben offen, bis das tatsächliche
-Ziel festgelegt und autorisiert ist.
+`approvalEnabled`, `live`, `LINKEDIN_AUTHOR_URN` und Modus bleiben deaktiviert
+beziehungsweise offen, bis das tatsächliche Ziel festgelegt und autorisiert
+ist.
 
 Aktuelle Primärdokumentation für die Aktivierung:
 

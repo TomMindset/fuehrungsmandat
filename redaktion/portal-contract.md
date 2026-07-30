@@ -80,7 +80,17 @@ Nur bei gültiger Entscheidung wird das Paket ausgeliefert:
   "contentHash": "<sha256>",
   "packageHash": "<sha256>",
   "approvedAt": "2026-07-27T10:00:00.000Z",
-  "approvedChannels": ["website", "facebook", "instagram", "linkedin"],
+  "approvedChannels": ["website", "facebook", "instagram"],
+  "publications": [
+    {
+      "channel": "facebook",
+      "status": "pending",
+      "externalId": null,
+      "url": null,
+      "publishedAt": null,
+      "reason": null
+    }
+  ],
   "package": {}
 }
 ```
@@ -102,7 +112,8 @@ Content-Type: application/json
   "version": 1,
   "contentHash": "<sha256>",
   "packageHash": "<sha256>",
-  "workflowRunId": "123456789"
+  "workflowRunId": "123456789",
+  "confirmManualRetry": false
 }
 ```
 
@@ -115,9 +126,11 @@ Antwort:
 }
 ```
 
-Ein bereits erfolgreicher, laufender oder manuell zu prüfender Kanal darf
-nicht erneut beansprucht werden. Ein Claim-Token wird serverseitig nur
-gehasht gespeichert.
+Ein bereits erfolgreicher oder laufender Kanal darf nicht erneut beansprucht
+werden. `manual_check_required` bleibt für automatische Läufe gesperrt. Nur ein
+manuell gestarteter, auf konkrete Social-Kanäle begrenzter Workflow darf nach
+externer Prüfung `confirmManualRetry: true` übermitteln. Ein Claim-Token wird
+serverseitig nur gehasht gespeichert.
 
 ## Kanal abschließen
 
@@ -146,6 +159,8 @@ Content-Type: application/json
 ```
 
 `manual_check_required` ist eine harte Sperre gegen automatische Wiederholung.
+Ein bestätigter Retry verlangt eine konkrete Freigabe-ID, die betroffenen
+Kanäle und die ausdrückliche Bestätigung der vorherigen Plattformprüfung.
 
 ## GitHub-Workflow auslösen
 
@@ -176,5 +191,6 @@ Content-Type: application/json
 
 Ohne diesen optionalen Token markiert das Portal die Freigabe für die planmäßige
 Abholung. Bei einem Dispatch-Fehler bleibt sie ebenfalls abholbar. Der Workflow
-kann zudem mit derselben `review_id` manuell gestartet werden. Veröffentlichung
-und Dublettenschutz prüfen den Portalstatus unabhängig vom Auslöseweg erneut.
+kann zudem mit derselben `review_id` als reiner Testlauf oder als gezielter
+Facebook-/Instagram-Retry gestartet werden. Veröffentlichung und
+Dublettenschutz prüfen den Portalstatus unabhängig vom Auslöseweg erneut.

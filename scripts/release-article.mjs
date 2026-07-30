@@ -1,6 +1,7 @@
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
+import { berlinCalendarDay } from "../redaktion/scripts/lib/dates.mjs";
 
 const root = process.cwd();
 const notesDir = path.join(root, "src", "content", "notes");
@@ -122,7 +123,7 @@ if (!existsSync(articlePath)) {
   throw new Error(`Artikel nicht gefunden: ${file}\nVerfügbare Artikel: ${available}`);
 }
 
-const original = await readFile(articlePath, "utf8");
+const original = (await readFile(articlePath, "utf8")).replace(/\r\n?/gu, "\n");
 
 if (/\ndraft:\s*false\b/.test(original)) {
   if (releasedAt || image) {
@@ -151,7 +152,14 @@ if (!/\ndraft:\s*true\b/.test(original)) {
 
 const title = frontmatterValue(original, "title");
 let updated = replaceFrontmatterValue(original, "draft", "false");
-if (releasedAt) updated = upsertFrontmatterValue(updated, "updated", `"${releasedAt}"`);
+if (releasedAt) {
+  updated = replaceFrontmatterValue(
+    updated,
+    "date",
+    berlinCalendarDay(releasedAt)
+  );
+  updated = upsertFrontmatterValue(updated, "updated", `"${releasedAt}"`);
+}
 if (image) updated = upsertFrontmatterValue(updated, "image", `"${image}"`);
 updated = removeDraftH1(updated, title);
 assertReleaseReady(updated, file);

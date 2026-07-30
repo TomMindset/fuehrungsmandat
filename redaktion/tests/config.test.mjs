@@ -23,6 +23,12 @@ test("nur bestätigte Meta-IDs sind gesetzt; Mail und LinkedIn bleiben offen", a
   assert.equal(config.mail.recipientAddress, null);
   assert.equal(config.channels.facebook.pageId, "1302500569602973");
   assert.equal(config.channels.instagram.accountId, "17841439839407567");
+  assert.equal(config.channels.website.approvalEnabled, true);
+  assert.equal(config.channels.facebook.approvalEnabled, true);
+  assert.equal(config.channels.instagram.approvalEnabled, true);
+  assert.equal(config.channels.linkedin.approvalEnabled, false);
   assert.equal(config.channels.linkedin.authorUrn, null);
   assert.equal(config.channels.linkedin.mode, null);
+  assert.equal(config.publishing.facebookDelayMinutes, 15);
+  assert.equal(config.publishing.instagramDelayMinutes, 20);
 });

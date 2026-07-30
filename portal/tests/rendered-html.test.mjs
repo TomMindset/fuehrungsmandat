@@ -30,11 +30,12 @@ test("paketiert Portal, Bindungen und Migration", async () => {
 });
 
 test("hält Freigabeoberfläche und Sicherheitsregeln im Quellstand", async () => {
-  const [decision, layout, config, robots] = await Promise.all([
+  const [decision, reviewPage, layout, config, robots] = await Promise.all([
     readFile(
       new URL("../app/review/[token]/ReviewDecision.tsx", import.meta.url),
       "utf8",
     ),
+    readFile(new URL("../app/review/[token]/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../next.config.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/robots.ts", import.meta.url), "utf8"),
@@ -43,8 +44,28 @@ test("hält Freigabeoberfläche und Sicherheitsregeln im Quellstand", async () =
   assert.match(decision, /initialApprovedChannels/);
   assert.match(decision, /channel === "website"/);
   assert.match(decision, /Ausgewählte Kanäle freigeben/);
+  assert.match(reviewPage, /availableChannels\.includes\("linkedin"\)/);
   assert.match(layout, /new URL\("\/og\.png", metadataBase\)/);
   assert.match(config, /X-Frame-Options/);
   assert.match(config, /Cache-Control/);
   assert.match(robots, /disallow:\s*"\/"/);
+});
+
+test("liefert Kanalzustände und schützt bestätigte Social-Retries", async () => {
+  const [publication, publicationPackage] = await Promise.all([
+    readFile(new URL("../lib/publication.ts", import.meta.url), "utf8"),
+    readFile(
+      new URL(
+        "../app/api/editorial/reviews/[id]/publication-package/route.ts",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+  ]);
+
+  assert.match(publication, /confirmManualRetry/u);
+  assert.match(publication, /manual_check_required/u);
+  assert.match(publication, /claimableStatus/u);
+  assert.match(publicationPackage, /publications:/u);
+  assert.match(publicationPackage, /externalId:/u);
 });

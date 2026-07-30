@@ -88,7 +88,9 @@ async function claimChannel(context, channel) {
         version: context.pkg.version,
         contentHash: context.pkg.contentHash,
         packageHash: context.pkg.packageHash,
-        workflowRunId: optionalEnv("GITHUB_RUN_ID") || "local"
+        workflowRunId: optionalEnv("GITHUB_RUN_ID") || "local",
+        confirmManualRetry:
+          context.pkg.approval?.confirmManualRetry === true
       })
     }
   );
@@ -290,7 +292,24 @@ async function main() {
   if (!Array.isArray(approvedChannels)) {
     throw new Error("Freigegebene Kanäle fehlen.");
   }
-  const channels = approvedChannels.filter((channel) => channel !== "website");
+  const requestedChannel = argument("--channel");
+  const approvedSocialChannels = approvedChannels.filter(
+    (channel) => channel !== "website"
+  );
+  if (
+    requestedChannel &&
+    !["facebook", "instagram", "linkedin"].includes(requestedChannel)
+  ) {
+    throw new Error("Angeforderter Social-Kanal ist ungültig.");
+  }
+  if (requestedChannel && !approvedSocialChannels.includes(requestedChannel)) {
+    throw new Error(
+      `Angeforderter Social-Kanal ${requestedChannel} ist nicht für diesen Lauf freigegeben.`
+    );
+  }
+  const channels = requestedChannel
+    ? [requestedChannel]
+    : approvedSocialChannels;
   if (channels.length === 0) {
     console.log("Keine Social-Kanäle freigegeben.");
     return;

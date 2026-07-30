@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { argument } from "./lib/args.mjs";
 import {
+  approvalChannels,
   loadArticle,
   objectHash,
   validateSocialCopy
@@ -206,7 +207,7 @@ async function main() {
     sourceUrls: article.sourceUrls,
     createdAt: new Date().toISOString(),
     createdByModel: social.model,
-    availableChannels: ["website", "facebook", "instagram", "linkedin"],
+    availableChannels: approvalChannels(config),
     publicationRules: {
       websiteFirst: true,
       selectedChannelsOnly: true,

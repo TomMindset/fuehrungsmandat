@@ -3,19 +3,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { argument } from "./lib/args.mjs";
 import { loadArticle, objectHash, validateSocialCopy } from "./lib/article.mjs";
+import { createPublicationPlan } from "./lib/publication-plan.mjs";
 import {
   githubOutput,
   portalJson,
   requiredEnv,
   safeBaseUrl
 } from "./lib/http.mjs";
-
-const allowedChannels = new Set([
-  "website",
-  "facebook",
-  "instagram",
-  "linkedin"
-]);
 
 function sameHash(left, right) {
   if (
@@ -32,6 +26,18 @@ function sameHash(left, right) {
 async function main() {
   const reviewId = argument("--review-id", { required: true });
   const outputDir = path.resolve(argument("--output-dir", { required: true }));
+  const dryRun = process.argv.includes("--dry-run");
+  const confirmManualRetry = process.argv.includes("--confirm-manual-retry");
+  const retryChannels = String(argument("--retry-channels") || "")
+    .split(",")
+    .map((channel) => channel.trim())
+    .filter(Boolean);
+  const invalidRetryChannel = retryChannels.find(
+    (channel) => !["facebook", "instagram"].includes(channel)
+  );
+  if (invalidRetryChannel) {
+    throw new Error(`Ungültiger Social-Retry-Kanal: ${invalidRetryChannel}.`);
+  }
   if (!/^[A-Za-z0-9_-]{8,128}$/u.test(reviewId)) {
     throw new Error("Ungültige Freigabe-ID.");
   }
@@ -39,13 +45,6 @@ async function main() {
   const config = JSON.parse(
     await readFile(path.join(process.cwd(), "redaktion", "config.json"), "utf8")
   );
-  if (
-    config.approval?.live !== true ||
-    config.publishing?.live !== true ||
-    config.channels?.website?.live !== true
-  ) {
-    throw new Error("Freigabe oder Veröffentlichung ist in config.json gesperrt.");
-  }
 
   const portalBaseUrl = safeBaseUrl(
     process.env.FUEHRUNGSMANDAT_PORTAL_URL ||
@@ -92,21 +91,41 @@ async function main() {
     linkedin: pkg.payload?.linkedin
   });
 
-  const channels = approval.approvedChannels;
-  if (
-    !Array.isArray(channels) ||
-    channels.length === 0 ||
-    channels.some((channel) => !allowedChannels.has(channel))
-  ) {
-    throw new Error("Die freigegebenen Kanäle sind ungültig.");
+  const { channels, notices } = createPublicationPlan({
+    approvedChannels: approval.approvedChannels,
+    publications: approval.publications,
+    config,
+    retryChannels,
+    confirmManualRetry
+  });
+  for (const notice of notices) console.log(notice);
+
+  if (channels.length === 0) {
+    await githubOutput("should_publish", "false");
+    console.log("Für diese Freigabe ist kein ausführbarer Kanal offen.");
+    return;
   }
-  if (!channels.includes("website")) {
-    throw new Error("Website-Freigabe fehlt; Social-Veröffentlichung ist gesperrt.");
+
+  const liveBlockers = [];
+  if (config.approval?.live !== true) liveBlockers.push("approval.live");
+  if (config.publishing?.live !== true) liveBlockers.push("publishing.live");
+  if (config.channels?.website?.live !== true) {
+    liveBlockers.push("channels.website.live");
   }
   for (const channel of channels) {
     if (config.channels?.[channel]?.live !== true) {
-      throw new Error(`Der freigegebene Kanal ${channel} ist lokal noch gesperrt.`);
+      liveBlockers.push(`channels.${channel}.live`);
     }
+  }
+  if (!dryRun && liveBlockers.length > 0) {
+    throw new Error(
+      `Veröffentlichung ist lokal gesperrt: ${[...new Set(liveBlockers)].join(", ")}.`
+    );
+  }
+  if (dryRun && liveBlockers.length > 0) {
+    console.log(
+      `Testlauf: Noch gesperrte Live-Schalter: ${[...new Set(liveBlockers)].join(", ")}.`
+    );
   }
   if (
     channels.includes("facebook") &&
@@ -181,17 +200,27 @@ async function main() {
     approval: {
       id: reviewId,
       approvedAt: approval.approvedAt,
-      channels
+      channels,
+      confirmManualRetry,
+      publications: approval.publications
     }
   };
   await writeFile(outputPath, `${JSON.stringify(verified, null, 2)}\n`, "utf8");
 
+  await githubOutput("should_publish", "true");
   await githubOutput("package_path", outputPath);
   await githubOutput("slug", pkg.slug);
   await githubOutput("article_url", pkg.canonicalUrl);
   await githubOutput("image_path", pkg.imagePath);
   await githubOutput("channels", channels.join(","));
   await githubOutput("review_id", reviewId);
+  await githubOutput("website_pending", String(channels.includes("website")));
+  await githubOutput("facebook_pending", String(channels.includes("facebook")));
+  await githubOutput("instagram_pending", String(channels.includes("instagram")));
+  await githubOutput(
+    "social_pending",
+    String(channels.some((channel) => channel !== "website"))
+  );
   console.log(`Freigabe ${reviewId} für ${pkg.slug} wurde kryptografisch zugeordnet.`);
 }
 

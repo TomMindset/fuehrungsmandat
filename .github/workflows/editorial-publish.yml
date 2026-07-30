@@ -11,6 +11,26 @@ on:
         description: "ID einer bereits im Portal freigegebenen Version"
         required: true
         type: string
+      dry_run:
+        description: "Freigabe, Assets und Zugangsdaten prüfen, nichts veröffentlichen"
+        required: false
+        default: false
+        type: boolean
+      retry_channels:
+        description: "Bestätigter Social-Retry: facebook, instagram oder beide"
+        required: false
+        default: ""
+        type: string
+      confirm_manual_retry:
+        description: "Manuelle Prüfung eines uneindeutigen Plattformstatus bestätigen"
+        required: false
+        default: false
+        type: boolean
+      skip_offsets:
+        description: "Kanalabstände bei einem bestätigten Retry auslassen"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -23,21 +43,25 @@ concurrency:
 
 jobs:
   release:
-    name: Verify approval, release and build
-    if: vars.EDITORIAL_AUTOMATION_ENABLED == 'true'
+    name: Verify approval and prepare the website release
+    if: vars.EDITORIAL_AUTOMATION_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == true)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment: content-production
     outputs:
-      should_continue: ${{ steps.review.outputs.should_continue }}
+      should_continue: ${{ steps.approved.outputs.should_publish }}
       article_url: ${{ steps.approved.outputs.article_url }}
       image_path: ${{ steps.approved.outputs.image_path }}
+      website_pending: ${{ steps.approved.outputs.website_pending }}
+      facebook_pending: ${{ steps.approved.outputs.facebook_pending }}
+      instagram_pending: ${{ steps.approved.outputs.instagram_pending }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v7
 
       - name: Setup Pages
+        if: inputs.dry_run != true
         uses: actions/configure-pages@v6
 
       - name: Setup Node
@@ -50,6 +74,17 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Validate manual retry inputs
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          RETRY_CHANNELS: ${{ inputs.retry_channels }}
+          CONFIRM_MANUAL_RETRY: ${{ inputs.confirm_manual_retry }}
+        run: |
+          if [ "$CONFIRM_MANUAL_RETRY" = "true" ] && [ -z "$RETRY_CHANNELS" ]; then
+            echo "confirm_manual_retry benötigt mindestens einen retry_channels-Wert."
+            exit 1
+          fi
 
       - name: Resolve one approved review
         id: review
@@ -65,6 +100,9 @@ jobs:
         if: steps.review.outputs.should_continue == 'true'
         env:
           REVIEW_ID: ${{ steps.review.outputs.review_id }}
+          RETRY_CHANNELS: ${{ inputs.retry_channels }}
+          CONFIRM_MANUAL_RETRY: ${{ inputs.confirm_manual_retry }}
+          DRY_RUN: ${{ inputs.dry_run }}
           FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
           FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
           FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
@@ -74,12 +112,23 @@ jobs:
           LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}
           LINKEDIN_AUTHOR_URN: ${{ vars.LINKEDIN_AUTHOR_URN }}
         run: |
-          node redaktion/scripts/fetch-approved-package.mjs \
-            --review-id "$REVIEW_ID" \
+          args=(
+            --review-id "$REVIEW_ID"
             --output-dir "$RUNNER_TEMP/fuehrungsmandat-publication"
+          )
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          if [ -n "$RETRY_CHANNELS" ]; then
+            args+=(--retry-channels "$RETRY_CHANNELS")
+          fi
+          if [ "$CONFIRM_MANUAL_RETRY" = "true" ]; then
+            args+=(--confirm-manual-retry)
+          fi
+          node redaktion/scripts/fetch-approved-package.mjs "${args[@]}"
 
-      - name: Validate credentials for every approved social channel
-        if: steps.review.outputs.should_continue == 'true'
+      - name: Validate credentials for every selected social channel
+        if: steps.approved.outputs.should_publish == 'true'
         env:
           CHANNELS: ${{ steps.approved.outputs.channels }}
           META_GRAPH_API_VERSION: ${{ vars.META_GRAPH_API_VERSION }}
@@ -108,12 +157,18 @@ jobs:
             done
           fi
           if [ "${#missing[@]}" -gt 0 ]; then
-            echo "Fehlende Konfiguration für freigegebene Kanäle: ${missing[*]}"
+            echo "Fehlende Konfiguration für ausgewählte Kanäle: ${missing[*]}"
             exit 1
           fi
+          echo "Geschützte Konfiguration ist für die ausgewählten Kanäle vollständig."
+
+      - name: Confirm the dry run
+        if: steps.approved.outputs.should_publish == 'true' && inputs.dry_run == true
+        run: |
+          echo "Testlauf erfolgreich: Freigabe, Hashes, Zielkonten und Zugangsdaten sind konsistent."
 
       - name: Render the approved social card
-        if: steps.review.outputs.should_continue == 'true'
+        if: steps.approved.outputs.website_pending == 'true' && inputs.dry_run != true
         env:
           PACKAGE_PATH: ${{ steps.approved.outputs.package_path }}
           IMAGE_PATH: ${{ steps.approved.outputs.image_path }}
@@ -123,8 +178,8 @@ jobs:
             --output "public$IMAGE_PATH"
 
       - name: Release the approved article
-        id: release
-        if: steps.review.outputs.should_continue == 'true'
+        id: website_release
+        if: steps.approved.outputs.website_pending == 'true' && inputs.dry_run != true
         env:
           SLUG: ${{ steps.approved.outputs.slug }}
           IMAGE_PATH: ${{ steps.approved.outputs.image_path }}
@@ -141,14 +196,14 @@ jobs:
           echo "released_at=$RELEASED_AT" >> "$GITHUB_OUTPUT"
 
       - name: Check content and Astro
-        if: steps.review.outputs.should_continue == 'true'
+        if: steps.approved.outputs.website_pending == 'true' && inputs.dry_run != true
         run: |
           pnpm content:check
           pnpm check
           pnpm build
 
       - name: Commit exactly the released publication
-        if: steps.review.outputs.should_continue == 'true'
+        if: steps.approved.outputs.website_pending == 'true' && inputs.dry_run != true
         env:
           SLUG: ${{ steps.approved.outputs.slug }}
           IMAGE_PATH: ${{ steps.approved.outputs.image_path }}
@@ -164,13 +219,13 @@ jobs:
           fi
 
       - name: Upload Pages artifact
-        if: steps.review.outputs.should_continue == 'true'
+        if: steps.approved.outputs.website_pending == 'true' && inputs.dry_run != true
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
 
       - name: Preserve the verified publication context
-        if: steps.review.outputs.should_continue == 'true'
+        if: steps.approved.outputs.should_publish == 'true' && inputs.dry_run != true
         uses: actions/upload-artifact@v4
         with:
           name: fuehrungsmandat-publication-context
@@ -181,7 +236,7 @@ jobs:
   deploy:
     name: Deploy Fuehrungsmandat.de
     needs: release
-    if: needs.release.outputs.should_continue == 'true'
+    if: needs.release.outputs.website_pending == 'true' && inputs.dry_run != true
     runs-on: ubuntu-latest
     timeout-minutes: 15
     concurrency:
@@ -196,12 +251,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
-  social:
-    name: Confirm website and publish approved social channels
+  website:
+    name: Confirm the exact approved website article
     needs: [release, deploy]
-    if: needs.release.outputs.should_continue == 'true'
+    if: always() && needs.release.outputs.should_continue == 'true' && inputs.dry_run != true && (needs.deploy.result == 'success' || needs.deploy.result == 'skipped')
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
 
     steps:
       - name: Checkout the released main branch
@@ -229,6 +284,7 @@ jobs:
             --timeout-seconds 600
 
       - name: Record the successful website publication
+        if: needs.release.outputs.website_pending == 'true'
         env:
           PACKAGE_PATH: ${{ runner.temp }}/fuehrungsmandat-publication/approved-package.json
           FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
@@ -236,7 +292,35 @@ jobs:
           FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
         run: node redaktion/scripts/confirm-website-live.mjs --package "$PACKAGE_PATH"
 
-      - name: Publish only the approved social channels
+  facebook:
+    name: Publish the approved Facebook post
+    needs: [release, website]
+    if: needs.release.outputs.facebook_pending == 'true' && needs.website.result == 'success' && inputs.dry_run != true
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Download verified publication context
+        uses: actions/download-artifact@v4
+        with:
+          name: fuehrungsmandat-publication-context
+          path: ${{ runner.temp }}/fuehrungsmandat-publication
+
+      - name: Keep the approved Facebook offset
+        if: inputs.skip_offsets != true
+        run: sleep 900
+
+      - name: Publish Facebook
         env:
           PACKAGE_PATH: ${{ runner.temp }}/fuehrungsmandat-publication/approved-package.json
           FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
@@ -246,11 +330,54 @@ jobs:
           META_PAGE_ID: ${{ vars.META_PAGE_ID }}
           META_INSTAGRAM_ACCOUNT_ID: ${{ vars.META_INSTAGRAM_ACCOUNT_ID }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
-          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION }}
-          LINKEDIN_AUTHOR_URN: ${{ vars.LINKEDIN_AUTHOR_URN }}
-          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
         run: |
           node redaktion/scripts/publish-social.mjs \
             --package "$PACKAGE_PATH" \
+            --channel facebook \
+            --article-url "${{ needs.release.outputs.article_url }}" \
+            --image-url "https://fuehrungsmandat.de${{ needs.release.outputs.image_path }}"
+
+  instagram:
+    name: Publish the approved Instagram post
+    needs: [release, website]
+    if: needs.release.outputs.instagram_pending == 'true' && needs.website.result == 'success' && inputs.dry_run != true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Download verified publication context
+        uses: actions/download-artifact@v4
+        with:
+          name: fuehrungsmandat-publication-context
+          path: ${{ runner.temp }}/fuehrungsmandat-publication
+
+      - name: Keep the approved Instagram offset
+        if: inputs.skip_offsets != true
+        run: sleep 1200
+
+      - name: Publish Instagram
+        env:
+          PACKAGE_PATH: ${{ runner.temp }}/fuehrungsmandat-publication/approved-package.json
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+          META_GRAPH_API_VERSION: ${{ vars.META_GRAPH_API_VERSION }}
+          META_PAGE_ID: ${{ vars.META_PAGE_ID }}
+          META_INSTAGRAM_ACCOUNT_ID: ${{ vars.META_INSTAGRAM_ACCOUNT_ID }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+        run: |
+          node redaktion/scripts/publish-social.mjs \
+            --package "$PACKAGE_PATH" \
+            --channel instagram \
             --article-url "${{ needs.release.outputs.article_url }}" \
             --image-url "https://fuehrungsmandat.de${{ needs.release.outputs.image_path }}"

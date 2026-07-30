@@ -42,6 +42,20 @@ export async function GET(
   if (review.status !== "approved" || !review.approved_channels_json) {
     return jsonError("Diese Version ist nicht zur Veröffentlichung freigegeben.", 409);
   }
+  const publicationResult = await getPortalEnv()
+    .DB.prepare(
+      `SELECT channel, status, external_id, url, published_at, reason
+       FROM publications WHERE review_id = ? ORDER BY channel`,
+    )
+    .bind(id)
+    .all<{
+      channel: string;
+      status: string;
+      external_id: string | null;
+      url: string | null;
+      published_at: string | null;
+      reason: string | null;
+    }>();
   return Response.json(
     {
       id: review.id,
@@ -51,6 +65,14 @@ export async function GET(
       packageHash: review.package_hash,
       approvedAt: review.decision_at,
       approvedChannels: JSON.parse(review.approved_channels_json),
+      publications: publicationResult.results.map((publication) => ({
+        channel: publication.channel,
+        status: publication.status,
+        externalId: publication.external_id,
+        url: publication.url,
+        publishedAt: publication.published_at,
+        reason: publication.reason,
+      })),
       package: JSON.parse(review.package_json),
     },
     {

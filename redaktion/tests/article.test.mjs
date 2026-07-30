@@ -1,12 +1,14 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  approvalChannels,
   contentHash,
   objectHash,
   parseFrontmatter,
   slugify,
   validateSocialCopy
 } from "../scripts/lib/article.mjs";
+import { berlinCalendarDay } from "../scripts/lib/dates.mjs";
 
 test("slugify erhält deutsche Umschrift", () => {
   assert.equal(
@@ -34,10 +36,31 @@ test("Inhalts-Hash ist unabhängig von Windows-Zeilenenden", () => {
   assert.equal(contentHash("A\r\nB\r\n"), contentHash("A\nB\n"));
 });
 
+test("Veröffentlichungstag folgt dem Berliner Kalender", () => {
+  assert.equal(
+    berlinCalendarDay("2026-07-30T22:30:00.000Z"),
+    "2026-07-31"
+  );
+});
+
 test("Paket-Hash ist unabhängig von der Reihenfolge der JSON-Schlüssel", () => {
   assert.equal(
     objectHash({ b: 2, a: { d: 4, c: 3 } }),
     objectHash({ a: { c: 3, d: 4 }, b: 2 })
+  );
+});
+
+test("pausierte Kanäle werden nicht zur Freigabe angeboten", () => {
+  assert.deepEqual(
+    approvalChannels({
+      channels: {
+        website: { approvalEnabled: true },
+        facebook: { approvalEnabled: true },
+        instagram: { approvalEnabled: true },
+        linkedin: { approvalEnabled: false }
+      }
+    }),
+    ["website", "facebook", "instagram"]
   );
 });
 

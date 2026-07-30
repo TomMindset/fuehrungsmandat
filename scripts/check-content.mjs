@@ -31,7 +31,7 @@ for (const file of files) {
   const h2Count = (content.match(/^##\s+/gm) || []).length;
   const isDraft = /\ndraft:\s*true\b/.test(content);
 
-  if (!content.startsWith("---\n")) failures.push(`${file}: Frontmatter fehlt`);
+  if (!/^---\r?\n/u.test(content)) failures.push(`${file}: Frontmatter fehlt`);
   if (!frontmatterValue(content, "title")) failures.push(`${file}: title fehlt`);
   if (!frontmatterValue(content, "description")) failures.push(`${file}: description fehlt`);
   if (!frontmatterValue(content, "date")) failures.push(`${file}: date fehlt`);

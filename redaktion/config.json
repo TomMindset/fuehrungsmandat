@@ -25,21 +25,27 @@
     "websiteFirst": true,
     "duplicatePublicationProtection": true,
     "ambiguousResultsRequireManualCheck": true,
-    "liveUrlTimeoutSeconds": 600
+    "liveUrlTimeoutSeconds": 600,
+    "facebookDelayMinutes": 15,
+    "instagramDelayMinutes": 20
   },
   "channels": {
     "website": {
+      "approvalEnabled": true,
       "live": false
     },
     "facebook": {
+      "approvalEnabled": true,
       "live": false,
       "pageId": "1302500569602973"
     },
     "instagram": {
+      "approvalEnabled": true,
       "live": false,
       "accountId": "17841439839407567"
     },
     "linkedin": {
+      "approvalEnabled": false,
       "live": false,
       "authorUrn": null,
       "mode": null

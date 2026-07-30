@@ -199,3 +199,13 @@ export function validateSocialCopy(value) {
     linkedin: { text: linkedin }
   };
 }
+
+export function approvalChannels(config) {
+  const channels = ["website", "facebook", "instagram", "linkedin"].filter(
+    (channel) => config?.channels?.[channel]?.approvalEnabled === true
+  );
+  if (!channels.includes("website")) {
+    throw new Error("Website muss als Freigabekanal aktiviert sein.");
+  }
+  return channels;
+}
