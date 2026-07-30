@@ -6,9 +6,10 @@ export default function Home() {
         <p className="eyebrow">Führungsmandat Redaktion</p>
         <h1>Freigabe mit klarer Bindung.</h1>
         <p className="home-lead">
-          Dieses Portal dokumentiert Entscheidungen zu Website, Facebook,
-          Instagram und LinkedIn. Jeder Freigabelink gilt ausschließlich für
-          eine konkrete Artikelversion und ihren geprüften Inhalts-Hash.
+          Dieses Portal dokumentiert Entscheidungen zu Website, Facebook und
+          Instagram. LinkedIn bleibt bis zur späteren Anbindung pausiert. Jeder
+          Freigabelink gilt ausschließlich für eine konkrete Artikelversion und
+          ihren geprüften Inhalts-Hash.
         </p>
         <div className="home-rule">
           <span>01</span>

@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: "Führungsmandat Freigabeportal",
       description:
-        "Versionierte Freigaben für Website, Facebook, Instagram und LinkedIn.",
+        "Versionierte Freigaben für Website, Facebook und Instagram.",
       type: "website",
       locale: "de_DE",
       images: [
@@ -55,7 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Führungsmandat Freigabeportal",
       description:
-        "Versionierte Freigaben für Website, Facebook, Instagram und LinkedIn.",
+        "Versionierte Freigaben für Website, Facebook und Instagram.",
       images: [image],
     },
   };
