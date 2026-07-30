@@ -1,0 +1,109 @@
+name: Fuehrungsmandat editorial approval
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/notes/*.md"
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Artikel-Slug für eine neue Freigabeversion"
+        required: true
+        type: string
+      version:
+        description: "Positive Freigabeversion"
+        required: false
+        default: "1"
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fuehrungsmandat-editorial-approval
+  cancel-in-progress: false
+
+jobs:
+  approval:
+    name: Create channel-specific approval
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Resolve one approval-ready article
+        id: resolve
+        env:
+          EDITORIAL_AUTOMATION_ENABLED: ${{ vars.EDITORIAL_AUTOMATION_ENABLED }}
+          REQUESTED_SLUG: ${{ inputs.slug }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          if [ -n "$REQUESTED_SLUG" ]; then
+            node redaktion/scripts/resolve-approval-article.mjs --slug "$REQUESTED_SLUG"
+          else
+            node redaktion/scripts/resolve-approval-article.mjs --before "$BEFORE_SHA" --after "$AFTER_SHA"
+          fi
+
+      - name: Validate protected configuration
+        if: steps.resolve.outputs.should_continue == 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD: ${{ secrets.FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+        run: |
+          missing=()
+          for name in OPENAI_API_KEY FUEHRUNGSMANDAT_PORTAL_SECRET FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD FUEHRUNGSMANDAT_PORTAL_URL; do
+            if [ -z "${!name}" ]; then missing+=("$name"); fi
+          done
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "Fehlende Repository-Konfiguration: ${missing[*]}"
+            exit 1
+          fi
+
+      - name: Create social variants and approval card
+        id: prepare
+        if: steps.resolve.outputs.should_continue == 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_TEXT_MODEL: ${{ vars.OPENAI_TEXT_MODEL }}
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+        run: |
+          node redaktion/scripts/prepare-approval.mjs \
+            --slug "${{ steps.resolve.outputs.slug }}" \
+            --version "${{ inputs.version || '1' }}" \
+            --output-dir "$RUNNER_TEMP/fuehrungsmandat-approval"
+
+      - name: Send approval mail
+        if: steps.resolve.outputs.should_continue == 'true'
+        env:
+          FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD: ${{ secrets.FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD }}
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+        run: |
+          python redaktion/scripts/send-approval-mail.py \
+            --review "${{ steps.prepare.outputs.review_path }}" \
+            --package "${{ steps.prepare.outputs.package_path }}" \
+            --template "redaktion/templates/freigabe-mail.html" \
+            --config "redaktion/config.json"

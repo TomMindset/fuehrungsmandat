@@ -12,7 +12,8 @@ const notes = defineCollection({
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
-    riskLevel: z.enum(["low", "medium", "high"]).default("low")
+    riskLevel: z.enum(["low", "medium", "high"]).default("low"),
+    image: z.string().optional()
   })
 });
 

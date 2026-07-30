@@ -18,12 +18,17 @@
     "content:generate": "node scripts/generate-article.mjs",
     "content:check": "node scripts/check-all.mjs",
     "content:check:articles": "node scripts/check-content.mjs",
-    "content:check:plan": "node scripts/check-plan.mjs"
+    "content:check:plan": "node scripts/check-plan.mjs",
+    "editorial:prepare": "node redaktion/scripts/prepare-approval.mjs",
+    "editorial:fetch-approved": "node redaktion/scripts/fetch-approved-package.mjs",
+    "editorial:publish-social": "node redaktion/scripts/publish-social.mjs",
+    "editorial:check": "node --test redaktion/tests/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.5",
     "astro": "^5.10.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
   }
