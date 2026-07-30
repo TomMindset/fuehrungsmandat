@@ -17,6 +17,7 @@ test("paketiert Portal, Bindungen und Migration", async () => {
   assert.match(page, /Freigabe mit klarer Bindung\./);
   assert.match(page, /Website zuerst/);
   assert.match(page, /Keine Veröffentlichung ohne gültige Freigabe/);
+  assert.doesNotMatch(page, /Instagram und LinkedIn/u);
   assert.match(layout, /lang="de"/);
   assert.match(layout, /index:\s*false/);
   assert.deepEqual(JSON.parse(hosting), {
