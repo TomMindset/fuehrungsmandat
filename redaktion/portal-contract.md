@@ -10,9 +10,12 @@ Alle Endpunkte verlangen als interne API-Authentifizierung:
 X-Fuehrungsmandat-Secret: <FUEHRUNGSMANDAT_PORTAL_SECRET>
 ```
 
-Bei einer privaten Sites-Bereitstellung verwendet `Authorization` zusätzlich
-den separaten Workspace-Bypass-Token. Ohne diese Zugriffsschicht bleibt die
-interne API-Authentifizierung abwärtskompatibel auch als Bearer-Token gültig.
+Bei einer privaten Sites-Bereitstellung wird der separate
+Workspace-Bypass-Token zusätzlich als Bearer-Token im Header
+`OAI-Sites-Authorization` gesendet. `Authorization` und
+`X-Fuehrungsmandat-Secret` enthalten weiterhin ausschließlich den
+Portal-Ingest-Schlüssel. Ohne die private Zugriffsschicht bleibt die interne
+API-Authentifizierung auch als Bearer-Token gültig.
 
 Freigabelinks selbst werden niemals über diese API zurückgelesen und im
 Portal nur als SHA-256-Hash gespeichert.
