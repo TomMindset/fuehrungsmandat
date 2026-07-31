@@ -53,11 +53,18 @@ test("hält Freigabeoberfläche und Sicherheitsregeln im Quellstand", async () =
 });
 
 test("liefert Kanalzustände und schützt bestätigte Social-Retries", async () => {
-  const [publication, publicationPackage] = await Promise.all([
+  const [publication, publicationPackage, archiveRoute] = await Promise.all([
     readFile(new URL("../lib/publication.ts", import.meta.url), "utf8"),
     readFile(
       new URL(
         "../app/api/editorial/reviews/[id]/publication-package/route.ts",
+        import.meta.url,
+      ),
+      "utf8",
+    ),
+    readFile(
+      new URL(
+        "../app/api/editorial/reviews/[id]/archive/route.ts",
         import.meta.url,
       ),
       "utf8",
@@ -69,4 +76,8 @@ test("liefert Kanalzustände und schützt bestätigte Social-Retries", async () 
   assert.match(publication, /claimableStatus/u);
   assert.match(publicationPackage, /publications:/u);
   assert.match(publicationPackage, /externalId:/u);
+  assert.match(archiveRoute, /authorizeService/u);
+  assert.match(archiveRoute, /confirmNoExternalPublication/u);
+  assert.match(archiveRoute, /status <> 'pending'/u);
+  assert.match(archiveRoute, /status = 'archived'/u);
 });

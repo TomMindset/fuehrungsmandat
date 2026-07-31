@@ -315,6 +315,10 @@ h3 {
   color: var(--danger);
 }
 
+.status-pill.archived {
+  color: var(--muted);
+}
+
 .review-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.45fr);

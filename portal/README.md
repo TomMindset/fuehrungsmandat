@@ -14,6 +14,8 @@ zu den GitHub-Actions unter `../.github/workflows/`.
 - Freigaben werden versions- und hashgebunden gespeichert.
 - Jeder Kanal wird vor dem Publizieren atomar beansprucht; unklare Ergebnisse
   sperren den Kanal für eine manuelle Prüfung.
+- Eine geschützte Wartungsroute kann ausschließlich freigegebene Versionen
+  archivieren, deren Kanäle noch vollständig auf `pending` stehen.
 - Website ist verbindlich der erste Veröffentlichungskanal.
 
 ## Lokale Entwicklung

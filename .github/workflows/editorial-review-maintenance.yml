@@ -1,0 +1,68 @@
+name: Fuehrungsmandat editorial review maintenance
+
+on:
+  workflow_dispatch:
+    inputs:
+      review_id:
+        description: "Explizite ID der zu archivierenden Testfreigabe"
+        required: true
+        type: string
+      confirmation:
+        description: "Zur Bestätigung exakt ARCHIVE_TEST_REVIEW eingeben"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    name: Archive one unpublished test review
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Validate guarded maintenance request
+        env:
+          CONFIRMATION: ${{ inputs.confirmation }}
+          EDITORIAL_AUTOMATION_ENABLED: ${{ vars.EDITORIAL_AUTOMATION_ENABLED }}
+          REVIEW_ID: ${{ inputs.review_id }}
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+        run: |
+          if [ "$CONFIRMATION" != "ARCHIVE_TEST_REVIEW" ]; then
+            echo "Die Archivierungsbestätigung ist ungültig."
+            exit 1
+          fi
+          if [ "$EDITORIAL_AUTOMATION_ENABLED" = "true" ]; then
+            echo "Vor einer Archivierung muss der Automatisierungs-Hauptschalter deaktiviert sein."
+            exit 1
+          fi
+          missing=()
+          for name in REVIEW_ID FUEHRUNGSMANDAT_PORTAL_SECRET FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN FUEHRUNGSMANDAT_PORTAL_URL; do
+            if [ -z "${!name}" ]; then missing+=("$name"); fi
+          done
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "Fehlende geschützte Konfiguration: ${missing[*]}"
+            exit 1
+          fi
+
+      - name: Archive exactly one unpublished test review
+        env:
+          REVIEW_ID: ${{ inputs.review_id }}
+          FUEHRUNGSMANDAT_PORTAL_SECRET: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_SECRET }}
+          FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN: ${{ secrets.FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN }}
+          FUEHRUNGSMANDAT_PORTAL_URL: ${{ vars.FUEHRUNGSMANDAT_PORTAL_URL }}
+        run: |
+          node redaktion/scripts/archive-review.mjs \
+            --review-id "$REVIEW_ID" \
+            --reason "Technische End-to-End-Testfreigabe vor dem Livebetrieb archiviert."

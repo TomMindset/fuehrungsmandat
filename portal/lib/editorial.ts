@@ -20,7 +20,8 @@ export type ReviewStatus =
   | "approved"
   | "changes_requested"
   | "rejected"
-  | "expired";
+  | "expired"
+  | "archived";
 
 type PortalEnv = {
   DB: D1Database;

@@ -67,6 +67,24 @@ Content-Type: application/json
 
 Dieser Endpunkt darf keinen erneuten Versand auslösen.
 
+## Unveröffentlichte Testfreigabe archivieren
+
+```http
+POST /api/editorial/reviews/{id}/archive
+Content-Type: application/json
+
+{
+  "confirmNoExternalPublication": true,
+  "reason": "Nachvollziehbarer Archivierungsgrund"
+}
+```
+
+Die geschützte Wartungsroute akzeptiert nur eine bereits freigegebene Version,
+deren ausgewählte Kanäle ausnahmslos noch `pending` sind. Beanspruchte,
+uneindeutige oder veröffentlichte Kanäle blockieren die Archivierung. Der
+manuelle GitHub-Workflow verlangt zusätzlich eine explizite Freigabe-ID, die
+Bestätigung `ARCHIVE_TEST_REVIEW` und einen deaktivierten Hauptschalter.
+
 ## Entscheidung lesen
 
 ```http
