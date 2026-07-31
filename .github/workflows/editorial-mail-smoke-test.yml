@@ -1,0 +1,30 @@
+name: Fuehrungsmandat editorial mail smoke test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fuehrungsmandat-editorial-mail-smoke-test
+  cancel-in-progress: false
+
+jobs:
+  smoke-test:
+    name: Send one isolated approval mail test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: content-production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Send the isolated test mail
+        env:
+          FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD: ${{ secrets.FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD }}
+        run: |
+          python redaktion/scripts/send-approval-mail.py \
+            --smoke-test \
+            --config redaktion/config.json

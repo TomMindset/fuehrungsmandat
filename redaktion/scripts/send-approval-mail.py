@@ -136,6 +136,54 @@ Ohne formal gültige Portalentscheidung wird nichts veröffentlicht.
     return message
 
 
+def build_smoke_message(config: dict) -> EmailMessage:
+    sender, recipient, display_name, prefix = mail_config(config)
+    message = EmailMessage()
+    message["From"] = f"{display_name} <{sender}>"
+    message["To"] = recipient
+    message["Reply-To"] = sender
+    message["Subject"] = f"{prefix} Technischer Versandtest"
+    message["Date"] = formatdate(localtime=True)
+    message["Message-ID"] = make_msgid(domain=sender.split("@", 1)[-1])
+    message.set_content(
+        "Dies ist ein einmaliger technischer Versandtest für die "
+        "Führungsmandat-Freigabeautomation.\n\n"
+        "Gmail-Anmeldung, Absender und feste Prüferadresse funktionieren. "
+        "Dieser Test hat weder eine Freigabe angelegt noch Inhalte "
+        "veröffentlicht.\n"
+    )
+    return message
+
+
+def send_via_gmail(
+    message: EmailMessage, sender: str, recipient: str
+) -> None:
+    password = normalize_app_password(
+        required_env("FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD")
+    )
+    try:
+        with smtplib.SMTP_SSL(
+            SMTP_HOST, SMTP_PORT, context=ssl.create_default_context(), timeout=30
+        ) as smtp:
+            smtp.login(sender, password)
+            refused = smtp.send_message(
+                message, from_addr=sender, to_addrs=[recipient]
+            )
+    except smtplib.SMTPAuthenticationError as exc:
+        raise ApprovalMailError(
+            "Gmail-Anmeldung fehlgeschlagen; nichts gesendet."
+        ) from exc
+    except (smtplib.SMTPException, OSError, ssl.SSLError) as exc:
+        raise ApprovalMailError(
+            "SMTP-Fehler mit unklarem Versandstatus; nicht automatisch wiederholen."
+        ) from exc
+    finally:
+        password = ""
+
+    if refused:
+        raise ApprovalMailError("Gmail hat die feste Freigabeadresse abgewiesen.")
+
+
 def confirm_delivery(
     portal_url: str, secret: str, review_id: str, message_id: str
 ) -> bool:
@@ -162,18 +210,29 @@ def confirm_delivery(
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--review", required=True)
-    parser.add_argument("--package", required=True)
-    parser.add_argument("--template", required=True)
+    parser.add_argument("--review")
+    parser.add_argument("--package")
+    parser.add_argument("--template")
     parser.add_argument("--config", required=True)
+    parser.add_argument("--smoke-test", action="store_true")
     args = parser.parse_args()
+
+    config = load_json(args.config)
+    sender, recipient, _, _ = mail_config(config)
+    if args.smoke_test:
+        send_via_gmail(build_smoke_message(config), sender, recipient)
+        print("Technische Freigabe-Testmail versendet.")
+        return 0
+
+    if not all([args.review, args.package, args.template]):
+        raise ApprovalMailError(
+            "Review, Paket und Vorlage sind für eine Freigabemail erforderlich."
+        )
 
     review = load_json(args.review)
     package = load_json(args.package)
-    config = load_json(args.config)
     portal_url = required_env("FUEHRUNGSMANDAT_PORTAL_URL").rstrip("/")
     portal_secret = required_env("FUEHRUNGSMANDAT_PORTAL_SECRET")
-    sender, recipient, _, _ = mail_config(config)
     message = build_message(
         review,
         package,
@@ -181,28 +240,7 @@ def main() -> int:
         config,
         portal_url,
     )
-    password = normalize_app_password(
-        required_env("FUEHRUNGSMANDAT_GMAIL_APP_PASSWORD")
-    )
-    try:
-        with smtplib.SMTP_SSL(
-            SMTP_HOST, SMTP_PORT, context=ssl.create_default_context(), timeout=30
-        ) as smtp:
-            smtp.login(sender, password)
-            refused = smtp.send_message(
-                message, from_addr=sender, to_addrs=[recipient]
-            )
-    except smtplib.SMTPAuthenticationError as exc:
-        raise ApprovalMailError("Gmail-Anmeldung fehlgeschlagen; nichts gesendet.") from exc
-    except (smtplib.SMTPException, OSError, ssl.SSLError) as exc:
-        raise ApprovalMailError(
-            "SMTP-Fehler mit unklarem Versandstatus; nicht automatisch wiederholen."
-        ) from exc
-    finally:
-        password = ""
-
-    if refused:
-        raise ApprovalMailError("Gmail hat die feste Freigabeadresse abgewiesen.")
+    send_via_gmail(message, sender, recipient)
 
     if confirm_delivery(
         portal_url,
