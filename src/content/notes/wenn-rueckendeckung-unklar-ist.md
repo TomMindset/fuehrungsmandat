@@ -7,8 +7,10 @@ cluster: "Führungsmandat"
 tags: ["unklare Rückendeckung Führung", "Führungsmandat", "Rollenklärung"]
 featured: false
 riskLevel: "low"
-draft: false
+draft: true
 ---
+
+# Wenn Rückendeckung unklar ist: Verantwortung führen, ohne das Mandat zu überziehen
 
 Eine Führungskraft soll eine Entscheidung vertreten, ein schwieriges Gespräch führen oder eine Veränderung sichtbar voranbringen. Der Auftrag klingt eindeutig. Sobald Widerstand entsteht, bleibt jedoch offen, ob die eigene Linie wirklich getragen wird. Ist Rückendeckung nur vermutet – oder für den Konfliktfall tatsächlich geklärt?
 
