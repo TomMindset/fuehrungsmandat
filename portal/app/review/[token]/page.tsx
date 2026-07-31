@@ -19,6 +19,7 @@ const statusLabels = {
   changes_requested: "Änderungen angefordert",
   rejected: "Abgelehnt",
   expired: "Link abgelaufen",
+  archived: "Archiviert",
 } as const;
 
 export default async function ReviewPage({ params }: Props) {

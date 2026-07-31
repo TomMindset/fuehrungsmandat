@@ -88,6 +88,8 @@ export function ReviewDecision({
         "Diese Version wurde abgelehnt und kann nicht veröffentlicht werden.",
       expired:
         "Dieser Freigabelink ist abgelaufen. Bitte erzeugen Sie eine neue Version.",
+      archived:
+        "Diese Freigabe wurde archiviert und wird von der Veröffentlichung nicht mehr berücksichtigt.",
     };
     return (
       <aside className="decision-panel">
