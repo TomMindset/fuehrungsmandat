@@ -6,18 +6,18 @@
     "siteUrl": "https://fuehrungsmandat.de"
   },
   "approval": {
-    "live": false,
+    "live": true,
     "portalBaseUrl": "https://fuehrungsmandat-freigabe.hoffmann877528.chatgpt.site",
-    "reviewerAddress": null,
+    "reviewerAddress": "thoffmann2015@gmail.com",
     "tokenValidDays": 7,
     "requireChannelSelection": true,
     "requireContentHashMatch": true,
     "storeTokenAsSha256Only": true
   },
   "mail": {
-    "live": false,
-    "senderAddress": null,
-    "recipientAddress": null,
+    "live": true,
+    "senderAddress": "fuehrungsmandat.publishing@gmail.com",
+    "recipientAddress": "thoffmann2015@gmail.com",
     "subjectPrefix": "[Führungsmandat-Freigabe]"
   },
   "publishing": {
