@@ -196,8 +196,13 @@ def confirm_delivery(
         data=body,
         method="POST",
         headers={
-            "Authorization": "Bearer " + (bypass_token or secret),
+            "Authorization": "Bearer " + secret,
             "X-Fuehrungsmandat-Secret": secret,
+            **(
+                {"OAI-Sites-Authorization": "Bearer " + bypass_token}
+                if bypass_token
+                else {}
+            ),
             "Content-Type": "application/json",
         },
     )

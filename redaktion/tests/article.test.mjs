@@ -9,6 +9,7 @@ import {
   validateSocialCopy
 } from "../scripts/lib/article.mjs";
 import { berlinCalendarDay } from "../scripts/lib/dates.mjs";
+import { socialSchema } from "../scripts/lib/social-schema.mjs";
 
 test("slugify erhält deutsche Umschrift", () => {
   assert.equal(
@@ -83,6 +84,62 @@ test("valide kanalgetrennte Social-Fassungen werden akzeptiert", () => {
     }
   });
   assert.match(result.linkedin.text, /Gespräch nach oben/u);
+});
+
+test("OpenAI-Schema erzwingt dieselben Social-Längen wie die Validierung", () => {
+  assert.deepEqual(socialSchema.properties.summary, {
+    type: "string",
+    minLength: 80,
+    maxLength: 800
+  });
+  assert.deepEqual(socialSchema.properties.evidenceNote, {
+    type: "string",
+    minLength: 80,
+    maxLength: 1000
+  });
+  assert.deepEqual(socialSchema.properties.audience, {
+    type: "string",
+    minLength: 5,
+    maxLength: 160
+  });
+  assert.deepEqual(socialSchema.properties.facebook.properties.text, {
+    type: "string",
+    minLength: 250,
+    maxLength: 1200
+  });
+  assert.deepEqual(socialSchema.properties.instagram.properties.caption, {
+    type: "string",
+    minLength: 250,
+    maxLength: 1800
+  });
+  assert.deepEqual(socialSchema.properties.instagram.properties.altText, {
+    type: "string",
+    minLength: 80,
+    maxLength: 600
+  });
+  assert.deepEqual(socialSchema.properties.linkedin.properties.text, {
+    type: "string",
+    minLength: 300,
+    maxLength: 2200
+  });
+});
+
+test("Längenfehler nennen nur die erhaltene Zeichenanzahl", () => {
+  assert.throws(
+    () =>
+      validateSocialCopy({
+        summary: "x".repeat(100),
+        evidenceNote: "x".repeat(100),
+        audience: "x".repeat(161),
+        facebook: { text: "x".repeat(260) },
+        instagram: {
+          caption: "x".repeat(260),
+          altText: "x".repeat(100)
+        },
+        linkedin: { text: "x".repeat(320) }
+      }),
+    /Zielgruppe muss 5 bis 160 Zeichen haben \(erhalten: 161\)/u
+  );
 });
 
 test("vorweggenommene URLs werden blockiert", () => {
