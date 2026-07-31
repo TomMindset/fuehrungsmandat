@@ -14,6 +14,7 @@ import {
   requestJson,
   safeBaseUrl
 } from "./lib/http.mjs";
+import { socialSchema } from "./lib/social-schema.mjs";
 import { renderSocialCard } from "./render-social-card.mjs";
 
 const root = process.cwd();
@@ -29,45 +30,6 @@ function responseOutputText(response) {
     .map((item) => item.text || "")
     .join("");
 }
-
-const socialSchema = {
-  type: "object",
-  additionalProperties: false,
-  required: [
-    "summary",
-    "evidenceNote",
-    "audience",
-    "facebook",
-    "instagram",
-    "linkedin"
-  ],
-  properties: {
-    summary: { type: "string" },
-    evidenceNote: { type: "string" },
-    audience: { type: "string" },
-    facebook: {
-      type: "object",
-      additionalProperties: false,
-      required: ["text"],
-      properties: { text: { type: "string" } }
-    },
-    instagram: {
-      type: "object",
-      additionalProperties: false,
-      required: ["caption", "altText"],
-      properties: {
-        caption: { type: "string" },
-        altText: { type: "string" }
-      }
-    },
-    linkedin: {
-      type: "object",
-      additionalProperties: false,
-      required: ["text"],
-      properties: { text: { type: "string" } }
-    }
-  }
-};
 
 async function createSocialCopy(article, styleRules) {
   const apiKey = requiredEnv("OPENAI_API_KEY");

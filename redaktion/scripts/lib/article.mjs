@@ -156,25 +156,39 @@ export function validateSocialCopy(value) {
   const audience = String(value?.audience || "").trim();
 
   if (summary.length < 80 || summary.length > 800) {
-    failures.push("Kurzfassung muss 80 bis 800 Zeichen haben");
+    failures.push(
+      `Kurzfassung muss 80 bis 800 Zeichen haben (erhalten: ${summary.length})`
+    );
   }
   if (evidenceNote.length < 80 || evidenceNote.length > 1000) {
-    failures.push("Evidenzhinweis muss 80 bis 1.000 Zeichen haben");
+    failures.push(
+      `Evidenzhinweis muss 80 bis 1.000 Zeichen haben (erhalten: ${evidenceNote.length})`
+    );
   }
   if (audience.length < 5 || audience.length > 160) {
-    failures.push("Zielgruppe muss 5 bis 160 Zeichen haben");
+    failures.push(
+      `Zielgruppe muss 5 bis 160 Zeichen haben (erhalten: ${audience.length})`
+    );
   }
   if (facebook.length < 250 || facebook.length > 1200) {
-    failures.push("Facebook-Text muss 250 bis 1.200 Zeichen haben");
+    failures.push(
+      `Facebook-Text muss 250 bis 1.200 Zeichen haben (erhalten: ${facebook.length})`
+    );
   }
   if (instagram.length < 250 || instagram.length > 1800) {
-    failures.push("Instagram-Caption muss 250 bis 1.800 Zeichen haben");
+    failures.push(
+      `Instagram-Caption muss 250 bis 1.800 Zeichen haben (erhalten: ${instagram.length})`
+    );
   }
   if (altText.length < 80 || altText.length > 600) {
-    failures.push("Instagram-Alt-Text muss 80 bis 600 Zeichen haben");
+    failures.push(
+      `Instagram-Alt-Text muss 80 bis 600 Zeichen haben (erhalten: ${altText.length})`
+    );
   }
   if (linkedin.length < 300 || linkedin.length > 2200) {
-    failures.push("LinkedIn-Text muss 300 bis 2.200 Zeichen haben");
+    failures.push(
+      `LinkedIn-Text muss 300 bis 2.200 Zeichen haben (erhalten: ${linkedin.length})`
+    );
   }
 
   const all = [facebook, instagram, linkedin].join("\n");
