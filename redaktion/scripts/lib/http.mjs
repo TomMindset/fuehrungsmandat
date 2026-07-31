@@ -41,10 +41,14 @@ export async function requestJson(url, init = {}, label = "API-Aufruf") {
 
 export function portalAuthHeaders(secret) {
   const bypassToken = optionalEnv("FUEHRUNGSMANDAT_PORTAL_BYPASS_TOKEN");
-  return {
-    Authorization: `Bearer ${bypassToken || secret}`,
+  const headers = {
+    Authorization: `Bearer ${secret}`,
     "X-Fuehrungsmandat-Secret": secret
   };
+  if (bypassToken) {
+    headers["OAI-Sites-Authorization"] = `Bearer ${bypassToken}`;
+  }
+  return headers;
 }
 
 export async function portalJson(baseUrl, secret, path, init = {}) {
