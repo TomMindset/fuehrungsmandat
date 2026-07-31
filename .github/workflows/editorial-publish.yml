@@ -8,8 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       review_id:
-        description: "ID einer bereits im Portal freigegebenen Version"
-        required: true
+        description: "ID einer freigegebenen Version; im Dry Run leer lassen für die älteste offene Freigabe"
+        required: false
+        default: ""
         type: string
       dry_run:
         description: "Freigabe, Assets und Zugangsdaten prüfen, nichts veröffentlichen"
@@ -78,9 +79,15 @@ jobs:
       - name: Validate manual retry inputs
         if: github.event_name == 'workflow_dispatch'
         env:
+          REQUESTED_REVIEW_ID: ${{ inputs.review_id }}
+          DRY_RUN: ${{ inputs.dry_run }}
           RETRY_CHANNELS: ${{ inputs.retry_channels }}
           CONFIRM_MANUAL_RETRY: ${{ inputs.confirm_manual_retry }}
         run: |
+          if [ "$DRY_RUN" != "true" ] && [ -z "$REQUESTED_REVIEW_ID" ]; then
+            echo "Ein manueller Publikationslauf benötigt eine konkrete review_id."
+            exit 1
+          fi
           if [ "$CONFIRM_MANUAL_RETRY" = "true" ] && [ -z "$RETRY_CHANNELS" ]; then
             echo "confirm_manual_retry benötigt mindestens einen retry_channels-Wert."
             exit 1

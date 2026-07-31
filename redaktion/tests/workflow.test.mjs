@@ -55,3 +55,25 @@ test("SMTP-Smoke-Test ist manuell und von Veröffentlichungen isoliert", async (
   assert.match(mailScript, /def build_smoke_message\(/u);
   assert.match(mailScript, /Technischer Versandtest/u);
 });
+
+test("Dry Run darf die älteste offene Freigabe sicher abrufen", async () => {
+  const workflow = await readFile(
+    new URL("../../.github/workflows/editorial-publish.yml", import.meta.url),
+    "utf8"
+  );
+
+  assert.match(
+    workflow,
+    /review_id:\s*\n\s+description:.*Dry Run.*\n\s+required: false\s*\n\s+default: ""/u
+  );
+  assert.match(workflow, /REQUESTED_REVIEW_ID:.*inputs\.review_id/u);
+  assert.match(workflow, /DRY_RUN:.*inputs\.dry_run/u);
+  assert.match(
+    workflow,
+    /"\$DRY_RUN" != "true".*"\$REQUESTED_REVIEW_ID"/u
+  );
+  assert.match(
+    workflow,
+    /Ein manueller Publikationslauf benötigt eine konkrete review_id\./u
+  );
+});
