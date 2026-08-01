@@ -21,7 +21,7 @@
     "subjectPrefix": "[Führungsmandat-Freigabe]"
   },
   "publishing": {
-    "live": false,
+    "live": true,
     "websiteFirst": true,
     "duplicatePublicationProtection": true,
     "ambiguousResultsRequireManualCheck": true,
@@ -32,16 +32,16 @@
   "channels": {
     "website": {
       "approvalEnabled": true,
-      "live": false
+      "live": true
     },
     "facebook": {
       "approvalEnabled": true,
-      "live": false,
+      "live": true,
       "pageId": "1302500569602973"
     },
     "instagram": {
       "approvalEnabled": true,
-      "live": false,
+      "live": true,
       "accountId": "17841439839407567"
     },
     "linkedin": {
