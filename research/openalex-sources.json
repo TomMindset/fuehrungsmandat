@@ -1,9 +1,63 @@
 {
-  "generatedAt": "2026-06-28T16:44:46.567Z",
+  "generatedAt": "2026-08-03T10:24:25.087Z",
   "source": "OpenAlex",
   "researchWindow": "2020-2026",
   "queryCount": 6,
   "works": [
+    {
+      "openAlexId": "https://openalex.org/W4221011774",
+      "title": "When customer involvement hinders/promotes product innovation performance: The concurrent effect of relationship quality and role ambiguity",
+      "year": 2022,
+      "doi": "https://doi.org/10.1016/j.jbusres.2022.03.001",
+      "url": "https://doi.org/10.1016/j.jbusres.2022.03.001",
+      "type": "article",
+      "citedByCount": 39,
+      "openAccess": true,
+      "source": "Journal of Business Research",
+      "authors": [
+        "Saeed Najafi-Tavani",
+        "Ghasem Zaefarian",
+        "Matthew J. Robson",
+        "Peter Naudé"
+      ],
+      "topics": [
+        "Customer Service Quality and Loyalty",
+        "Service and Product Innovation",
+        "Outsourcing and Supply Chain Management"
+      ],
+      "abstract": "Despite recent attempts to explain the nature of customer involvement, the question of how to curb its negative effect on product innovation has yet to be explored. This study focuses on the association between customer involvement and developers’ product innovation performance, and relies on relationship management theory and the role hazard perspective to explore what levels of relationship quality and role ambiguity, which coexist in partnerships, can turn ineffective customer involvement into a successful strategy. Using a survey of 273 manufacturing firms, we found an inverted U-shaped relationship between customer involvement and product innovation performance, and verified that the interplay of relationship quality and role ambiguity significantly moderate this association. We unpack the role of our moderators by developing a 2 × 2 matrix of high versus low levels of role ambiguity and relationship quality, and exploring the nature of the association between customer involvement and product innovation performance in each quadrant.",
+      "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
+      "queryId": "role-ambiguity",
+      "clusterHint": "Führungsmandat",
+      "intentHint": "Mandat und Verantwortung klären"
+    },
+    {
+      "openAlexId": "https://openalex.org/W3118624470",
+      "title": "New employee orientation, role-related stressors and conflict at work: Consequences for work attitudes and performance of hospitality employees",
+      "year": 2021,
+      "doi": "https://doi.org/10.1016/j.ijhm.2020.102857",
+      "url": "https://doi.org/10.1016/j.ijhm.2020.102857",
+      "type": "article",
+      "citedByCount": 78,
+      "openAccess": true,
+      "source": "International Journal of Hospitality Management",
+      "authors": [
+        "Steffen Raub",
+        "Stefano Borzillo",
+        "Gabrielle Perretten",
+        "Achim Schmitt"
+      ],
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Gender Diversity and Inequality",
+        "Nonprofit Sector and Volunteering"
+      ],
+      "abstract": "Combining role theory with theories on hindrance stressors and intragroup conflict, we develop a model of the attitudinal and behavioral consequences of new employee orientation in hospitality organizations. We test hypotheses about main and mediated effects in this model, using data from a sample of 156 recently hired hospitality interns and applying a longitudinal approach, with data collection shortly after organizational entry and several months later. Results suggest that employee orientation is negatively related to two hindrance stressors: role ambiguity and role conflict. Role ambiguity predicts a range of attitudinal outcomes and the relationship is partially mediated by relationship conflict. In addition, role ambiguity is negatively related to task performance. Role conflict predicts hospitality employees’ job attitudes and this relationship is fully mediated by relationship conflict. We discuss important theoretical and practical implications of these findings for human resource management in hospitality firms.",
+      "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
+      "queryId": "role-ambiguity",
+      "clusterHint": "Führungsmandat",
+      "intentHint": "Mandat und Verantwortung klären"
+    },
     {
       "openAlexId": "https://openalex.org/W3184486320",
       "title": "Leadership empowering behaviour as a predictor of employees’ psychological well-being: Evidence from a cross-sectional study among secondary school teachers in Kohat Division, Pakistan",
@@ -26,6 +80,33 @@
         "Workplace Spirituality and Leadership"
       ],
       "abstract": "In this technologically developed scenario, many organizations in developing countries including Pakistan have expanded the enthusiasm for understanding and creating an encouraging administrative and managerial environment. Numerous organizations are struggling for structural changes by deserting the old-fashioned organizational management style and implementing an empowering leadership where leaders give more authority to subordinates in decision making and responsibilities with the aim to increase organizational productivity. Therefore, the study examined the leadership empowering behaviour as a predictor of employees' psychological well-being of the educational institutions at secondary level in Kohat Division, Pakistan. A total sample of 564 secondary school teachers (male n = 379; female n = 185) was carefully chosen through a stratified random sampling technique. In this study, a non-experimental predictive correlational design was adopted. In order to collect data from the participants, two different standardized research tools i.e., the Leader Empowering Behaviour Questionnaire and Ryff's Psychological Well-being Scale were used. After the collection of data, it was analyze",
+      "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
+      "queryId": "role-ambiguity",
+      "clusterHint": "Führungsmandat",
+      "intentHint": "Mandat und Verantwortung klären"
+    },
+    {
+      "openAlexId": "https://openalex.org/W4378348438",
+      "title": "Association of pharmaceutical care barriers and role ambiguity and role conflict of clinical pharmacists",
+      "year": 2023,
+      "doi": "https://doi.org/10.3389/fphar.2023.1103255",
+      "url": "https://doi.org/10.3389/fphar.2023.1103255",
+      "type": "article",
+      "citedByCount": 17,
+      "openAccess": true,
+      "source": "Frontiers in Pharmacology",
+      "authors": [
+        "Qingran Sun",
+        "Chuchuan Wan",
+        "Zhaoqi Xu",
+        "Yuankai Huang"
+      ],
+      "topics": [
+        "Pharmacy and Medical Practices",
+        "Pharmaceutical Practices and Patient Outcomes",
+        "Patient Safety and Medication Errors"
+      ],
+      "abstract": "Objectives: This study aimed to understand current status of pharmaceutical care barriers and explore the impact of them on the role ambiguity and role conflict of clinical pharmacists in secondary and tertiary hospitals in mainland China. Methods: The Chinese version of Role Conflict and Role Ambiguity Scale was used to measure clinical pharmacists’ role ambiguity and role conflict. A questionnaire for clinical pharmacists’ pharmaceutical care barriers was established to determine whether clinical pharmacists encounter barriers. Multiple linear regression model was used to analyze the influence of various pharmaceutical care barriers on the role ambiguity and role conflict of clinical pharmacists. Results: 1,300 clinical pharmacists from 31 provinces were eventually included. The results revealed that commonly perceived barriers to pharmaceutical care by clinical pharmacists include the lack of financial compensation and dedicated time for pharmaceutical care. Barriers such as clinical pharmacists’ unawareness of the importance of pharmaceutical care increase the degree of clinical pharmacists’ role conflict. And the lack of financial compensation for pharmaceutical care decreases",
       "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
       "queryId": "role-ambiguity",
       "clusterHint": "Führungsmandat",
@@ -57,27 +138,26 @@
       "intentHint": "Mandat und Verantwortung klären"
     },
     {
-      "openAlexId": "https://openalex.org/W4378348438",
-      "title": "Association of pharmaceutical care barriers and role ambiguity and role conflict of clinical pharmacists",
-      "year": 2023,
-      "doi": "https://doi.org/10.3389/fphar.2023.1103255",
-      "url": "https://doi.org/10.3389/fphar.2023.1103255",
+      "openAlexId": "https://openalex.org/W3124874940",
+      "title": "The Effect of Work Demand, Role Conflict, and Role Ambiguity on Work-Family Conflict (Impact of Work From Home due to The Covid-19 Pandemic)",
+      "year": 2021,
+      "doi": "https://doi.org/10.29244/jfs.v5i2.32644",
+      "url": "https://doi.org/10.29244/jfs.v5i2.32644",
       "type": "article",
-      "citedByCount": 16,
+      "citedByCount": 31,
       "openAccess": true,
-      "source": "Frontiers in Pharmacology",
+      "source": "Journal of Family Sciences",
       "authors": [
-        "Qingran Sun",
-        "Chuchuan Wan",
-        "Zhaoqi Xu",
-        "Yuankai Huang"
+        "Farika Nikmah",
+        "Titien Indrianti",
+        "Joni Dwi Pribadi"
       ],
       "topics": [
-        "Pharmacy and Medical Practices",
-        "Pharmaceutical Practices and Patient Outcomes",
-        "Patient Safety and Medication Errors"
+        "Work-Family Balance Challenges",
+        "Gender and Women's Rights",
+        "COVID-19 Pandemic Impacts"
       ],
-      "abstract": "Objectives: This study aimed to understand current status of pharmaceutical care barriers and explore the impact of them on the role ambiguity and role conflict of clinical pharmacists in secondary and tertiary hospitals in mainland China. Methods: The Chinese version of Role Conflict and Role Ambiguity Scale was used to measure clinical pharmacists’ role ambiguity and role conflict. A questionnaire for clinical pharmacists’ pharmaceutical care barriers was established to determine whether clinical pharmacists encounter barriers. Multiple linear regression model was used to analyze the influence of various pharmaceutical care barriers on the role ambiguity and role conflict of clinical pharmacists. Results: 1,300 clinical pharmacists from 31 provinces were eventually included. The results revealed that commonly perceived barriers to pharmaceutical care by clinical pharmacists include the lack of financial compensation and dedicated time for pharmaceutical care. Barriers such as clinical pharmacists’ unawareness of the importance of pharmaceutical care increase the degree of clinical pharmacists’ role conflict. And the lack of financial compensation for pharmaceutical care decreases",
+      "abstract": "Because of the Covid-19 pandemic, this research's background was to break the chain of virus spread, and the government requires physical distancing. Working from home, which causes many employees to work from home, creates conflicts for married female workers. The research objective is to examine and analyze the direct effect of job demands, role conflict, role ambiguity on work-family conflicts. Data were obtained through questionnaires and submitted online to 100 married women who work in universities in East Java, Indonesia, both public and private, and then the analysis was carried out using Partial Least Square (PLS). The results showed that all hypotheses were accepted, and the most dominant influence was role conflict on family-work conflicts. The conclusion is that married women experience many conflicts in carrying out their jobs because other demands must also be considered, namely the mother and wife's role.",
       "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
       "queryId": "role-ambiguity",
       "clusterHint": "Führungsmandat",
@@ -102,32 +182,6 @@
         "Education and Communication Studies"
       ],
       "abstract": "The present study aimed to find out the school principals’ opinions working in public primary and secondary schools concerning their role ambiguity. It is significant for the purpose of this study to set forth the perspectives regarding experiencing the role ambiguity, consider the main factors which lay ground to role ambiguity and prevent situations that may adversely affect the functions of educational organizations in advance. This study employed a qualitative, phenomenological research design. As participants, there were 10 school principals determined with maximum variation sampling. The data, collected with the semi-structured interview, were analyzed and interpreted using the content analysis. The findings obtained in this study revealed two main themes as follows: “role ambiguity” and “influence framework”. “Role ambiguity” was divided into two subthemes as “role line” and “elements of ambiguity”. “Influence framework'; was divided into four subthemes as \"organizational ambiguity\", \"pressure groups\", \"ambiguity mirror\", and \"solution paths\". The findings obtained in this study showed that school principals experience role ambiguity. It was determined that the role ambiguit",
-      "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
-      "queryId": "role-ambiguity",
-      "clusterHint": "Führungsmandat",
-      "intentHint": "Mandat und Verantwortung klären"
-    },
-    {
-      "openAlexId": "https://openalex.org/W3124874940",
-      "title": "The Effect of Work Demand, Role Conflict, and Role Ambiguity on Work-Family Conflict (Impact of Work From Home due to The Covid-19 Pandemic)",
-      "year": 2021,
-      "doi": "https://doi.org/10.29244/jfs.v5i2.32644",
-      "url": "https://doi.org/10.29244/jfs.v5i2.32644",
-      "type": "article",
-      "citedByCount": 30,
-      "openAccess": true,
-      "source": "Journal of Family Sciences",
-      "authors": [
-        "Farika Nikmah",
-        "Titien Indrianti",
-        "Joni Dwi Pribadi"
-      ],
-      "topics": [
-        "Work-Family Balance Challenges",
-        "Gender and Women's Rights",
-        "COVID-19 Pandemic Impacts"
-      ],
-      "abstract": "Because of the Covid-19 pandemic, this research's background was to break the chain of virus spread, and the government requires physical distancing. Working from home, which causes many employees to work from home, creates conflicts for married female workers. The research objective is to examine and analyze the direct effect of job demands, role conflict, role ambiguity on work-family conflicts. Data were obtained through questionnaires and submitted online to 100 married women who work in universities in East Java, Indonesia, both public and private, and then the analysis was carried out using Partial Least Square (PLS). The results showed that all hypotheses were accepted, and the most dominant influence was role conflict on family-work conflicts. The conclusion is that married women experience many conflicts in carrying out their jobs because other demands must also be considered, namely the mother and wife's role.",
       "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
       "queryId": "role-ambiguity",
       "clusterHint": "Führungsmandat",
@@ -159,87 +213,13 @@
       "intentHint": "Mandat und Verantwortung klären"
     },
     {
-      "openAlexId": "https://openalex.org/W4390105736",
-      "title": "Job Autonomy, Role Ambiguity, and Procedural Justice: A Multi-Conditional Process Model of Change-Oriented Organizational Citizenship Behavior in Public Organizations",
-      "year": 2023,
-      "doi": "https://doi.org/10.1177/0734371x231214978",
-      "url": "https://doi.org/10.1177/0734371x231214978",
-      "type": "article",
-      "citedByCount": 17,
-      "openAccess": true,
-      "source": "Review of Public Personnel Administration",
-      "authors": [
-        "Jesse W. Campbell"
-      ],
-      "topics": [
-        "Job Satisfaction and Organizational Behavior",
-        "Public Policy and Administration Research",
-        "Nonprofit Sector and Volunteering"
-      ],
-      "abstract": "Job autonomy allows employees to act upon contextual knowledge to introduce performance-enhancing work process improvements. However, autonomy is not a sufficient condition for change-oriented organizational citizenship behavior (OCB), as employees may lack the skills, information, or psychological safety necessary to pursue change. I propose a job autonomy-based multi-conditional process model of change-oriented OCB that takes into account the mediating role of job performance and the moderating roles of both role ambiguity and procedural justice. Using a large sample of Korean central and local government workers, I estimate a latent variable moderated mediation model. The results suggest that the effect of job autonomy on change-oriented OCB via job performance is strongest when role ambiguity is low and procedural justice is high. In closing, I argue that public managers need to be cognizant of the subtle factors that shape the impact of job autonomy on employee behavioral outputs.",
-      "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
-      "queryId": "role-ambiguity",
-      "clusterHint": "Führungsmandat",
-      "intentHint": "Mandat und Verantwortung klären"
-    },
-    {
-      "openAlexId": "https://openalex.org/W4382281427",
-      "title": "Double-Edged Sword Effect of Flexible Work Arrangements on Employee Innovation Performance: From the Demands–Resources–Individual Effects Perspective",
-      "year": 2023,
-      "doi": "https://doi.org/10.3390/su151310159",
-      "url": "https://doi.org/10.3390/su151310159",
-      "type": "article",
-      "citedByCount": 37,
-      "openAccess": true,
-      "source": "Sustainability",
-      "authors": [
-        "Li-Yuan Wang",
-        "Tianyi Xie"
-      ],
-      "topics": [
-        "Job Satisfaction and Organizational Behavior",
-        "Work-Family Balance Challenges",
-        "Cyberloafing and Workplace Behavior"
-      ],
-      "abstract": "This study explores the double-edged sword effect of FWAs on employee innovation performance based on the Demand–Resource–Individual Effect (DRIVE) model. A total of 411 valid questionnaires from knowledge-based employees were collected in three stages through a survey of technology-based companies in China. The data were analyzed using SPSS 25.0 and AMOS 22 software, and multi-level linear model analysis was conducted to test the double mediating effect of psychological empowerment and role ambiguity and the moderating effect of role breadth self-efficacy. This study found that, in terms of the job demand path, flexible work arrangements (FWAs) increased employees’ role ambiguity, which in turn decreased their innovation performance; in terms of the job resource path, FWAs increased employees’ psychological empowerment, which in turn increased their innovation performance. From the perspective of individual differences, under the flexible work system, employees with high role breadth self-efficacy can enhance their psychological empowerment and reduce role ambiguity, thus promoting their innovation performance. This study is the first to analyze the “double-edged sword” effect of ",
-      "matchedQuery": "\"role ambiguity\" leadership management authority responsibility",
-      "queryId": "role-ambiguity",
-      "clusterHint": "Führungsmandat",
-      "intentHint": "Mandat und Verantwortung klären"
-    },
-    {
-      "openAlexId": "https://openalex.org/W4205650573",
-      "title": "An Exploratory Literature Study into Digital Transformation and Leadership: Toward Future-Proof Middle Managers",
-      "year": 2022,
-      "doi": "https://doi.org/10.3390/su14020687",
-      "url": "https://doi.org/10.3390/su14020687",
-      "type": "article",
-      "citedByCount": 91,
-      "openAccess": true,
-      "source": "Sustainability",
-      "authors": [
-        "Maartje Henderikx",
-        "Jol Stoffers"
-      ],
-      "topics": [
-        "Digital Transformation in Industry",
-        "Educational Leadership and Innovation",
-        "Organizational Leadership and Management Strategies"
-      ],
-      "abstract": "This study aimed to obtain insight into the influence digital transformation has on future leadership behaviors and management. Up to now, most literature solely focuses on the need for strong strategic leadership to build and lead the transformation. This study was directed at future leadership behaviors and skills needed during and after digital transformation of management below senior level. An exploratory approach to review literature on digital transformation and leadership was used, inspired by the PRISMA protocol. Our findings show that digital transformation is a disruptive process that impacts the whole organization and results in new forms of working. This calls for altro-centric leadership, an other-centered leadership style. Specifically, soft skills such as empathy, humility, integrity and compassion are becoming increasingly important, as is understanding the power of digital technology. The emergence of artificial intelligence offers interesting opportunities. It could be used to handle quantifiable managerial tasks and evaluate the quantifiable part of performance, while managers focus on the soft skills side of management such as coaching, motivating and empowerin",
-      "matchedQuery": "\"middle managers\" change leadership transformation role conflict",
-      "queryId": "middle-management-change",
-      "clusterHint": "Führung in Transformation",
-      "intentHint": "Führung in Veränderung einordnen"
-    },
-    {
       "openAlexId": "https://openalex.org/W3200443804",
       "title": "Middle Managers' Struggle Over Their Subject Position in Open Strategy Processes",
       "year": 2021,
       "doi": "https://doi.org/10.1111/joms.12776",
       "url": "https://doi.org/10.1111/joms.12776",
       "type": "article",
-      "citedByCount": 75,
+      "citedByCount": 79,
       "openAccess": true,
       "source": "Journal of Management Studies",
       "authors": [
@@ -259,13 +239,38 @@
       "intentHint": "Führung in Veränderung einordnen"
     },
     {
+      "openAlexId": "https://openalex.org/W4205650573",
+      "title": "An Exploratory Literature Study into Digital Transformation and Leadership: Toward Future-Proof Middle Managers",
+      "year": 2022,
+      "doi": "https://doi.org/10.3390/su14020687",
+      "url": "https://doi.org/10.3390/su14020687",
+      "type": "article",
+      "citedByCount": 92,
+      "openAccess": true,
+      "source": "Sustainability",
+      "authors": [
+        "Maartje Henderikx",
+        "Jol Stoffers"
+      ],
+      "topics": [
+        "Digital Transformation in Industry",
+        "Educational Leadership and Innovation",
+        "Organizational Leadership and Management Strategies"
+      ],
+      "abstract": "This study aimed to obtain insight into the influence digital transformation has on future leadership behaviors and management. Up to now, most literature solely focuses on the need for strong strategic leadership to build and lead the transformation. This study was directed at future leadership behaviors and skills needed during and after digital transformation of management below senior level. An exploratory approach to review literature on digital transformation and leadership was used, inspired by the PRISMA protocol. Our findings show that digital transformation is a disruptive process that impacts the whole organization and results in new forms of working. This calls for altro-centric leadership, an other-centered leadership style. Specifically, soft skills such as empathy, humility, integrity and compassion are becoming increasingly important, as is understanding the power of digital technology. The emergence of artificial intelligence offers interesting opportunities. It could be used to handle quantifiable managerial tasks and evaluate the quantifiable part of performance, while managers focus on the soft skills side of management such as coaching, motivating and empowerin",
+      "matchedQuery": "\"middle managers\" change leadership transformation role conflict",
+      "queryId": "middle-management-change",
+      "clusterHint": "Führung in Transformation",
+      "intentHint": "Führung in Veränderung einordnen"
+    },
+    {
       "openAlexId": "https://openalex.org/W4306399361",
       "title": "Opportunity or Threat? Exploring Middle Manager Roles in the Face of Digital Transformation",
       "year": 2022,
       "doi": "https://doi.org/10.1111/joms.12880",
       "url": "https://doi.org/10.1111/joms.12880",
       "type": "article",
-      "citedByCount": 45,
+      "citedByCount": 50,
       "openAccess": true,
       "source": "Journal of Management Studies",
       "authors": [
@@ -292,7 +297,7 @@
       "doi": "https://doi.org/10.3389/fpsyg.2024.1368442",
       "url": "https://doi.org/10.3389/fpsyg.2024.1368442",
       "type": "article",
-      "citedByCount": 40,
+      "citedByCount": 43,
       "openAccess": true,
       "source": "Frontiers in Psychology",
       "authors": [
@@ -319,7 +324,7 @@
       "doi": "https://doi.org/10.1177/10946705231220462",
       "url": "https://doi.org/10.1177/10946705231220462",
       "type": "article",
-      "citedByCount": 37,
+      "citedByCount": 38,
       "openAccess": true,
       "source": "Journal of Service Research",
       "authors": [
@@ -372,7 +377,7 @@
       "doi": "https://doi.org/10.1111/emre.12587",
       "url": "https://doi.org/10.1111/emre.12587",
       "type": "article",
-      "citedByCount": 19,
+      "citedByCount": 20,
       "openAccess": true,
       "source": "European Management Review",
       "authors": [
@@ -392,31 +397,81 @@
       "intentHint": "Führung in Veränderung einordnen"
     },
     {
-      "openAlexId": "https://openalex.org/W4386791150",
-      "title": "Servant Leadership as a Catalyst for Middle Managers’ Learning Ambidexterity: A Resource‐Based Perspective",
-      "year": 2023,
-      "doi": "https://doi.org/10.1111/1467-8551.12761",
-      "url": "https://doi.org/10.1111/1467-8551.12761",
+      "openAlexId": "https://openalex.org/W4400690719",
+      "title": "Characteristics of Leadership Competency in Nurse Managers: A Scoping Review",
+      "year": 2024,
+      "doi": "https://doi.org/10.1155/2024/5594154",
+      "url": "https://doi.org/10.1155/2024/5594154",
       "type": "article",
-      "citedByCount": 19,
+      "citedByCount": 31,
       "openAccess": true,
-      "source": "British Journal of Management",
+      "source": "Journal of Nursing Management",
       "authors": [
-        "Muhammad Usman",
-        "Chidiebere Ogbonnaya",
-        "Hamid Roodbari",
-        "Rebecca Yusuf"
+        "Silvia Pérez‐González",
+        "Pilar Marqués‐Sánchez",
+        "Arrate Pinto‐Carral",
+        "A. García"
       ],
       "topics": [
-        "Innovation and Knowledge Management",
-        "Complex Systems and Decision Making",
-        "Cognitive Science and Mapping"
+        "Nursing education and management",
+        "Competency Development and Evaluation",
+        "Nursing Education, Practice, and Leadership"
       ],
-      "abstract": "Abstract Although recent years have seen a proliferation of research on organizational ambidexterity, important questions remain about the role that leaders play in leveraging learning ambidexterity for organizational benefits. Drawing on the conservation of resources theory, we investigate the indirect links between servant leadership and middle managers’ learning ambidexterity, with structural empowerment and role breadth self‐efficacy (RBSE) as serial mediators. We also examine the importance of leader boundary‐spanning behaviour as a moderating factor for these relationships. Using time‐lagged and multi‐source data from 344 middle managers and their supervisors, we show that servant leadership has a positive indirect influence on two forms of learning ambidexterity: exploitative and explorative learning. In particular, servant leadership promotes structural empowerment (as a contextual resource), which in turn influences RBSE (as a personal resource) and encourages learning ambidexterity. In addition, we show that when leaders engage in boundary‐spanning behaviour, these indirect relationships become more prominent. This research offers new theoretical and practical insights to",
+      "abstract": "Aim: Identify the characteristics of leadership competency for the nurse manager and describe the most cited leadership styles in the literature. Background: Leadership is a fundamental competency for nurse managers, as it plays an important role in the healthcare environment to achieve Sustainable Development Goals and promote people-centered organizations. Therefore, understanding the characteristics of leadership and the leadership style to be employed is important. Methods: A scoping review was conducted from January 2009 to January 2024 using the design of González Garcia et al., the Arksey and O'Malley framework, and databases including Web of Science, Scopus, and PubMed. Articles reporting on the characteristics of leadership for nurse managers were reviewed. The authors performed the review based on a search syntax, inclusion and exclusion criteria, and the data extraction process. Results: Sixty-two studies were included in the final review. The review identified 38 characteristics related to leadership competency, among which we highlighted caring for nurses as individuals, being a visionary, knowledgeable, a change agent, and a communicator. This review highlights the pr",
       "matchedQuery": "\"middle managers\" change leadership transformation role conflict",
       "queryId": "middle-management-change",
       "clusterHint": "Führung in Transformation",
       "intentHint": "Führung in Veränderung einordnen"
+    },
+    {
+      "openAlexId": "https://openalex.org/W3110969532",
+      "title": "E-Leadership and Teleworking in Times of COVID-19 and Beyond: What We Know and Where Do We Go",
+      "year": 2020,
+      "doi": "https://doi.org/10.3389/fpsyg.2020.590271",
+      "url": "https://doi.org/10.3389/fpsyg.2020.590271",
+      "type": "article",
+      "citedByCount": 525,
+      "openAccess": true,
+      "source": "Frontiers in Psychology",
+      "authors": [
+        "Françoise Contreras",
+        "Elif Baykal",
+        "Ghulam Abid"
+      ],
+      "topics": [
+        "Work-Family Balance Challenges",
+        "Job Satisfaction and Organizational Behavior",
+        "Employee Performance and Management"
+      ],
+      "abstract": "Suddenly, COVID-19 has changed the world and the way people work. Companies had to accelerate something they knew was imminent in the future, but not immediate and extremely humongous. This situation poses a huge challenge for companies to survive and thrive in this complex business environment and for employees, who must adapt to this new way of working. An effective e-leadership, which promotes companies' adaptability, is needed. This study investigates the existing knowledge on teleworking and e-leadership; and analyzes the supposed challenges. The literature review shows that companies with effective e-leadership can view teleworking as an opportunity. It is advantageous for not only companies' productivity but also the environment and people who work remotely. However, a traditional or no leadership can result in some risks. Thriving in remote work environments implies that managers must adjust the companies' structure, making them less hierarchical, and developing new abilities to establish a strong and trustworthy relationship with their employees to maintain their competitiveness, while retaining a genuine concern for their employees' well-being. Similarly, successful e-lea",
+      "matchedQuery": "informal leadership shared leadership authority influence stakeholders",
+      "queryId": "leading-without-authority",
+      "clusterHint": "Laterale Führung",
+      "intentHint": "Einfluss ohne formale Macht verstehen"
+    },
+    {
+      "openAlexId": "https://openalex.org/W3183585092",
+      "title": "A Review of Evidence about Equitable School Leadership",
+      "year": 2021,
+      "doi": "https://doi.org/10.3390/educsci11080377",
+      "url": "https://doi.org/10.3390/educsci11080377",
+      "type": "article",
+      "citedByCount": 201,
+      "openAccess": true,
+      "source": "Education Sciences",
+      "authors": [
+        "Kenneth Leithwood"
+      ],
+      "topics": [
+        "Parental Involvement in Education",
+        "Teacher Education and Leadership Studies",
+        "School Choice and Performance"
+      ],
+      "abstract": "This paper reviews the results of 63 empirical studies and reviews of research in order to identify those school leadership practices and dispositions likely to help improve equitable school conditions and outcomes for diverse and traditionally underserved students. Guided by a well-developed framework of successful school leadership, results indicate that most of the practices and dispositions in the framework can be enacted in ways that contribute to more equitable conditions and outcomes for students. A handful of these practices and dispositions appear to make an especially significant contribution to the development of more equitable schools as well as several additional practices and dispositions associated with equitable leadership merit mastery by equitably-oriented leaders. Among the especially significant practices are building productive partnerships among parents, schools, and the larger community as well as encouraging teachers to engage in forms of instruction with all students that are both ambitious and culturally responsive. Leaders are likely to be more effective when they adopt a critical perspective on the policies, practices, and procedures in their schools and",
+      "matchedQuery": "informal leadership shared leadership authority influence stakeholders",
+      "queryId": "leading-without-authority",
+      "clusterHint": "Laterale Führung",
+      "intentHint": "Einfluss ohne formale Macht verstehen"
     },
     {
       "openAlexId": "https://openalex.org/W4285731708",
@@ -425,7 +480,7 @@
       "doi": "https://doi.org/10.1177/10596011221111505",
       "url": "https://doi.org/10.1177/10596011221111505",
       "type": "article",
-      "citedByCount": 161,
+      "citedByCount": 170,
       "openAccess": true,
       "source": "Group & Organization Management",
       "authors": [
@@ -450,7 +505,7 @@
       "doi": "https://doi.org/10.1111/puar.13182",
       "url": "https://doi.org/10.1111/puar.13182",
       "type": "article",
-      "citedByCount": 168,
+      "citedByCount": 170,
       "openAccess": true,
       "source": "Public Administration Review",
       "authors": [
@@ -476,7 +531,7 @@
       "doi": "https://doi.org/10.1016/j.psychsport.2020.101762",
       "url": "https://doi.org/10.1016/j.psychsport.2020.101762",
       "type": "article",
-      "citedByCount": 83,
+      "citedByCount": 84,
       "openAccess": true,
       "source": "Psychology of sport and exercise",
       "authors": [
@@ -497,37 +552,13 @@
       "intentHint": "Einfluss ohne formale Macht verstehen"
     },
     {
-      "openAlexId": "https://openalex.org/W3131874337",
-      "title": "The Importance of Teacher Leadership Skills in the Classroom",
-      "year": 2021,
-      "doi": "https://doi.org/10.11648/j.edu.20211001.12",
-      "url": "https://doi.org/10.11648/j.edu.20211001.12",
-      "type": "article",
-      "citedByCount": 67,
-      "openAccess": true,
-      "source": "Education Journal",
-      "authors": [
-        "Louis L. Warren"
-      ],
-      "topics": [
-        "Teacher Education and Leadership Studies",
-        "Education and Technology Integration",
-        "Technology-Enhanced Education Studies"
-      ],
-      "abstract": "Teachers determines students’ success within the classroom. Research supports the notion that the teacher is the single greatest factor that determines students’ growth in the classroom. Effective teachers need to be leaders for their students. It is critically important that teachers possess leadership skills because it is a fundamental factor that is required to enhance the instructional quality of teachers both inside and outside the classroom. Teacher leaders possess excellent class management skills and are more capable of driving students toward academic success. In the current body of work, limited studies have focused on the impact of teacher leaders on student learning and academic success, while having leadership responsibilities inside the classroom. The purpose of this study is to explore in depth the entire concept of teacher leadership in the classroom and its relationship to student performance and achievement. The study involves a synthesis of evidence in education literature that describes the concept of teacher leadership and student performance. The findings reveal that teacher leaders, whether outside or within the classroom, are driven by the desire to improve ",
-      "matchedQuery": "informal leadership shared leadership authority influence stakeholders",
-      "queryId": "leading-without-authority",
-      "clusterHint": "Laterale Führung",
-      "intentHint": "Einfluss ohne formale Macht verstehen"
-    },
-    {
       "openAlexId": "https://openalex.org/W4403998565",
       "title": "The evolution of leadership: Past insights, present trends, and future directions",
       "year": 2024,
       "doi": "https://doi.org/10.1016/j.jbusres.2024.115036",
       "url": "https://doi.org/10.1016/j.jbusres.2024.115036",
       "type": "article",
-      "citedByCount": 74,
+      "citedByCount": 88,
       "openAccess": true,
       "source": "Journal of Business Research",
       "authors": [
@@ -547,78 +578,48 @@
       "intentHint": "Einfluss ohne formale Macht verstehen"
     },
     {
-      "openAlexId": "https://openalex.org/W3048751360",
-      "title": "Stakeholder Governance: Solving the Collective Action Problems in Joint Value Creation",
-      "year": 2020,
-      "doi": "https://doi.org/10.5465/amr.2019.0441",
-      "url": "https://doi.org/10.5465/amr.2019.0441",
-      "type": "article",
-      "citedByCount": 258,
-      "openAccess": true,
-      "source": "Academy of Management Review",
-      "authors": [
-        "Flore Bridoux",
-        "J.W. Stoelhorst"
-      ],
-      "topics": [
-        "Corporate Social Responsibility Reporting",
-        "Management and Organizational Studies",
-        "Environmental Sustainability in Business"
-      ],
-      "abstract": "Capitalism works when actors are motivated to engage in joint value creation. Stakeholder theorists have long argued that this is most likely when firms “manage for stakeholders,” but have only recently explicitly recognized that stakeholders engaged in joint value creation face collective action problems: situations in which stakeholders may be tempted to pursue their own interest at the expense of maximizing joint value creation. We build on the work of Elinor Ostrom on solving collective action problems to develop theory about how to govern joint value creation when managing for stakeholders. Specifically, we use Ostrom’s design principles to contrast the hub-and-spoke form of governance central to much of the stakeholder literature with two alternative governance forms (lead role governance and shared governance) that we derive from Ostrom’s work, and we discuss the comparative effectiveness of these three governance forms as depending on the nature of the joint value creation activities. Our work contributes to stakeholder theory as an integrative perspective on the role of management and governance in fostering cooperation in modern capitalist systems, where joint value creat",
-      "matchedQuery": "informal leadership shared leadership authority influence stakeholders",
-      "queryId": "leading-without-authority",
-      "clusterHint": "Laterale Führung",
-      "intentHint": "Einfluss ohne formale Macht verstehen"
-    },
-    {
-      "openAlexId": "https://openalex.org/W3097337616",
-      "title": "More self-organization, more control—or even both? Inverse transparency as a digital leadership concept",
-      "year": 2020,
-      "doi": "https://doi.org/10.1007/s40685-020-00130-0",
-      "url": "https://doi.org/10.1007/s40685-020-00130-0",
-      "type": "article",
-      "citedByCount": 101,
-      "openAccess": true,
-      "source": "BuR - Business Research",
-      "authors": [
-        "Maren Gierlich-Joas",
-        "Thomas Heß",
-        "Rahild Neuburger"
-      ],
-      "topics": [
-        "Digital Transformation in Industry",
-        "Big Data and Business Intelligence",
-        "Blockchain Technology Applications and Security"
-      ],
-      "abstract": "Abstract Digital innovations drive an organization’s digital transformation. While numerous studies focus on digital product and service innovation, digital process innovation and novel business models, management and leadership concepts are primarily investigated as enabling framing conditions in previous contributions. However, management and leadership concepts have changed dramatically in the digital era. The rise of digital technologies has led to companies acquiring large amounts of data. Moreover, novel technical solutions facilitate the analysis and processing of this data, leading to an increase in organizational transparency. Traditional leadership theories fail to explain the influence of digitalization and increasing transparency of leadership. In a digitized world, managers often face a trade-off when using data for management purposes. On the one hand, transparency leads to decreasing information asymmetries, allowing managers to monitor employees’ actions at low cost. On the other hand, employees demand self-organization and empowerment. In this context, new forms of control and employee engagement need to be designed. With our conceptual paper, we aim to provide a s",
-      "matchedQuery": "informal leadership shared leadership authority influence stakeholders",
-      "queryId": "leading-without-authority",
-      "clusterHint": "Laterale Führung",
-      "intentHint": "Einfluss ohne formale Macht verstehen"
-    },
-    {
-      "openAlexId": "https://openalex.org/W3119357710",
-      "title": "A psychological contract perspective of vertical and distributed leadership in project-based organizations",
+      "openAlexId": "https://openalex.org/W3131874337",
+      "title": "The Importance of Teacher Leadership Skills in the Classroom",
       "year": 2021,
-      "doi": "https://doi.org/10.1016/j.ijproman.2020.12.004",
-      "url": "https://doi.org/10.1016/j.ijproman.2020.12.004",
+      "doi": "https://doi.org/10.11648/j.edu.20211001.12",
+      "url": "https://doi.org/10.11648/j.edu.20211001.12",
       "type": "article",
-      "citedByCount": 73,
+      "citedByCount": 68,
       "openAccess": true,
-      "source": "International Journal of Project Management",
+      "source": "Education Journal",
       "authors": [
-        "Upasna A. Agarwal",
-        "Vijaya Dixit",
-        "Natalia Nikolova",
-        "Karuna Jain"
+        "Louis L. Warren"
       ],
       "topics": [
-        "Construction Project Management and Performance",
-        "Innovation and Knowledge Management",
-        "Quality and Supply Management"
+        "Teacher Education and Leadership Studies",
+        "Education and Technology Integration",
+        "Technology-Enhanced Education Studies"
       ],
-      "abstract": "",
+      "abstract": "Teachers determines students’ success within the classroom. Research supports the notion that the teacher is the single greatest factor that determines students’ growth in the classroom. Effective teachers need to be leaders for their students. It is critically important that teachers possess leadership skills because it is a fundamental factor that is required to enhance the instructional quality of teachers both inside and outside the classroom. Teacher leaders possess excellent class management skills and are more capable of driving students toward academic success. In the current body of work, limited studies have focused on the impact of teacher leaders on student learning and academic success, while having leadership responsibilities inside the classroom. The purpose of this study is to explore in depth the entire concept of teacher leadership in the classroom and its relationship to student performance and achievement. The study involves a synthesis of evidence in education literature that describes the concept of teacher leadership and student performance. The findings reveal that teacher leaders, whether outside or within the classroom, are driven by the desire to improve ",
+      "matchedQuery": "informal leadership shared leadership authority influence stakeholders",
+      "queryId": "leading-without-authority",
+      "clusterHint": "Laterale Führung",
+      "intentHint": "Einfluss ohne formale Macht verstehen"
+    },
+    {
+      "openAlexId": "https://openalex.org/W3040843093",
+      "title": "Knowledge-oriented leadership, knowledge management behaviour and innovation performance in project-based SMEs. The moderating role of goal orientations",
+      "year": 2020,
+      "doi": "https://doi.org/10.1108/jkm-02-2020-0127",
+      "url": "https://doi.org/10.1108/jkm-02-2020-0127",
+      "type": "article",
+      "citedByCount": 150,
+      "openAccess": true,
+      "source": "Journal of Knowledge Management",
+      "authors": [
+        "Najam Ul Zia"
+      ],
+      "topics": [
+        "Knowledge Management and Sharing",
+        "Innovation and Socioeconomic Development",
+        "Innovation and Knowledge Management"
+      ],
+      "abstract": "Purpose This study aims to examine the association of knowledge-oriented leadership (KOL), knowledge management (KM) behaviour and innovation performance in project-based small and medium-sized enterprises. It investigates the moderation of goal-orientation in the relationship of KOL with knowledge-acquisition, transfer, documentation and application. Design/methodology/approach Data are collected from 215 employees in 32 small project-based software firms in Pakistan. Partial least square is used to test the hypotheses. Findings KOL is positively associated with KM behaviour and innovation performance. KM mediates the relationship of KOL and innovation performance. Furthermore, goal orientations play a moderating role in the relationship of KOL with knowledge acquisition, transfer and application activities. Originality/value This study extends the literature on knowledge-based dynamic capabilities, by examining the relationship of KOL, KM behaviour and project-based innovation performance. Investigating the moderation of goal-orientation in the relationship of KOL with KM behaviour is also an original contribution.",
       "matchedQuery": "informal leadership shared leadership authority influence stakeholders",
       "queryId": "leading-without-authority",
       "clusterHint": "Laterale Führung",
@@ -631,7 +632,7 @@
       "doi": "https://doi.org/10.1016/j.ijproman.2024.102649",
       "url": "https://doi.org/10.1016/j.ijproman.2024.102649",
       "type": "article",
-      "citedByCount": 40,
+      "citedByCount": 43,
       "openAccess": true,
       "source": "International Journal of Project Management",
       "authors": [
@@ -683,7 +684,7 @@
       "doi": "https://doi.org/10.3389/fpsyg.2021.704723",
       "url": "https://doi.org/10.3389/fpsyg.2021.704723",
       "type": "article",
-      "citedByCount": 14,
+      "citedByCount": 16,
       "openAccess": true,
       "source": "Frontiers in Psychology",
       "authors": [
@@ -709,7 +710,7 @@
       "doi": "https://doi.org/10.1016/j.ijproman.2020.02.002",
       "url": "https://doi.org/10.1016/j.ijproman.2020.02.002",
       "type": "article",
-      "citedByCount": 146,
+      "citedByCount": 148,
       "openAccess": true,
       "source": "International Journal of Project Management",
       "authors": [
@@ -734,7 +735,7 @@
       "doi": "https://doi.org/10.1016/j.jclepro.2021.128128",
       "url": "https://doi.org/10.1016/j.jclepro.2021.128128",
       "type": "article",
-      "citedByCount": 228,
+      "citedByCount": 233,
       "openAccess": true,
       "source": "Journal of Cleaner Production",
       "authors": [
@@ -753,13 +754,37 @@
       "intentHint": "Stakeholder-Führung bei Unklarheit vorbereiten"
     },
     {
+      "openAlexId": "https://openalex.org/W3091839424",
+      "title": "Pandemics and environmental shocks: What aviation managers should learn from COVID-19 for long-term planning",
+      "year": 2020,
+      "doi": "https://doi.org/10.1016/j.jairtraman.2020.101944",
+      "url": "https://doi.org/10.1016/j.jairtraman.2020.101944",
+      "type": "article",
+      "citedByCount": 77,
+      "openAccess": true,
+      "source": "Journal of Air Transport Management",
+      "authors": [
+        "Erik van der Linden"
+      ],
+      "topics": [
+        "Supply Chain Resilience and Risk Management",
+        "Complex Systems and Decision Making",
+        "Leadership, Behavior, and Decision-Making Studies"
+      ],
+      "abstract": "This article gives guidance to aviation managers being struck by environmental shocks. The introduced frameworks support aviation managers to think strategically during times of shocks and help them to prepare for future shocks by developing more resilient and learning organizations. Practical, short-term recommendations include strategically orienting or reorienting and not exaggerating the current, short-term developments due to unproductive uncertainty. Further, and to prepare for future shocks, the results of this study suggest that aviation managers should develop a common strategy language, introduce uncertainty as a standard factor for long-term planning, manage uncertainty proactively and make long-term plans accordingly by fostering a dialogue with various stake- and shareholders, being aware of the strategy tools in use, making the board a co-creating team and introducing a three-step process in sensing, seizing and transforming the organization accordingly.",
+      "matchedQuery": "\"stakeholder management\" leadership sensemaking uncertainty",
+      "queryId": "stakeholder-sensemaking",
+      "clusterHint": "Stakeholder und Wirkung",
+      "intentHint": "Stakeholder-Führung bei Unklarheit vorbereiten"
+    },
+    {
       "openAlexId": "https://openalex.org/W4205664305",
       "title": "Multinational enterprises and natural disasters: Challenges and opportunities for IB research",
       "year": 2022,
       "doi": "https://doi.org/10.1057/s41267-021-00483-6",
       "url": "https://doi.org/10.1057/s41267-021-00483-6",
       "type": "article",
-      "citedByCount": 139,
+      "citedByCount": 142,
       "openAccess": true,
       "source": "Journal of International Business Studies",
       "authors": [
@@ -784,7 +809,7 @@
       "doi": "https://doi.org/10.1016/j.jbusres.2020.12.057",
       "url": "https://doi.org/10.1016/j.jbusres.2020.12.057",
       "type": "article",
-      "citedByCount": 66,
+      "citedByCount": 67,
       "openAccess": true,
       "source": "Journal of Business Research",
       "authors": [
@@ -804,29 +829,57 @@
       "intentHint": "Stakeholder-Führung bei Unklarheit vorbereiten"
     },
     {
-      "openAlexId": "https://openalex.org/W3168893174",
-      "title": "A purpose-action framework for Corporate Social Responsibility in times of shock",
+      "openAlexId": "https://openalex.org/W3195625625",
+      "title": "Artificial Intelligence and Business Value: a Literature Review",
       "year": 2021,
-      "doi": "https://doi.org/10.1016/j.jclepro.2021.127789",
-      "url": "https://doi.org/10.1016/j.jclepro.2021.127789",
+      "doi": "https://doi.org/10.1007/s10796-021-10186-w",
+      "url": "https://doi.org/10.1007/s10796-021-10186-w",
       "type": "article",
-      "citedByCount": 51,
+      "citedByCount": 934,
       "openAccess": true,
-      "source": "Journal of Cleaner Production",
+      "source": "Information Systems Frontiers",
       "authors": [
-        "Francisco Javier Forcadell",
-        "Elisa Aracil"
+        "Ida Merete Enholm",
+        "Emmanouil Papagiannidis",
+        "Patrick Mikalef",
+        "John Krogstie"
       ],
       "topics": [
-        "Corporate Social Responsibility Reporting",
-        "Supply Chain Resilience and Risk Management",
-        "COVID-19 Pandemic Impacts"
+        "Big Data and Business Intelligence",
+        "Impact of AI and Big Data on Business and Society",
+        "Digital Transformation in Industry"
       ],
-      "abstract": "Extreme events undermine progress towards social sustainability and urge an immediate and broad response from the private sector. Nevertheless, corporate interventions in the face of a shock differ from traditional Corporate Social Responsibility (CSR) actions in some essential aspects not addressed by the literature. To solve this gap, we propose a purpose-action framework to examine and categorize 218 post-shock CSR interventions from 111 companies operating in Spain during the first wave of the COVID-19 pandemic. The framework allows assessing their heterogeneous social sustainability impact. We identify a set of firm dynamic sustainability capabilities -leadership, intentionality, prior stakeholder engagement, and partnership building-underpinning corporate purpose and action to develop an effective and efficient post-shock CSR. This exploratory study extends the literature on the company–society interface and provides a guide to foster social sustainability through CSR in times of shock.",
-      "matchedQuery": "\"stakeholder management\" leadership sensemaking uncertainty",
-      "queryId": "stakeholder-sensemaking",
-      "clusterHint": "Stakeholder und Wirkung",
-      "intentHint": "Stakeholder-Führung bei Unklarheit vorbereiten"
+      "abstract": "Abstract Artificial Intelligence (AI) are a wide-ranging set of technologies that promise several advantages for organizations in terms off added business value. Over the past few years, organizations are increasingly turning to AI in order to gain business value following a deluge of data and a strong increase in computational capacity. Nevertheless, organizations are still struggling to adopt and leverage AI in their operations. The lack of a coherent understanding of how AI technologies create business value, and what type of business value is expected, therefore necessitates a holistic understanding. This study provides a systematic literature review that attempts to explain how organizations can leverage AI technologies in their operations and elucidate the value-generating mechanisms. Our analysis synthesizes the current literature and highlights: (1) the key enablers and inhibitors of AI adoption and use; (2) the typologies of AI use in the organizational setting; and (3) the first- and second-order effects of AI. The paper concludes with an identification of the gaps in the literature and develops a research agenda that identifies areas that need to be addressed by future s",
+      "matchedQuery": "\"artificial intelligence\" leadership digital transformation role ambiguity",
+      "queryId": "digital-ai-leadership",
+      "clusterHint": "KI und Führung",
+      "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
+    },
+    {
+      "openAlexId": "https://openalex.org/W3011186445",
+      "title": "Innovation and Design in the Age of Artificial Intelligence",
+      "year": 2020,
+      "doi": "https://doi.org/10.1111/jpim.12523",
+      "url": "https://doi.org/10.1111/jpim.12523",
+      "type": "article",
+      "citedByCount": 782,
+      "openAccess": true,
+      "source": "Journal of Product Innovation Management",
+      "authors": [
+        "Roberto Verganti",
+        "Luca Vendraminelli",
+        "Marco Iansiti"
+      ],
+      "topics": [
+        "Design Education and Practice",
+        "Service and Product Innovation",
+        "Innovative Human-Technology Interaction"
+      ],
+      "abstract": "At the heart of any innovation process lies a fundamental practice: the way people create ideas and solve problems. This “decision making” side of innovation is what scholars and practitioners refer to as “design.” Decisions in innovation processes have so far been taken by humans. What happens when they can be substituted by machines? Artificial Intelligence (AI) brings data and algorithms to the core of the innovation processes. What are the implications of this diffusion of AI for our understanding of design and innovation? Is AI just another digital technology that, akin to many others, will not significantly question what we know about design? Or will it create transformations in design that current theoretical frameworks cannot capture? This paper proposes a framework for understanding the design and innovation in the age of AI. We discuss the implications for design and innovation theory. Specifically, we observe that, as creative problem‐solving is significantly conducted by algorithms, human design increasingly becomes an activity of sensemaking , that is, understanding which problems should or could be addressed. This shift in focus calls for the new theories and brings d",
+      "matchedQuery": "\"artificial intelligence\" leadership digital transformation role ambiguity",
+      "queryId": "digital-ai-leadership",
+      "clusterHint": "KI und Führung",
+      "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
     },
     {
       "openAlexId": "https://openalex.org/W4413478458",
@@ -835,7 +888,7 @@
       "doi": "https://doi.org/10.25300/misq/2021/16274",
       "url": "https://doi.org/10.25300/misq/2021/16274",
       "type": "article",
-      "citedByCount": 435,
+      "citedByCount": 478,
       "openAccess": true,
       "source": "MIS Quarterly",
       "authors": [
@@ -856,13 +909,40 @@
       "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
     },
     {
+      "openAlexId": "https://openalex.org/W3081258743",
+      "title": "Rising with the machines: A sociotechnical framework for bringing artificial intelligence into the organization",
+      "year": 2020,
+      "doi": "https://doi.org/10.1016/j.jbusres.2020.07.045",
+      "url": "https://doi.org/10.1016/j.jbusres.2020.07.045",
+      "type": "article",
+      "citedByCount": 687,
+      "openAccess": true,
+      "source": "Journal of Business Research",
+      "authors": [
+        "Erin E. Makarius",
+        "Debmalya Mukherjee",
+        "Joseph D. Fox",
+        "Alexa K. Fox"
+      ],
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Innovation, Sustainability, Human-Machine Systems",
+        "Big Data and Business Intelligence"
+      ],
+      "abstract": "Artificial intelligence (AI) is increasingly being adopted by organizations, yet implementation is often carried out without careful consideration of the employees who will be working along with it. If employees do not understand or work with AI, it is unlikely to bring value to an organization. The purpose of this paper is to investigate the ways in which employees and AI can collaborate to build different levels of sociotechnical capital. Accordingly, we develop a model of AI integration based on Socio-Technical Systems (STS) theory that combines AI novelty and scope dimensions. We take an organizational socialization approach to build an understanding of the process of integrating AI into the organization. Our framework underscores the importance of AI socialization as a core process in successfully integrating AI systems and employees. We conclude with a future research agenda that highlights the cognitive, relational, and structural implications of integrating AI and employees.",
+      "matchedQuery": "\"artificial intelligence\" leadership digital transformation role ambiguity",
+      "queryId": "digital-ai-leadership",
+      "clusterHint": "KI und Führung",
+      "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
+    },
+    {
       "openAlexId": "https://openalex.org/W4383913712",
       "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
       "year": 2023,
       "doi": "https://doi.org/10.1111/1748-8583.12524",
       "url": "https://doi.org/10.1111/1748-8583.12524",
       "type": "article",
-      "citedByCount": 765,
+      "citedByCount": 802,
       "openAccess": true,
       "source": "Human Resource Management Journal",
       "authors": [
@@ -889,7 +969,7 @@
       "doi": "https://doi.org/10.1007/s00146-020-00992-2",
       "url": "https://doi.org/10.1007/s00146-020-00992-2",
       "type": "article",
-      "citedByCount": 513,
+      "citedByCount": 526,
       "openAccess": true,
       "source": "AI & Society",
       "authors": [
@@ -915,7 +995,7 @@
       "doi": "https://doi.org/10.1016/j.jbusres.2022.03.008",
       "url": "https://doi.org/10.1016/j.jbusres.2022.03.008",
       "type": "article",
-      "citedByCount": 479,
+      "citedByCount": 499,
       "openAccess": true,
       "source": "Journal of Business Research",
       "authors": [
@@ -942,7 +1022,7 @@
       "doi": "https://doi.org/10.15678/eber.2023.110201",
       "url": "https://doi.org/10.15678/eber.2023.110201",
       "type": "article",
-      "citedByCount": 522,
+      "citedByCount": 535,
       "openAccess": true,
       "source": "Entrepreneurial Business and Economics Review",
       "authors": [
@@ -961,88 +1041,13 @@
       "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
     },
     {
-      "openAlexId": "https://openalex.org/W4234956358",
-      "title": "Artificial Intelligence for a Better Future",
-      "year": 2021,
-      "doi": "https://doi.org/10.1007/978-3-030-69978-9",
-      "url": "https://doi.org/10.1007/978-3-030-69978-9",
-      "type": "book",
-      "citedByCount": 273,
-      "openAccess": true,
-      "source": "SpringerBriefs in research and innovation governance",
-      "authors": [
-        "Bernd Carsten Stahl"
-      ],
-      "topics": [
-        "Ethics and Social Impacts of AI"
-      ],
-      "abstract": "This open access book offers a novel conceptualization of the AI ethics debate by applying the discourse of innovation ecosystems to AI",
-      "matchedQuery": "\"artificial intelligence\" leadership digital transformation role ambiguity",
-      "queryId": "digital-ai-leadership",
-      "clusterHint": "KI und Führung",
-      "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
-    },
-    {
-      "openAlexId": "https://openalex.org/W2982936646",
-      "title": "Digital Twin: Enabling Technologies, Challenges and Open Research",
-      "year": 2020,
-      "doi": "https://doi.org/10.1109/access.2020.2998358",
-      "url": "https://doi.org/10.1109/access.2020.2998358",
-      "type": "article",
-      "citedByCount": 2498,
-      "openAccess": true,
-      "source": "IEEE Access",
-      "authors": [
-        "Aidan Fuller",
-        "Zhong Fan",
-        "Charles Day",
-        "Chris Barlow"
-      ],
-      "topics": [
-        "Digital Transformation in Industry",
-        "Engineering Education and Technology",
-        "Big Data and Business Intelligence"
-      ],
-      "abstract": "Digital Twin technology is an emerging concept that has become the centre of attention for industry and, in more recent years, academia. The advancements in industry 4.0 concepts have facilitated its growth, particularly in the manufacturing industry. The Digital Twin is defined extensively but is best described as the effortless integration of data between a physical and virtual machine in either direction. The challenges, applications, and enabling technologies for Artificial Intelligence, Internet of Things (IoT) and Digital Twins are presented. A review of publications relating to Digital Twins is performed, producing a categorical review of recent papers. The review has categorised them by research areas: manufacturing, healthcare and smart cities, discussing a range of papers that reflect these areas and the current state of research. The paper provides an assessment of the enabling technologies, challenges and open research for Digital Twins.",
-      "matchedQuery": "\"artificial intelligence\" leadership digital transformation role ambiguity",
-      "queryId": "digital-ai-leadership",
-      "clusterHint": "KI und Führung",
-      "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
-    },
-    {
-      "openAlexId": "https://openalex.org/W4307127952",
-      "title": "Discourses of artificial intelligence in higher education: a critical literature review",
-      "year": 2022,
-      "doi": "https://doi.org/10.1007/s10734-022-00937-2",
-      "url": "https://doi.org/10.1007/s10734-022-00937-2",
-      "type": "article",
-      "citedByCount": 393,
-      "openAccess": true,
-      "source": "Higher Education",
-      "authors": [
-        "Margaret Bearman",
-        "Juliana Ryan",
-        "Rola Ajjawi"
-      ],
-      "topics": [
-        "Online Learning and Analytics",
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI"
-      ],
-      "abstract": "Abstract Artificial intelligence (AI) holds significant implications for higher education; however, references to AI in the literature are often vague and open to debate. In order to understand how to progress AI-related research and analysis, this critical review systematically searched top higher education journals for references to the term ‘artificial intelligence’. We reviewed definitions and conducted a discourse analysis of included texts. Our findings identify few, confusing definitions and little overt reference to AI as a research object. We delineated two Discourses. The Discourse of imperative change outlines how AI is seen as an inevitable change to which all must respond. Additionally, the Discourse of altering authority describes how texts position AI as decentring the teacher and spreading authority across staff, machines, corporations and students. Our analysis prompts a call for new research foci that attend to the social implications of AI, including tracing accountability in AI-mediated practices and exploring how AI influences learning and teaching relationships.",
-      "matchedQuery": "\"artificial intelligence\" leadership digital transformation role ambiguity",
-      "queryId": "digital-ai-leadership",
-      "clusterHint": "KI und Führung",
-      "intentHint": "Führungsrolle bei KI und Digitalisierung klären"
-    },
-    {
       "openAlexId": "https://openalex.org/W3005288118",
       "title": "Distinguishing Voice and Silence at Work: Unique Relationships with Perceived Impact, Psychological Safety, and Burnout",
       "year": 2020,
       "doi": "https://doi.org/10.5465/amj.2018.1428",
       "url": "https://doi.org/10.5465/amj.2018.1428",
       "type": "article",
-      "citedByCount": 304,
+      "citedByCount": 311,
       "openAccess": true,
       "source": "Academy of Management Journal",
       "authors": [
@@ -1062,13 +1067,39 @@
       "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
     },
     {
+      "openAlexId": "https://openalex.org/W2998629787",
+      "title": "Psychological safety, the hidden curriculum, and ambiguity in medicine",
+      "year": 2020,
+      "doi": "https://doi.org/10.1007/s10067-019-04889-4",
+      "url": "https://doi.org/10.1007/s10067-019-04889-4",
+      "type": "article",
+      "citedByCount": 147,
+      "openAccess": true,
+      "source": "Clinical Rheumatology",
+      "authors": [
+        "Karina D. Torralba",
+        "Donna Jose",
+        "John M. Byrne"
+      ],
+      "topics": [
+        "Empathy and Medical Education",
+        "Innovations in Medical Education",
+        "Clinical Reasoning and Diagnostic Skills"
+      ],
+      "abstract": "",
+      "matchedQuery": "\"psychological safety\" leadership teams uncertainty decision making",
+      "queryId": "psychological-safety-uncertainty",
+      "clusterHint": "Rollenklärung",
+      "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
+    },
+    {
       "openAlexId": "https://openalex.org/W3007361286",
       "title": "Inclusive Leadership and Taking-Charge Behavior: Roles of Psychological Safety and Thriving at Work",
       "year": 2020,
       "doi": "https://doi.org/10.3389/fpsyg.2020.00062",
       "url": "https://doi.org/10.3389/fpsyg.2020.00062",
       "type": "article",
-      "citedByCount": 179,
+      "citedByCount": 183,
       "openAccess": true,
       "source": "Frontiers in Psychology",
       "authors": [
@@ -1088,13 +1119,40 @@
       "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
     },
     {
+      "openAlexId": "https://openalex.org/W3155410828",
+      "title": "Enhancing psychological safety in mental health services",
+      "year": 2021,
+      "doi": "https://doi.org/10.1186/s13033-021-00439-1",
+      "url": "https://doi.org/10.1186/s13033-021-00439-1",
+      "type": "article",
+      "citedByCount": 108,
+      "openAccess": true,
+      "source": "International Journal of Mental Health Systems",
+      "authors": [
+        "David Francis Hunt",
+        "Jill Bailey",
+        "Belinda Lennox",
+        "Merete Crofts"
+      ],
+      "topics": [
+        "Healthcare Decision-Making and Restraints",
+        "Psychiatric care and mental health services",
+        "Mental Health and Patient Involvement"
+      ],
+      "abstract": "BACKGROUND: Psychological safety-speaking up about ideas and concerns, free from interpersonal risk-are essential to the high-risk environment, such as healthcare settings. Psychologically safe working is particularly important in mental health where recovery-oriented approaches rely on collaborative efforts of interprofessional teams to make complex decisions. Much research focuses on antecedents and outcomes associated with psychological safety, but little focus on the practical steps for how to increase psychological safety across and at different levels of a healthcare organisation. AIMS: We explore how a mental health organisation creates an organisation-wide plan for building the foundations of mental health and how to enhance psychological safety. METHODS: This review encompasses strategies across psychological safety and organisational culture change to increase psychological safety at an individual, team and organisational level. We set out a comprehensive overview of the types of strategies and interventions for increasing the ethos of psychological safety and setting the foundations for delivering an organisation-wide programme on this topic. We also provide a list of ke",
+      "matchedQuery": "\"psychological safety\" leadership teams uncertainty decision making",
+      "queryId": "psychological-safety-uncertainty",
+      "clusterHint": "Rollenklärung",
+      "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
+    },
+    {
       "openAlexId": "https://openalex.org/W3129667329",
       "title": "Healthcare Professionals Experience of Psychological Safety, Voice, and Silence",
       "year": 2021,
       "doi": "https://doi.org/10.3389/fpsyg.2021.626689",
       "url": "https://doi.org/10.3389/fpsyg.2021.626689",
       "type": "article",
-      "citedByCount": 97,
+      "citedByCount": 101,
       "openAccess": true,
       "source": "Frontiers in Psychology",
       "authors": [
@@ -1120,7 +1178,7 @@
       "doi": "https://doi.org/10.1136/bmjsem-2021-001251",
       "url": "https://doi.org/10.1136/bmjsem-2021-001251",
       "type": "article",
-      "citedByCount": 52,
+      "citedByCount": 53,
       "openAccess": true,
       "source": "BMJ Open Sport & Exercise Medicine",
       "authors": [
@@ -1141,40 +1199,13 @@
       "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
     },
     {
-      "openAlexId": "https://openalex.org/W3120526002",
-      "title": "Keep Safe, Keep Learning: Principals' Role in Creating Psychological Safety and Organizational Learning During the COVID-19 Pandemic",
-      "year": 2021,
-      "doi": "https://doi.org/10.3389/feduc.2020.618483",
-      "url": "https://doi.org/10.3389/feduc.2020.618483",
-      "type": "article",
-      "citedByCount": 116,
-      "openAccess": true,
-      "source": "Frontiers in Education",
-      "authors": [
-        "Jennie Weiner",
-        "Chantal Francois",
-        "Corrie Stone‐Johnson",
-        "Joshua Childs"
-      ],
-      "topics": [
-        "COVID-19 and Mental Health",
-        "Resilience and Mental Health",
-        "Bullying, Victimization, and Aggression"
-      ],
-      "abstract": "Utilizing a sample of 54 interviews from a larger study of traditional public school principals' responses to the COVID-19 pandemic, we examined the degree to which principals in 19 states and representing both urban (e.g., intensive, emergent or characteristic; n = 37) and suburban settings ( n = 17) and across all student levels (i.e., elementary, middle, and high), experienced and engaged in behaviors to create psychological safety during the COVID-19 pandemic. We also sought to understand how various environmental and organizational features may have influenced these conditions and thus the likelihood of learning taking place. We find principals reported varied levels of psychological safety in their schools with associated differing levels of organizational learning and responsiveness to the crisis. However, rather being grounded in environmental conditions (e.g., urbanicity, demographics, etc.), organizational factors and specifically, differences in accountability, principal autonomy, professional culture and teacher decision-making were all key in the degree of psychological safety exhibited. Together, these findings serve to expand understanding of leadership as creating c",
-      "matchedQuery": "\"psychological safety\" leadership teams uncertainty decision making",
-      "queryId": "psychological-safety-uncertainty",
-      "clusterHint": "Rollenklärung",
-      "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
-    },
-    {
       "openAlexId": "https://openalex.org/W3006072539",
       "title": "The High-Performance Work System, Employee Voice, and Innovative Behavior: The Moderating Role of Psychological Safety",
       "year": 2020,
       "doi": "https://doi.org/10.3390/ijerph17041150",
       "url": "https://doi.org/10.3390/ijerph17041150",
       "type": "article",
-      "citedByCount": 94,
+      "citedByCount": 99,
       "openAccess": true,
       "source": "International Journal of Environmental Research and Public Health",
       "authors": [
@@ -1195,53 +1226,27 @@
       "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
     },
     {
-      "openAlexId": "https://openalex.org/W4228997115",
-      "title": "The effects of organizational trust and empowering leadership on group conflict: psychological safety as a mediator",
-      "year": 2022,
-      "doi": "https://doi.org/10.1108/omj-07-2021-1308",
-      "url": "https://doi.org/10.1108/omj-07-2021-1308",
+      "openAlexId": "https://openalex.org/W3120526002",
+      "title": "Keep Safe, Keep Learning: Principals' Role in Creating Psychological Safety and Organizational Learning During the COVID-19 Pandemic",
+      "year": 2021,
+      "doi": "https://doi.org/10.3389/feduc.2020.618483",
+      "url": "https://doi.org/10.3389/feduc.2020.618483",
       "type": "article",
-      "citedByCount": 72,
+      "citedByCount": 117,
       "openAccess": true,
-      "source": "Organization Management Journal",
+      "source": "Frontiers in Education",
       "authors": [
-        "Baek‐Kyoo Joo",
-        "So Kyum Yoon",
-        "Diane D. Galbraith"
+        "Jennie Weiner",
+        "Chantal Francois",
+        "Corrie Stone‐Johnson",
+        "Joshua Childs"
       ],
       "topics": [
-        "Conflict Management and Negotiation",
-        "Job Satisfaction and Organizational Behavior",
-        "Team Dynamics and Performance"
+        "COVID-19 and Mental Health",
+        "Resilience and Mental Health",
+        "Bullying, Victimization, and Aggression"
       ],
-      "abstract": "Purpose In a knowledge-based economy, employees’ perception of psychological safety in their wok unit is critical for group conflict. The purpose of this study is to investigate the mediating role of psychological safety between the predictors (i.e. organizational trust and empowering leadership) and the outcome variable, group conflict. Design/methodology/approach Data was drawn from 633 employees from a global automobile company headquartered in South Korea. Construct validity of the measurement model was examined using a confirmatory factor analysis. The hypothesized model was tested by a structural equation modeling and the bootstrap analysis. Findings Organizational trust and empowering leadership accounted for 68% of the variance in employees’ psychological safety. The three antecedents (i.e. organizational trust, empowering leadership and psychological safety) explained 20% of the variance in group conflicts. Psychological safety significantly and fully mediated the relationship between organizational trust and group conflict and the relationship between empowering leadership and group conflict. Practical implications Human resources and organization development professional",
-      "matchedQuery": "\"psychological safety\" leadership teams uncertainty decision making",
-      "queryId": "psychological-safety-uncertainty",
-      "clusterHint": "Rollenklärung",
-      "intentHint": "Entscheidungen und Kommunikation unter Unsicherheit reflektieren"
-    },
-    {
-      "openAlexId": "https://openalex.org/W4407086132",
-      "title": "Leading in the Digital Age: The Role of Leadership in Organizational Digital Transformation",
-      "year": 2025,
-      "doi": "https://doi.org/10.3390/admsci15020043",
-      "url": "https://doi.org/10.3390/admsci15020043",
-      "type": "article",
-      "citedByCount": 57,
-      "openAccess": true,
-      "source": "Administrative Sciences",
-      "authors": [
-        "António Sacavém",
-        "Andréia de Bem Machado",
-        "João Rodrigues dos Santos",
-        "Ana Moreira"
-      ],
-      "topics": [
-        "Digital Transformation in Industry",
-        "Educational Leadership and Innovation",
-        "Innovation, Sustainability, Human-Machine Systems"
-      ],
-      "abstract": "In the modern digital age, organizations face unprecedented challenges and possibilities while managing the intricacies of digital transformation. Accelerated technological developments, changing customer preferences, heightened competition, and dynamic regulatory environments necessitate companies to synchronize their business goals with technological innovations. Leadership is crucial in steering businesses through changes, requiring a deep understanding of change processes and the capacity to adjust leadership accordingly. This research addresses the central question: How does leadership effectively promote organizational digital transformation? The study examines how leaders can effectively promote the adoption of advanced technologies and the promotion of innovation, by first exploring the nature of digital transformation within organizations and then analyzing the evolving dynamics of leadership in this context. An integrative review of the Web of Science (WoS) and Scopus databases was conducted, using the search terms: “Leadership” and “Digital Transformation”. The findings emphasize that effective leadership is crucial for managing the minutiae of digital transformation, in",
+      "abstract": "Utilizing a sample of 54 interviews from a larger study of traditional public school principals' responses to the COVID-19 pandemic, we examined the degree to which principals in 19 states and representing both urban (e.g., intensive, emergent or characteristic; n = 37) and suburban settings ( n = 17) and across all student levels (i.e., elementary, middle, and high), experienced and engaged in behaviors to create psychological safety during the COVID-19 pandemic. We also sought to understand how various environmental and organizational features may have influenced these conditions and thus the likelihood of learning taking place. We find principals reported varied levels of psychological safety in their schools with associated differing levels of organizational learning and responsiveness to the crisis. However, rather being grounded in environmental conditions (e.g., urbanicity, demographics, etc.), organizational factors and specifically, differences in accountability, principal autonomy, professional culture and teacher decision-making were all key in the degree of psychological safety exhibited. Together, these findings serve to expand understanding of leadership as creating c",
       "matchedQuery": "\"psychological safety\" leadership teams uncertainty decision making",
       "queryId": "psychological-safety-uncertainty",
       "clusterHint": "Rollenklärung",
