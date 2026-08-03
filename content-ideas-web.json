@@ -1,6 +1,263 @@
 {
-  "generatedAt": null,
-  "status": "empty",
-  "method": "Wird durch pnpm content:research:web erzeugt.",
-  "ideas": []
+  "generatedAt": "2026-08-03T10:24:50.039Z",
+  "status": "web_research_draft",
+  "method": "OpenAI web_search mit wissenschaftlichem Fokus",
+  "ideas": [
+    {
+      "title": "Rollenambiguität und Verantwortung in Führungsmandaten klären",
+      "cluster": "Führungsmandat",
+      "intent": "Leserinnen und Leser suchen wissenschaftliche Erkenntnisse zur Unklarheit von Führungsrollen und Verantwortungsbereichen",
+      "primaryKeyword": "Rollenambiguität Führung",
+      "format": "Evidenznotiz",
+      "riskLevel": "low",
+      "priority": 1,
+      "mandateQuestion": "Wie können Sie Unsicherheit über Ihre Führungsrolle und Verantwortungsgrenzen erkennen und klären?",
+      "briefing": "Rollenambiguität ist ein gut erforschtes Phänomen. Meta-Analysen zeigen, dass unklare Erwartungen und Konflikte zwischen Rollen zu Stress und ineffektivem Verhalten führen können ([sciencedirect.com](https://www.sciencedirect.com/science/article/abs/pii/0749597885900202?utm_source=openai)). Für Führungskräfte ist es hilfreich, diese Dynamik zu verstehen, um Mandat und Verantwortung zu schärfen.",
+      "mustInclude": [
+        "Definition von Rollenambiguität",
+        "Auswirkungen auf Verhalten und Wohlbefinden",
+        "Hinweise zur Rollenklärung"
+      ],
+      "avoid": [
+        "Unternehmensberatungssprache",
+        "Versprechen von schnellen Lösungen"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "A meta‑analysis and conceptual critique of research on role ambiguity and role conflict in work settings",
+          "year": 1985,
+          "doi": "10.1016/0749-5978(85)90020-2",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/0749597885900202",
+          "sourceType": "journal",
+          "note": "Meta‑Analyse zu Rollenambiguität und Rollenkonflikt als wissenschaftliche Basis"
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrungsmandat",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "Mittlere Führungskräfte in der digitalen Transformation: Rolle und Verhalten",
+      "cluster": "Führung in Transformation",
+      "intent": "Leserinnen und Leser interessieren sich für die spezifische Rolle von Middle Managern in digitalen Veränderungsprozessen",
+      "primaryKeyword": "mittlere Führung digitale Transformation",
+      "format": "Reflexionsartikel",
+      "riskLevel": "medium",
+      "priority": 2,
+      "mandateQuestion": "Wie können Sie als mittlere Führungskraft Ihr Mandat in digitalen Veränderungsprozessen aktiv gestalten?",
+      "briefing": "Aktuelle Studien zeigen, dass mittlere Führungskräfte nicht nur umsetzen, sondern digitale Strategien mitformen – etwa durch „broadening“, „scaling“ oder „narrowing“ von Initiativen ([sciencedirect.com](https://www.sciencedirect.com/science/article/pii/S0963868726000193?utm_source=openai)). Zudem betonen qualitative Untersuchungen die emotionale Belastung und die Notwendigkeit von Rollenklarheit ([journalfwdmj.com](https://www.journalfwdmj.com/index.php/fwdmj/article/view/7?utm_source=openai)).",
+      "mustInclude": [
+        "Strategische Einflusswege",
+        "Emotionale und kognitive Herausforderungen",
+        "Handlungsmöglichkeiten zur Mandatsschärfung"
+      ],
+      "avoid": [
+        "Technologie‑Jargon",
+        "Vage Versprechen"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Strategizing beyond the boardroom: how middle managers shape digital strategy",
+          "year": 2026,
+          "doi": "10.1016/j.jsis.2026.101972",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0963868726000193",
+          "sourceType": "journal",
+          "note": "Zeigt, wie mittlere Führungskräfte digitale Strategien aktiv beeinflussen"
+        },
+        {
+          "title": "Examining the Role of Middle Managers in Digital Transformation Processes",
+          "year": 2024,
+          "doi": null,
+          "url": "https://www.journalfwdmj.com/index.php/fwdmj/article/view/7",
+          "sourceType": "journal",
+          "note": "Qualitative Studie zu Rolle, Herausforderungen und Emotionen mittlerer Führungskräfte"
+        }
+      ],
+      "internalLinks": [
+        "/themen#fuehrung-in-transformation",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "Laterale Führung: Einfluss ohne formale Autorität",
+      "cluster": "Laterale Führung",
+      "intent": "Leserinnen und Leser suchen wissenschaftliche Grundlagen für Führung ohne formale Macht",
+      "primaryKeyword": "laterale Führung ohne Autorität",
+      "format": "Reflexionsraster",
+      "riskLevel": "low",
+      "priority": 3,
+      "mandateQuestion": "Wie können Sie Einfluss nehmen, wenn Ihnen keine formale Autorität zusteht?",
+      "briefing": "Informelle oder geteilte Führung basiert auf Einfluss, Expertise und relationaler Legitimation – nicht auf formaler Macht ([repository.upenn.edu](https://repository.upenn.edu/bitstreams/b93e9fe3-790a-4506-817b-d90a993bc5ae/download?utm_source=openai)). Institutionelle Empowerment‑Mechanismen können diese Form der Führung unterstützen ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC10154746/?utm_source=openai)).",
+      "mustInclude": [
+        "Merkmale informeller Führung",
+        "Institutionelle Rahmenbedingungen",
+        "Reflexionsfragen zur eigenen Situation"
+      ],
+      "avoid": [
+        "Populäre Management‑Phrasen",
+        "Unbelegte Erfolgsgeschichten"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "WHAT MAKES INFORMAL LEADERS TICK?",
+          "year": null,
+          "doi": null,
+          "url": "https://repository.upenn.edu/bitstreams/b93e9fe3-790a-4506-817b-d90a993bc5ae/download",
+          "sourceType": "other",
+          "note": "Definition und Charakteristika informeller Führung"
+        },
+        {
+          "title": "Informal Leadership : An Integrative View and Future Research",
+          "year": null,
+          "doi": null,
+          "url": "https://osuva.uwasa.fi/server/api/core/bitstreams/fe3b169c-d4c5-47b8-bf86-aa79760bfa8b/content",
+          "sourceType": "other",
+          "note": "Integrative Perspektive auf informelle Führung"
+        },
+        {
+          "title": "To share or not to share: How perceived institutional empowerment shapes employee perceived shared leadership",
+          "year": null,
+          "doi": null,
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10154746/",
+          "sourceType": "journal",
+          "note": "Institutionelle Empowerment‑Mechanismen fördern Shared Leadership"
+        }
+      ],
+      "internalLinks": [
+        "/themen#laterale-fuehrung",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "Stakeholder‑Führung durch Sensemaking in unsicheren Situationen",
+      "cluster": "Stakeholder und Wirkung",
+      "intent": "Leserinnen und Leser suchen wissenschaftliche Konzepte zur Führung von Stakeholdern in unsicheren Kontexten",
+      "primaryKeyword": "Stakeholder Sensemaking Führung",
+      "format": "Essay",
+      "riskLevel": "medium",
+      "priority": 4,
+      "mandateQuestion": "Wie können Sie Stakeholder in unsicheren Situationen durch gezieltes Sensemaking führen?",
+      "briefing": "Sensemaking ist ein etabliertes Konzept zur Bewältigung von Unsicherheit in Organisationen ([en.wikipedia.org](https://en.wikipedia.org/wiki/Sensemaking?utm_source=openai)). Führungskräfte können durch strukturierte Deutung und Kommunikation Orientierung geben.",
+      "mustInclude": [
+        "Grundlagen des Sensemaking",
+        "Bezug zu Stakeholder‑Führung",
+        "Anwendungshinweise"
+      ],
+      "avoid": [
+        "Vage Metaphern",
+        "Übertriebene Komplexität"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Sensemaking",
+          "year": null,
+          "doi": null,
+          "url": "https://en.wikipedia.org/wiki/Sensemaking",
+          "sourceType": "other",
+          "note": "Grundlagen des Sensemaking‑Konzepts"
+        },
+        {
+          "title": "Karl E. Weick",
+          "year": null,
+          "doi": null,
+          "url": "https://en.wikipedia.org/wiki/Karl_E._Weick",
+          "sourceType": "other",
+          "note": "Bezug zu Unsicherheit und Organisationsforschung"
+        }
+      ],
+      "internalLinks": [
+        "/themen#stakeholder-und-wirkung",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "KI‑Integration und Führungsrolle: Verantwortung und Mandat im Algorithmuszeitalter",
+      "cluster": "KI und Führung",
+      "intent": "Leserinnen und Leser suchen wissenschaftliche Perspektiven zur Rolle von Führung im Kontext von KI‑Integration",
+      "primaryKeyword": "KI Führung Verantwortung",
+      "format": "Evidenznotiz",
+      "riskLevel": "high",
+      "priority": 5,
+      "mandateQuestion": "Wie verändert KI Ihre Führungsrolle, insbesondere in Bezug auf Verantwortung und Entscheidungsmandat?",
+      "briefing": "Systematische Reviews zeigen, dass KI die Verteilung von Verantwortung und Autorität verändert und neue Governance‑Herausforderungen schafft ([doi.org](https://doi.org/10.3390/su18084085?utm_source=openai)). Führungskräfte müssen Mandat und Verantwortung im Zusammenspiel mit algorithmischen Systemen neu denken.",
+      "mustInclude": [
+        "Verantwortungsdiffusion durch KI",
+        "Governance‑Aspekte",
+        "Reflexionsimpulse"
+      ],
+      "avoid": [
+        "Technik‑Hype",
+        "Unbelegte Versprechen"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Artificial Intelligence and Leadership in Organizations: A PRISMA Systematic Review of Challenges, Risks, and Governance Dynamics",
+          "year": 2026,
+          "doi": "10.3390/su18084085",
+          "url": "https://doi.org/10.3390/su18084085",
+          "sourceType": "journal",
+          "note": "Systematischer Review zu KI‑Führung, Verantwortung und Governance"
+        },
+        {
+          "title": "AI‑Driven Leadership: Decision‑Making, Competencies, and Ethical Challenges—A Systematic Review",
+          "year": 2026,
+          "doi": null,
+          "url": "https://www.mdpi.com/2076-3387/16/4/173",
+          "sourceType": "journal",
+          "note": "Integrative Perspektive auf KI‑gestützte Führung und ethische Herausforderungen"
+        }
+      ],
+      "internalLinks": [
+        "/themen#ki-und-fuehrung",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    },
+    {
+      "title": "Generative KI als kognitives Sparring für Führungsentscheidungen",
+      "cluster": "KI und Führung",
+      "intent": "Leserinnen und Leser interessieren sich für die Rolle generativer KI als Unterstützung bei Entscheidungsambiguität",
+      "primaryKeyword": "generative KI Führung Entscheidungshilfe",
+      "format": "Reflexionsartikel",
+      "riskLevel": "medium",
+      "priority": 6,
+      "mandateQuestion": "Wie können Sie generative KI als kognitives Sparring nutzen, ohne Ihre Führungsverantwortung zu delegieren?",
+      "briefing": "Aktuelle Forschung zeigt, dass generative KI Ambiguität erkennen und Entscheidungsqualität verbessern kann – aber auch sycophantisches Verhalten zeigt, das menschliche Führung reflektieren muss ([arxiv.org](https://arxiv.org/abs/2603.03970?utm_source=openai)).",
+      "mustInclude": [
+        "Ambiguitätserkennung durch KI",
+        "Risiken sycophantischen Verhaltens",
+        "Reflexionsfragen zur Nutzung"
+      ],
+      "avoid": [
+        "Verklärung der KI‑Fähigkeiten",
+        "Verantwortungsverschiebung"
+      ],
+      "sourcePolicy": "approved-external",
+      "evidenceBasis": [
+        {
+          "title": "Generative AI in Managerial Decision‑Making: Redefining Boundaries through Ambiguity Resolution and Sycophancy Analysis",
+          "year": 2026,
+          "doi": null,
+          "url": "https://arxiv.org/abs/2603.03970",
+          "sourceType": "other",
+          "note": "Experimentelle Studie zu generativer KI als Unterstützung bei Entscheidungsambiguität"
+        }
+      ],
+      "internalLinks": [
+        "/themen#ki-und-fuehrung",
+        "https://www.mandat-wirkung.de/"
+      ],
+      "status": "web_research_idea"
+    }
+  ]
 }

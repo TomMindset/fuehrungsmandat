@@ -1,0 +1,211 @@
+{
+  "id": "resp_0bb490c635bb33da006a706c723e3c819ab2bf2ae63c2494ab",
+  "object": "response",
+  "created_at": 1785752690,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785752707,
+  "error": null,
+  "frequency_penalty": 0,
+  "incomplete_details": null,
+  "instructions": "Sie sind der ergänzende Web-Recherche-Agent für Fuehrungsmandat.de.\n\nNutzen Sie Websuche nur als Recherchehilfe. Ziel ist nicht Aktualität um jeden Preis, sondern wissenschaftlich anschlussfähige Themen.\n\nRolle:\n- Ergänzen Sie die OpenAlex-Recherche durch Webfunde, wissenschaftliche Publikationsseiten, Hochschulquellen, Verlagsseiten, DOI-Seiten, Fachjournale und seriöse Reports.\n- Entwickeln Sie Themenvorschläge für Fuehrungsmandat.de.\n- Fuehrungsmandat.de behandelt Rolle, Mandat, Verantwortung, Wirkung, laterale Führung, Stakeholder und Transformation.\n- Mandat & Wirkung bleibt das vertrauliche Coaching-Angebot.\n\nQuellenpriorität:\n1. Peer-reviewed Artikel, DOI-Seiten, Journals, Hochschulen, Forschungsinstitutionen.\n2. Systematic Reviews, Literaturreviews, wissenschaftliche Buchkapitel.\n3. Seriöse Reports nur als Kontext, nicht als Evidenzkern.\n4. Keine Foren, keine anonymen Blogposts, keine werblichen Beratungsseiten als Evidenzbasis.\n\nArbeitsweise:\n- Keine Studien, Autoren, DOIs oder Zahlen erfinden.\n- Quellen immer mit URL ausweisen.\n- Bei unklarer Quelle vorsichtig formulieren.\n- Forschungshinweis und redaktionelle Deutung trennen.\n- Keine Unternehmensberatungssprache.\n\nAusgabeformat:\n- Ausschließlich valides JSON.\n- Kein Markdown.\n- Kein erklärender Vorspann.\n",
+  "max_output_tokens": 7000,
+  "max_tool_calls": null,
+  "model": "gpt-4.1-2025-04-14",
+  "moderation": null,
+  "output": [
+    {
+      "id": "ws_0bb490c635bb33da006a706c729d8c819a9377bb9f17bf6a51",
+      "type": "web_search_call",
+      "status": "completed",
+      "action": {
+        "type": "search",
+        "queries": [
+          "Recherchieren Sie im Web nach wissenschaftlich anschlussf\\u00e4higen Themen f\\u00fcr Fuehrungsmandat.de.\\n\\nKontext und Stilregeln:\\n# Content-Regeln f\\u00fcr Fuehrungsmandat.de\\n\\n## Rolle\\n\\nFuehrungsmandat.de ist eine pers\\u00f6nliche Fachpublikation von Thomas Hoffmann. Mandat & Wirkung ist das vertrauliche Coaching-Angebot f\\u00fcr konkrete F\\u00fchrungsfragen.\\n\\n## Sprache\\n\\n- Deutsch.\\n- Sie-Ansprache nur, wenn Leserinnen und Leser direkt adressiert werden.\\n- Ruhig, pr\\u00e4zise, vertraulich, erwachsen, businessnah.\\n- Coachingnah, aber nicht therapeutisch.\\n- Fachlich klar, aber nicht akademisiert.\\n\\n## Nicht verwenden\\n\\n- Potenzial entfalten\\n- Herzensweg\\n- Purpose Journey\\n- Transformation leben\\n- neue Horizonte entdecken\\n- ganzheitliche Begleitung\\n- Mindset-Reise\\n- innere Reise\\n- Jetzt durchstarten\\n- Kostenloses Erstgespr\\u00e4ch sichern\\n\\n## Inhaltliche Grenzen\\n\\n- Keine Unternehmensberatung versprechen.\\n- Keine KI-Strategie, Data Governance oder Transformationsroadmap anbieten.\\n- Keine erfundenen Kundensituationen, Testimonials oder biografischen Details.\\n- Keine aktuellen oder fr\\u00fcheren Arbeitgeber nennen.\\n- Keine rechtlichen Angaben erg\\u00e4nzen, die nicht geliefert wurden.\\n\\n## Bevorzugte Begriffe\\n\\n- Rolle kl\\u00e4ren\\n- Mandat sch\\u00e4rfen\\n- Wirkung st\\u00e4rken\\n- Verantwortung sortieren\\n- souver\\u00e4ner entscheiden\\n- Stakeholder f\\u00fchren\\n- laterale F\\u00fchrung\\n- Kommunikation vorbereiten\\n- vertrauliches Sparring\\n- F\\u00fchrungsfrage\\n- Ver\\u00e4nderungsmandat\\n\\n## Artikelstandard\\n\\nJeder Beitrag braucht:\\n\\n- genau eine H1\\n- eindeutigen Title\\n- Meta Description\\n- sprechende URL\\n- Cluster\\n- Ver\\u00f6ffentlichungsdatum\\n- mindestens einen internen Link\\n- keine unbelegten Studien- oder Rechtsbehauptungen\\n- klaren Nutzwert f\\u00fcr eine reale F\\u00fchrungsfrage\\n\\n## CTA\\n\\nStandardformulierung:\\n\\nWenn aus dieser Frage eine konkrete F\\u00fchrungs- oder Ver\\u00e4nderungssituation wird, bietet Mandat & Wirkung einen vertraulichen Coaching-Rahmen.\\n\\n\\nSuchauftr\\u00e4ge:\\nSuchauftrag 1: recent scientific literature leadership role ambiguity responsibility authority management\\nCluster: F\\u00fchrungsmandat\\nRedaktionelle Intention: wissenschaftliche Themen zu unklarem Mandat und Rollenambiguit\\u00e4t finden\\n\\nSuchauftrag 2: scientific papers middle managers digital transformation leadership role conflict\\nCluster: F\\u00fchrung in Transformation\\nRedaktionelle Intention: wissenschaftliche Themen zu F\\u00fchrung in Ver\\u00e4nderung finden\\n\\nSuchauftrag 3: scientific literature informal leadership shared leadership leading without authority stakeholder influence\\nCluster: Laterale F\\u00fchrung\\nRedaktionelle Intention: wissenschaftliche Themen zu Einfluss ohne formale Macht finden\\n\\nSuchauftrag 4: scientific literature stakeholder management leadership sensemaking uncertainty organization\\nCluster: Stakeholder und Wirkung\\nRedaktionelle Intention: wissenschaftliche Themen zu Stakeholder-F\\u00fchrung und Sensemaking finden\\n\\nSuchauftrag 5: scientific literature artificial intelligence leadership role ambiguity digital transformation management\\nCluster: KI und F\\u00fchrung\\nRedaktionelle Intention: wissenschaftliche Themen zu KI, Digitalisierung und F\\u00fchrungsrolle finden\\n\\nGew\\u00fcnschtes JSON-Schema:\\n{\\n  \\\"generatedAt\\\": \\\"2026-08-03T10:24:50.039Z\\\",\\n  \\\"status\\\": \\\"web_research_draft\\\",\\n  \\\"method\\\": \\\"OpenAI web_search mit wissenschaftlichem Fokus\\\",\\n  \\\"ideas\\\": [\\n    {\\n      \\\"title\\\": \\\"deutscher Arbeitstitel\\\",\\n      \\\"cluster\\\": \\\"F\\u00fchrungsmandat | Rollenkl\\u00e4rung | Laterale F\\u00fchrung | F\\u00fchrung in Transformation | Stakeholder und Wirkung | KI und F\\u00fchrung\\\",\\n      \\\"intent\\\": \\\"konkrete Such- oder Leserintention\\\",\\n      \\\"primaryKeyword\\\": \\\"deutsches SEO-Keyword\\\",\\n      \\\"format\\\": \\\"Evidenznotiz | Reflexionsartikel | Essay | Reflexionsraster\\\",\\n      \\\"riskLevel\\\": \\\"low | medium | high\\\",\\n      \\\"priority\\\": 1,\\n      \\\"mandateQuestion\\\": \\\"pr\\u00e4zise F\\u00fchrungsfrage\\\",\\n      \\\"briefing\\\": \\\"vorsichtige redaktionelle Leitthese mit Forschungsn\\u00e4he\\\",\\n      \\\"mustInclude\\\": [\\\"Punkt, der vorkommen sollte\\\"],\\n      \\\"avoid\\\": [\\\"Aussage oder Richtung, die vermieden werden sollte\\\"],\\n      \\\"sourcePolicy\\\": \\\"approved-external\\\",\\n      \\\"evidenceBasis\\\": [\\n        {\\n          \\\"title\\\": \\\"Titel der Quelle\\\",\\n          \\\"year\\\": 2024,\\n          \\\"doi\\\": \\\"DOI oder null\\\",\\n          \\\"url\\\": \\\"URL\\\",\\n          \\\"sourceType\\\": \\\"journal | university | publisher | report | other\\\",\\n          \\\"note\\\": \\\"Warum diese Quelle relevant ist\\\"\\n        }\\n      ],\\n      \\\"internalLinks\\\": [\\\"/themen#fuehrungsmandat\\\", \\\"https://www.mandat-wirkung.de/\\\"],\\n      \\\"status\\\": \\\"web_research_idea\\\"\\n    }\\n  ]\\n}\\n\\nVorgaben:\\n- Erstellen Sie 6 bis 10 Themenvorschl\\u00e4ge.\\n- Jeder Vorschlag muss mindestens eine konkret gefundene URL enthalten.\\n- Bevorzugen Sie wissenschaftliche Quellen gegen\\u00fcber Beratungsmaterial.\\n- Deutsche Titel, Keywords und F\\u00fchrungsfragen.\\n- Keine Artikel schreiben, nur Themenvorschl\\u00e4ge.\\n- Keine Evidenz st\\u00e4rker darstellen, als die Quelle tr\\u00e4gt.\\n"
+        ],
+        "query": "Recherchieren Sie im Web nach wissenschaftlich anschlussf\\u00e4higen Themen f\\u00fcr Fuehrungsmandat.de.\\n\\nKontext und Stilregeln:\\n# Content-Regeln f\\u00fcr Fuehrungsmandat.de\\n\\n## Rolle\\n\\nFuehrungsmandat.de ist eine pers\\u00f6nliche Fachpublikation von Thomas Hoffmann. Mandat & Wirkung ist das vertrauliche Coaching-Angebot f\\u00fcr konkrete F\\u00fchrungsfragen.\\n\\n## Sprache\\n\\n- Deutsch.\\n- Sie-Ansprache nur, wenn Leserinnen und Leser direkt adressiert werden.\\n- Ruhig, pr\\u00e4zise, vertraulich, erwachsen, businessnah.\\n- Coachingnah, aber nicht therapeutisch.\\n- Fachlich klar, aber nicht akademisiert.\\n\\n## Nicht verwenden\\n\\n- Potenzial entfalten\\n- Herzensweg\\n- Purpose Journey\\n- Transformation leben\\n- neue Horizonte entdecken\\n- ganzheitliche Begleitung\\n- Mindset-Reise\\n- innere Reise\\n- Jetzt durchstarten\\n- Kostenloses Erstgespr\\u00e4ch sichern\\n\\n## Inhaltliche Grenzen\\n\\n- Keine Unternehmensberatung versprechen.\\n- Keine KI-Strategie, Data Governance oder Transformationsroadmap anbieten.\\n- Keine erfundenen Kundensituationen, Testimonials oder biografischen Details.\\n- Keine aktuellen oder fr\\u00fcheren Arbeitgeber nennen.\\n- Keine rechtlichen Angaben erg\\u00e4nzen, die nicht geliefert wurden.\\n\\n## Bevorzugte Begriffe\\n\\n- Rolle kl\\u00e4ren\\n- Mandat sch\\u00e4rfen\\n- Wirkung st\\u00e4rken\\n- Verantwortung sortieren\\n- souver\\u00e4ner entscheiden\\n- Stakeholder f\\u00fchren\\n- laterale F\\u00fchrung\\n- Kommunikation vorbereiten\\n- vertrauliches Sparring\\n- F\\u00fchrungsfrage\\n- Ver\\u00e4nderungsmandat\\n\\n## Artikelstandard\\n\\nJeder Beitrag braucht:\\n\\n- genau eine H1\\n- eindeutigen Title\\n- Meta Description\\n- sprechende URL\\n- Cluster\\n- Ver\\u00f6ffentlichungsdatum\\n- mindestens einen internen Link\\n- keine unbelegten Studien- oder Rechtsbehauptungen\\n- klaren Nutzwert f\\u00fcr eine reale F\\u00fchrungsfrage\\n\\n## CTA\\n\\nStandardformulierung:\\n\\nWenn aus dieser Frage eine konkrete F\\u00fchrungs- oder Ver\\u00e4nderungssituation wird, bietet Mandat & Wirkung einen vertraulichen Coaching-Rahmen.\\n\\n\\nSuchauftr\\u00e4ge:\\nSuchauftrag 1: recent scientific literature leadership role ambiguity responsibility authority management\\nCluster: F\\u00fchrungsmandat\\nRedaktionelle Intention: wissenschaftliche Themen zu unklarem Mandat und Rollenambiguit\\u00e4t finden\\n\\nSuchauftrag 2: scientific papers middle managers digital transformation leadership role conflict\\nCluster: F\\u00fchrung in Transformation\\nRedaktionelle Intention: wissenschaftliche Themen zu F\\u00fchrung in Ver\\u00e4nderung finden\\n\\nSuchauftrag 3: scientific literature informal leadership shared leadership leading without authority stakeholder influence\\nCluster: Laterale F\\u00fchrung\\nRedaktionelle Intention: wissenschaftliche Themen zu Einfluss ohne formale Macht finden\\n\\nSuchauftrag 4: scientific literature stakeholder management leadership sensemaking uncertainty organization\\nCluster: Stakeholder und Wirkung\\nRedaktionelle Intention: wissenschaftliche Themen zu Stakeholder-F\\u00fchrung und Sensemaking finden\\n\\nSuchauftrag 5: scientific literature artificial intelligence leadership role ambiguity digital transformation management\\nCluster: KI und F\\u00fchrung\\nRedaktionelle Intention: wissenschaftliche Themen zu KI, Digitalisierung und F\\u00fchrungsrolle finden\\n\\nGew\\u00fcnschtes JSON-Schema:\\n{\\n  \\\"generatedAt\\\": \\\"2026-08-03T10:24:50.039Z\\\",\\n  \\\"status\\\": \\\"web_research_draft\\\",\\n  \\\"method\\\": \\\"OpenAI web_search mit wissenschaftlichem Fokus\\\",\\n  \\\"ideas\\\": [\\n    {\\n      \\\"title\\\": \\\"deutscher Arbeitstitel\\\",\\n      \\\"cluster\\\": \\\"F\\u00fchrungsmandat | Rollenkl\\u00e4rung | Laterale F\\u00fchrung | F\\u00fchrung in Transformation | Stakeholder und Wirkung | KI und F\\u00fchrung\\\",\\n      \\\"intent\\\": \\\"konkrete Such- oder Leserintention\\\",\\n      \\\"primaryKeyword\\\": \\\"deutsches SEO-Keyword\\\",\\n      \\\"format\\\": \\\"Evidenznotiz | Reflexionsartikel | Essay | Reflexionsraster\\\",\\n      \\\"riskLevel\\\": \\\"low | medium | high\\\",\\n      \\\"priority\\\": 1,\\n      \\\"mandateQuestion\\\": \\\"pr\\u00e4zise F\\u00fchrungsfrage\\\",\\n      \\\"briefing\\\": \\\"vorsichtige redaktionelle Leitthese mit Forschungsn\\u00e4he\\\",\\n      \\\"mustInclude\\\": [\\\"Punkt, der vorkommen sollte\\\"],\\n      \\\"avoid\\\": [\\\"Aussage oder Richtung, die vermieden werden sollte\\\"],\\n      \\\"sourcePolicy\\\": \\\"approved-external\\\",\\n      \\\"evidenceBasis\\\": [\\n        {\\n          \\\"title\\\": \\\"Titel der Quelle\\\",\\n          \\\"year\\\": 2024,\\n          \\\"doi\\\": \\\"DOI oder null\\\",\\n          \\\"url\\\": \\\"URL\\\",\\n          \\\"sourceType\\\": \\\"journal | university | publisher | report | other\\\",\\n          \\\"note\\\": \\\"Warum diese Quelle relevant ist\\\"\\n        }\\n      ],\\n      \\\"internalLinks\\\": [\\\"/themen#fuehrungsmandat\\\", \\\"https://www.mandat-wirkung.de/\\\"],\\n      \\\"status\\\": \\\"web_research_idea\\\"\\n    }\\n  ]\\n}\\n\\nVorgaben:\\n- Erstellen Sie 6 bis 10 Themenvorschl\\u00e4ge.\\n- Jeder Vorschlag muss mindestens eine konkret gefundene URL enthalten.\\n- Bevorzugen Sie wissenschaftliche Quellen gegen\\u00fcber Beratungsmaterial.\\n- Deutsche Titel, Keywords und F\\u00fchrungsfragen.\\n- Keine Artikel schreiben, nur Themenvorschl\\u00e4ge.\\n- Keine Evidenz st\\u00e4rker darstellen, als die Quelle tr\\u00e4gt.\\n",
+        "sources": [
+          {
+            "type": "url",
+            "url": "https://www.sciencedirect.com/science/article/abs/pii/0749597885900202?utm_source=openai"
+          },
+          {
+            "type": "url",
+            "url": "https://www.sciencedirect.com/science/article/pii/S0963868726000193?utm_source=openai"
+          },
+          {
+            "type": "url",
+            "url": "https://www.journalfwdmj.com/index.php/fwdmj/article/view/7?utm_source=openai"
+          },
+          {
+            "type": "url",
+            "url": "https://repository.upenn.edu/bitstreams/b93e9fe3-790a-4506-817b-d90a993bc5ae/download?utm_source=openai"
+          },
+          {
+            "type": "url",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10154746/?utm_source=openai"
+          },
+          {
+            "type": "url",
+            "url": "https://en.wikipedia.org/wiki/Sensemaking?utm_source=openai"
+          },
+          {
+            "type": "url",
+            "url": "https://doi.org/10.3390/su18084085?utm_source=openai"
+          },
+          {
+            "type": "url",
+            "url": "https://arxiv.org/abs/2603.03970?utm_source=openai"
+          }
+        ]
+      }
+    },
+    {
+      "id": "msg_0bb490c635bb33da006a706c74aa34819ab00e1f1540203b8c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [
+            {
+              "type": "url_citation",
+              "end_index": 984,
+              "start_index": 873,
+              "title": "A meta-analysis and conceptual critique of research on role ambiguity and role conflict in work settings - ScienceDirect",
+              "url": "https://www.sciencedirect.com/science/article/abs/pii/0749597885900202?utm_source=openai"
+            },
+            {
+              "type": "url_citation",
+              "end_index": 2852,
+              "start_index": 2744,
+              "title": "Strategizing beyond the boardroom: how middle managers shape digital strategy - ScienceDirect",
+              "url": "https://www.sciencedirect.com/science/article/pii/S0963868726000193?utm_source=openai"
+            },
+            {
+              "type": "url_citation",
+              "end_index": 3060,
+              "start_index": 2961,
+              "title": "Examining the Role of Middle Managers in Digital Transformation Processes | Future of Work and Digital Management Journal",
+              "url": "https://www.journalfwdmj.com/index.php/fwdmj/article/view/7?utm_source=openai"
+            },
+            {
+              "type": "url_citation",
+              "end_index": 5012,
+              "start_index": 4883,
+              "title": "WHAT MAKES INFORMAL LEADERS TICK?",
+              "url": "https://repository.upenn.edu/bitstreams/b93e9fe3-790a-4506-817b-d90a993bc5ae/download?utm_source=openai"
+            },
+            {
+              "type": "url_citation",
+              "end_index": 5191,
+              "start_index": 5097,
+              "title": "To share or not to share: How perceived institutional empowerment shapes employee perceived shared leadership - PMC",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10154746/?utm_source=openai"
+            },
+            {
+              "type": "url_citation",
+              "end_index": 7410,
+              "start_index": 7329,
+              "title": "Sensemaking",
+              "url": "https://en.wikipedia.org/wiki/Sensemaking?utm_source=openai"
+            },
+            {
+              "type": "url_citation",
+              "end_index": 9167,
+              "start_index": 9102,
+              "title": "Artificial Intelligence and Leadership in Organizations: A PRISMA Systematic Review of Challenges, Risks, and Governance Dynamics",
+              "url": "https://doi.org/10.3390/su18084085?utm_source=openai"
+            },
+            {
+              "type": "url_citation",
+              "end_index": 11261,
+              "start_index": 11196,
+              "title": "Generative AI in Managerial Decision-Making: Redefining Boundaries through Ambiguity Resolution and Sycophancy Analysis",
+              "url": "https://arxiv.org/abs/2603.03970?utm_source=openai"
+            }
+          ],
+          "logprobs": [],
+          "text": "{\n  \"generatedAt\": \"2026-08-03T10:24:50.039Z\",\n  \"status\": \"web_research_draft\",\n  \"method\": \"OpenAI web_search mit wissenschaftlichem Fokus\",\n  \"ideas\": [\n    {\n      \"title\": \"Rollenambiguität und Verantwortung in Führungsmandaten klären\",\n      \"cluster\": \"Führungsmandat\",\n      \"intent\": \"Leserinnen und Leser suchen wissenschaftliche Erkenntnisse zur Unklarheit von Führungsrollen und Verantwortungsbereichen\",\n      \"primaryKeyword\": \"Rollenambiguität Führung\",\n      \"format\": \"Evidenznotiz\",\n      \"riskLevel\": \"low\",\n      \"priority\": 1,\n      \"mandateQuestion\": \"Wie können Sie Unsicherheit über Ihre Führungsrolle und Verantwortungsgrenzen erkennen und klären?\",\n      \"briefing\": \"Rollenambiguität ist ein gut erforschtes Phänomen. Meta-Analysen zeigen, dass unklare Erwartungen und Konflikte zwischen Rollen zu Stress und ineffektivem Verhalten führen können ([sciencedirect.com](https://www.sciencedirect.com/science/article/abs/pii/0749597885900202?utm_source=openai)). Für Führungskräfte ist es hilfreich, diese Dynamik zu verstehen, um Mandat und Verantwortung zu schärfen.\",\n      \"mustInclude\": [\"Definition von Rollenambiguität\", \"Auswirkungen auf Verhalten und Wohlbefinden\", \"Hinweise zur Rollenklärung\"],\n      \"avoid\": [\"Unternehmensberatungssprache\", \"Versprechen von schnellen Lösungen\"],\n      \"sourcePolicy\": \"approved-external\",\n      \"evidenceBasis\": [\n        {\n          \"title\": \"A meta‑analysis and conceptual critique of research on role ambiguity and role conflict in work settings\",\n          \"year\": 1985,\n          \"doi\": \"10.1016/0749-5978(85)90020-2\",\n          \"url\": \"https://www.sciencedirect.com/science/article/abs/pii/0749597885900202\",\n          \"sourceType\": \"journal\",\n          \"note\": \"Meta‑Analyse zu Rollenambiguität und Rollenkonflikt als wissenschaftliche Basis\"\n        }\n      ],\n      \"internalLinks\": [\"/themen#fuehrungsmandat\", \"https://www.mandat-wirkung.de/\"],\n      \"status\": \"web_research_idea\"\n    },\n    {\n      \"title\": \"Mittlere Führungskräfte in der digitalen Transformation: Rolle und Verhalten\",\n      \"cluster\": \"Führung in Transformation\",\n      \"intent\": \"Leserinnen und Leser interessieren sich für die spezifische Rolle von Middle Managern in digitalen Veränderungsprozessen\",\n      \"primaryKeyword\": \"mittlere Führung digitale Transformation\",\n      \"format\": \"Reflexionsartikel\",\n      \"riskLevel\": \"medium\",\n      \"priority\": 2,\n      \"mandateQuestion\": \"Wie können Sie als mittlere Führungskraft Ihr Mandat in digitalen Veränderungsprozessen aktiv gestalten?\",\n      \"briefing\": \"Aktuelle Studien zeigen, dass mittlere Führungskräfte nicht nur umsetzen, sondern digitale Strategien mitformen – etwa durch „broadening“, „scaling“ oder „narrowing“ von Initiativen ([sciencedirect.com](https://www.sciencedirect.com/science/article/pii/S0963868726000193?utm_source=openai)). Zudem betonen qualitative Untersuchungen die emotionale Belastung und die Notwendigkeit von Rollenklarheit ([journalfwdmj.com](https://www.journalfwdmj.com/index.php/fwdmj/article/view/7?utm_source=openai)).\",\n      \"mustInclude\": [\"Strategische Einflusswege\", \"Emotionale und kognitive Herausforderungen\", \"Handlungsmöglichkeiten zur Mandatsschärfung\"],\n      \"avoid\": [\"Technologie‑Jargon\", \"Vage Versprechen\"],\n      \"sourcePolicy\": \"approved-external\",\n      \"evidenceBasis\": [\n        {\n          \"title\": \"Strategizing beyond the boardroom: how middle managers shape digital strategy\",\n          \"year\": 2026,\n          \"doi\": \"10.1016/j.jsis.2026.101972\",\n          \"url\": \"https://www.sciencedirect.com/science/article/pii/S0963868726000193\",\n          \"sourceType\": \"journal\",\n          \"note\": \"Zeigt, wie mittlere Führungskräfte digitale Strategien aktiv beeinflussen\"\n        },\n        {\n          \"title\": \"Examining the Role of Middle Managers in Digital Transformation Processes\",\n          \"year\": 2024,\n          \"doi\": null,\n          \"url\": \"https://www.journalfwdmj.com/index.php/fwdmj/article/view/7\",\n          \"sourceType\": \"journal\",\n          \"note\": \"Qualitative Studie zu Rolle, Herausforderungen und Emotionen mittlerer Führungskräfte\"\n        }\n      ],\n      \"internalLinks\": [\"/themen#fuehrung-in-transformation\", \"https://www.mandat-wirkung.de/\"],\n      \"status\": \"web_research_idea\"\n    },\n    {\n      \"title\": \"Laterale Führung: Einfluss ohne formale Autorität\",\n      \"cluster\": \"Laterale Führung\",\n      \"intent\": \"Leserinnen und Leser suchen wissenschaftliche Grundlagen für Führung ohne formale Macht\",\n      \"primaryKeyword\": \"laterale Führung ohne Autorität\",\n      \"format\": \"Reflexionsraster\",\n      \"riskLevel\": \"low\",\n      \"priority\": 3,\n      \"mandateQuestion\": \"Wie können Sie Einfluss nehmen, wenn Ihnen keine formale Autorität zusteht?\",\n      \"briefing\": \"Informelle oder geteilte Führung basiert auf Einfluss, Expertise und relationaler Legitimation – nicht auf formaler Macht ([repository.upenn.edu](https://repository.upenn.edu/bitstreams/b93e9fe3-790a-4506-817b-d90a993bc5ae/download?utm_source=openai)). Institutionelle Empowerment‑Mechanismen können diese Form der Führung unterstützen ([pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC10154746/?utm_source=openai)).\",\n      \"mustInclude\": [\"Merkmale informeller Führung\", \"Institutionelle Rahmenbedingungen\", \"Reflexionsfragen zur eigenen Situation\"],\n      \"avoid\": [\"Populäre Management‑Phrasen\", \"Unbelegte Erfolgsgeschichten\"],\n      \"sourcePolicy\": \"approved-external\",\n      \"evidenceBasis\": [\n        {\n          \"title\": \"WHAT MAKES INFORMAL LEADERS TICK?\",\n          \"year\": null,\n          \"doi\": null,\n          \"url\": \"https://repository.upenn.edu/bitstreams/b93e9fe3-790a-4506-817b-d90a993bc5ae/download\",\n          \"sourceType\": \"other\",\n          \"note\": \"Definition und Charakteristika informeller Führung\"\n        },\n        {\n          \"title\": \"Informal Leadership : An Integrative View and Future Research\",\n          \"year\": null,\n          \"doi\": null,\n          \"url\": \"https://osuva.uwasa.fi/server/api/core/bitstreams/fe3b169c-d4c5-47b8-bf86-aa79760bfa8b/content\",\n          \"sourceType\": \"other\",\n          \"note\": \"Integrative Perspektive auf informelle Führung\"\n        },\n        {\n          \"title\": \"To share or not to share: How perceived institutional empowerment shapes employee perceived shared leadership\",\n          \"year\": null,\n          \"doi\": null,\n          \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10154746/\",\n          \"sourceType\": \"journal\",\n          \"note\": \"Institutionelle Empowerment‑Mechanismen fördern Shared Leadership\"\n        }\n      ],\n      \"internalLinks\": [\"/themen#laterale-fuehrung\", \"https://www.mandat-wirkung.de/\"],\n      \"status\": \"web_research_idea\"\n    },\n    {\n      \"title\": \"Stakeholder‑Führung durch Sensemaking in unsicheren Situationen\",\n      \"cluster\": \"Stakeholder und Wirkung\",\n      \"intent\": \"Leserinnen und Leser suchen wissenschaftliche Konzepte zur Führung von Stakeholdern in unsicheren Kontexten\",\n      \"primaryKeyword\": \"Stakeholder Sensemaking Führung\",\n      \"format\": \"Essay\",\n      \"riskLevel\": \"medium\",\n      \"priority\": 4,\n      \"mandateQuestion\": \"Wie können Sie Stakeholder in unsicheren Situationen durch gezieltes Sensemaking führen?\",\n      \"briefing\": \"Sensemaking ist ein etabliertes Konzept zur Bewältigung von Unsicherheit in Organisationen ([en.wikipedia.org](https://en.wikipedia.org/wiki/Sensemaking?utm_source=openai)). Führungskräfte können durch strukturierte Deutung und Kommunikation Orientierung geben.\",\n      \"mustInclude\": [\"Grundlagen des Sensemaking\", \"Bezug zu Stakeholder‑Führung\", \"Anwendungshinweise\"],\n      \"avoid\": [\"Vage Metaphern\", \"Übertriebene Komplexität\"],\n      \"sourcePolicy\": \"approved-external\",\n      \"evidenceBasis\": [\n        {\n          \"title\": \"Sensemaking\",\n          \"year\": null,\n          \"doi\": null,\n          \"url\": \"https://en.wikipedia.org/wiki/Sensemaking\",\n          \"sourceType\": \"other\",\n          \"note\": \"Grundlagen des Sensemaking‑Konzepts\"\n        },\n        {\n          \"title\": \"Karl E. Weick\",\n          \"year\": null,\n          \"doi\": null,\n          \"url\": \"https://en.wikipedia.org/wiki/Karl_E._Weick\",\n          \"sourceType\": \"other\",\n          \"note\": \"Bezug zu Unsicherheit und Organisationsforschung\"\n        }\n      ],\n      \"internalLinks\": [\"/themen#stakeholder-und-wirkung\", \"https://www.mandat-wirkung.de/\"],\n      \"status\": \"web_research_idea\"\n    },\n    {\n      \"title\": \"KI‑Integration und Führungsrolle: Verantwortung und Mandat im Algorithmuszeitalter\",\n      \"cluster\": \"KI und Führung\",\n      \"intent\": \"Leserinnen und Leser suchen wissenschaftliche Perspektiven zur Rolle von Führung im Kontext von KI‑Integration\",\n      \"primaryKeyword\": \"KI Führung Verantwortung\",\n      \"format\": \"Evidenznotiz\",\n      \"riskLevel\": \"high\",\n      \"priority\": 5,\n      \"mandateQuestion\": \"Wie verändert KI Ihre Führungsrolle, insbesondere in Bezug auf Verantwortung und Entscheidungsmandat?\",\n      \"briefing\": \"Systematische Reviews zeigen, dass KI die Verteilung von Verantwortung und Autorität verändert und neue Governance‑Herausforderungen schafft ([doi.org](https://doi.org/10.3390/su18084085?utm_source=openai)). Führungskräfte müssen Mandat und Verantwortung im Zusammenspiel mit algorithmischen Systemen neu denken.\",\n      \"mustInclude\": [\"Verantwortungsdiffusion durch KI\", \"Governance‑Aspekte\", \"Reflexionsimpulse\"],\n      \"avoid\": [\"Technik‑Hype\", \"Unbelegte Versprechen\"],\n      \"sourcePolicy\": \"approved-external\",\n      \"evidenceBasis\": [\n        {\n          \"title\": \"Artificial Intelligence and Leadership in Organizations: A PRISMA Systematic Review of Challenges, Risks, and Governance Dynamics\",\n          \"year\": 2026,\n          \"doi\": \"10.3390/su18084085\",\n          \"url\": \"https://doi.org/10.3390/su18084085\",\n          \"sourceType\": \"journal\",\n          \"note\": \"Systematischer Review zu KI‑Führung, Verantwortung und Governance\"\n        },\n        {\n          \"title\": \"AI‑Driven Leadership: Decision‑Making, Competencies, and Ethical Challenges—A Systematic Review\",\n          \"year\": 2026,\n          \"doi\": null,\n          \"url\": \"https://www.mdpi.com/2076-3387/16/4/173\",\n          \"sourceType\": \"journal\",\n          \"note\": \"Integrative Perspektive auf KI‑gestützte Führung und ethische Herausforderungen\"\n        }\n      ],\n      \"internalLinks\": [\"/themen#ki-und-fuehrung\", \"https://www.mandat-wirkung.de/\"],\n      \"status\": \"web_research_idea\"\n    },\n    {\n      \"title\": \"Generative KI als kognitives Sparring für Führungsentscheidungen\",\n      \"cluster\": \"KI und Führung\",\n      \"intent\": \"Leserinnen und Leser interessieren sich für die Rolle generativer KI als Unterstützung bei Entscheidungsambiguität\",\n      \"primaryKeyword\": \"generative KI Führung Entscheidungshilfe\",\n      \"format\": \"Reflexionsartikel\",\n      \"riskLevel\": \"medium\",\n      \"priority\": 6,\n      \"mandateQuestion\": \"Wie können Sie generative KI als kognitives Sparring nutzen, ohne Ihre Führungsverantwortung zu delegieren?\",\n      \"briefing\": \"Aktuelle Forschung zeigt, dass generative KI Ambiguität erkennen und Entscheidungsqualität verbessern kann – aber auch sycophantisches Verhalten zeigt, das menschliche Führung reflektieren muss ([arxiv.org](https://arxiv.org/abs/2603.03970?utm_source=openai)).\",\n      \"mustInclude\": [\"Ambiguitätserkennung durch KI\", \"Risiken sycophantischen Verhaltens\", \"Reflexionsfragen zur Nutzung\"],\n      \"avoid\": [\"Verklärung der KI‑Fähigkeiten\", \"Verantwortungsverschiebung\"],\n      \"sourcePolicy\": \"approved-external\",\n      \"evidenceBasis\": [\n        {\n          \"title\": \"Generative AI in Managerial Decision‑Making: Redefining Boundaries through Ambiguity Resolution and Sycophancy Analysis\",\n          \"year\": 2026,\n          \"doi\": null,\n          \"url\": \"https://arxiv.org/abs/2603.03970\",\n          \"sourceType\": \"other\",\n          \"note\": \"Experimentelle Studie zu generativer KI als Unterstützung bei Entscheidungsambiguität\"\n        }\n      ],\n      \"internalLinks\": [\"/themen#ki-und-fuehrung\", \"https://www.mandat-wirkung.de/\"],\n      \"status\": \"web_research_idea\"\n    }\n  ]\n}"
+        }
+      ],
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": null,
+    "effort": null,
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "auto",
+  "store": true,
+  "temperature": 0.25,
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "required",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 1
+    }
+  },
+  "tools": [
+    {
+      "type": "web_search",
+      "return_token_budget": "default",
+      "search_content_types": [
+        "text"
+      ],
+      "search_context_size": "medium",
+      "user_location": {
+        "type": "approximate",
+        "city": null,
+        "country": "US",
+        "region": null,
+        "timezone": null
+      }
+    }
+  ],
+  "top_logprobs": 0,
+  "top_p": 1,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 18851,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 3584
+    },
+    "output_tokens": 2949,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 21800
+  },
+  "user": null,
+  "metadata": {}
+}
