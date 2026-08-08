@@ -6,7 +6,10 @@
     "primaryKeyword": "unklare Rückendeckung Führung",
     "format": "Notiz",
     "targetLength": 1000,
-    "internalLinks": ["/themen#fuehrungsmandat", "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"],
+    "internalLinks": [
+      "/themen#fuehrungsmandat",
+      "https://www.mandat-wirkung.de/rollenklaerung-fuehrungskraft"
+    ],
     "riskLevel": "low",
     "status": "published",
     "draftPath": "src/content/notes/wenn-rueckendeckung-unklar-ist.md",
@@ -39,9 +42,12 @@
     "primaryKeyword": "kritisches Gespräch mit Vorgesetzten vorbereiten",
     "format": "Reflexionsraster",
     "targetLength": 1200,
-    "internalLinks": ["/themen#stakeholder-wirkung", "https://www.mandat-wirkung.de/kontakt"],
+    "internalLinks": [
+      "/themen#stakeholder-wirkung",
+      "https://www.mandat-wirkung.de/kontakt"
+    ],
     "riskLevel": "low",
-    "status": "drafted",
+    "status": "published",
     "draftPath": "src/content/notes/kritisches-gespraech-mit-vorgesetzten-vorbereiten.md",
     "draftedAt": "2026-07-30",
     "date": "2026-08-03",
@@ -63,7 +69,8 @@
         "url": "https://doi.org/10.5465/amj.2007.26279183",
         "note": "Zweiphasige Studie in einer Restaurantkette; Zusammenhang von wahrgenommener Offenheit, psychologischer Sicherheit und verbesserungsorientiertem Ansprechen, keine universelle Gesprächsanleitung."
       }
-    ]
+    ],
+    "publishedAt": "2026-08-08T17:59:55+00:00"
   },
   {
     "topic": "Führung in Transformation: Warum das Mandat oft nachträglich entsteht",
@@ -72,7 +79,10 @@
     "primaryKeyword": "Führung in Transformation",
     "format": "Essay",
     "targetLength": 1600,
-    "internalLinks": ["/themen#transformation", "https://www.mandat-wirkung.de/coaching-transformation-fuehrungskraft"],
+    "internalLinks": [
+      "/themen#transformation",
+      "https://www.mandat-wirkung.de/coaching-transformation-fuehrungskraft"
+    ],
     "riskLevel": "medium",
     "status": "planned"
   },
@@ -83,7 +93,10 @@
     "primaryKeyword": "KI und Führung",
     "format": "Evidenznotiz",
     "targetLength": 1200,
-    "internalLinks": ["/themen#ki-und-fuehrung", "https://www.mandat-wirkung.de/ki-transformation-fuehrung"],
+    "internalLinks": [
+      "/themen#ki-und-fuehrung",
+      "https://www.mandat-wirkung.de/ki-transformation-fuehrung"
+    ],
     "riskLevel": "medium",
     "status": "planned"
   }

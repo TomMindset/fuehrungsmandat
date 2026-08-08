@@ -1,16 +1,16 @@
 ---
 title: "Kritisches Gespräch mit Vorgesetzten vorbereiten: Klarheit vor Loyalitätssignalen"
 description: "Ein kritisches Gespräch mit Vorgesetzten vorbereiten: Wie Führungskräfte Beobachtung, Risiko, Mandat und gewünschte Entscheidung präzise trennen."
-date: 2026-08-03
+date: 2026-08-08
 author: "Thomas Hoffmann"
 cluster: "Stakeholder und Wirkung"
 tags: ["kritisches Gespräch mit Vorgesetzten vorbereiten", "Stakeholder führen", "Führungsmandat"]
 featured: false
 riskLevel: "low"
-draft: true
+draft: false
+updated: "2026-08-08T17:59:55+00:00"
+image: "/assets/notizen/kritisches-gespraech-mit-vorgesetzten-vorbereiten.jpg"
 ---
-
-# Kritisches Gespräch mit Vorgesetzten vorbereiten: Klarheit vor Loyalitätssignalen
 
 Ein kritisches Gespräch nach oben beginnt selten erst im Besprechungsraum. Es beginnt früher: mit der Frage, ob ein Einwand als Führungsbeitrag verstanden wird oder als mangelnde Loyalität. Wer eine Priorität infrage stellt, auf ein nicht tragfähiges Versprechen hinweist oder fehlende Rückendeckung anspricht, führt deshalb immer auf zwei Ebenen. Es geht um die Sache – und um die Beziehung zur vorgesetzten Person.
 
