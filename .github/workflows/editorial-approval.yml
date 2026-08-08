@@ -1,10 +1,8 @@
 name: Fuehrungsmandat editorial approval
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "src/content/notes/*.md"
+  schedule:
+    - cron: "17 7 * * *"
   workflow_dispatch:
     inputs:
       slug:
@@ -51,14 +49,17 @@ jobs:
         id: resolve
         env:
           EDITORIAL_AUTOMATION_ENABLED: ${{ vars.EDITORIAL_AUTOMATION_ENABLED }}
+          EVENT_NAME: ${{ github.event_name }}
           REQUESTED_SLUG: ${{ inputs.slug }}
-          BEFORE_SHA: ${{ github.event.before }}
-          AFTER_SHA: ${{ github.sha }}
         run: |
           if [ -n "$REQUESTED_SLUG" ]; then
             node redaktion/scripts/resolve-approval-article.mjs --slug "$REQUESTED_SLUG"
+          elif [ "$EVENT_NAME" = "schedule" ]; then
+            DUE_DAY="$(TZ=Europe/Berlin date +%F)"
+            node redaktion/scripts/resolve-approval-article.mjs --due-day "$DUE_DAY"
           else
-            node redaktion/scripts/resolve-approval-article.mjs --before "$BEFORE_SHA" --after "$AFTER_SHA"
+            echo "Unbekannter Auslöser für die Freigabeautomation."
+            exit 1
           fi
 
       - name: Validate protected configuration
