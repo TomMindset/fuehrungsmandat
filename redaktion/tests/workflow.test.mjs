@@ -56,6 +56,20 @@ test("SMTP-Smoke-Test ist manuell und von Veröffentlichungen isoliert", async (
   assert.match(mailScript, /Technischer Versandtest/u);
 });
 
+test("Artikelfreigaben werden am geplanten Berliner Tag erzeugt", async () => {
+  const workflow = await readFile(
+    new URL("../../.github/workflows/editorial-approval.yml", import.meta.url),
+    "utf8"
+  );
+
+  assert.match(workflow, /^\s{2}schedule:\s*$/mu);
+  assert.match(workflow, /cron: "17 7 \* \* \*"/u);
+  assert.match(workflow, /TZ=Europe\/Berlin date \+%F/u);
+  assert.match(workflow, /resolve-approval-article\.mjs --due-day/u);
+  assert.doesNotMatch(workflow, /^\s{2}push:\s*$/mu);
+  assert.match(workflow, /^\s{2}workflow_dispatch:\s*$/mu);
+});
+
 test("Dry Run darf die älteste offene Freigabe sicher abrufen", async () => {
   const workflow = await readFile(
     new URL("../../.github/workflows/editorial-publish.yml", import.meta.url),
@@ -64,7 +78,7 @@ test("Dry Run darf die älteste offene Freigabe sicher abrufen", async () => {
 
   assert.match(
     workflow,
-    /review_id:\s*\n\s+description:.*Dry Run.*\n\s+required: false\s*\n\s+default: ""/u
+    /review_id:\s*\r?\n\s+description:.*Dry Run.*\r?\n\s+required: false\s*\r?\n\s+default: ""/u
   );
   assert.match(workflow, /REQUESTED_REVIEW_ID:.*inputs\.review_id/u);
   assert.match(workflow, /DRY_RUN:.*inputs\.dry_run/u);

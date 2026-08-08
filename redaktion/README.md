@@ -21,8 +21,10 @@ Social-Kanäle folgen.
 
 1. Der bestehende Draft-Workflow erzeugt einen Pull Request mit `draft: true`.
 2. Der Artikel wird mit dem Redaktionscoach geprüft und redigiert.
-3. Nach dem Merge eines geänderten Drafts erzeugt
-   `editorial-approval.yml` ein Freigabepaket:
+3. Am in `date` beziehungsweise `draftAfter` vorgesehenen Berliner
+   Kalendertag erzeugt `editorial-approval.yml` automatisch genau ein
+   Freigabepaket. Eine neue Version kann weiterhin manuell für einen konkreten
+   Slug ausgelöst werden:
    - vollständiger Artikel,
    - Facebook-Fassung,
    - Instagram-Caption und Alt-Text,
