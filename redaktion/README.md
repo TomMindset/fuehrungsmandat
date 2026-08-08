@@ -21,10 +21,11 @@ Social-Kanäle folgen.
 
 1. Der bestehende Draft-Workflow erzeugt einen Pull Request mit `draft: true`.
 2. Der Artikel wird mit dem Redaktionscoach geprüft und redigiert.
-3. Am in `date` beziehungsweise `draftAfter` vorgesehenen Berliner
-   Kalendertag erzeugt `editorial-approval.yml` automatisch genau ein
-   Freigabepaket. Eine neue Version kann weiterhin manuell für einen konkreten
-   Slug ausgelöst werden:
+3. Am in `publishOn` beziehungsweise `date` vorgesehenen Berliner Kalendertag
+   erzeugt `editorial-approval.yml` automatisch genau ein Freigabepaket. Bei
+   älteren Planeinträgen ohne diese Felder dient `draftAfter` als Fallback.
+   Eine neue Version kann weiterhin manuell für einen konkreten Slug ausgelöst
+   werden:
    - vollständiger Artikel,
    - Facebook-Fassung,
    - Instagram-Caption und Alt-Text,

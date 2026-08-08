@@ -25,7 +25,10 @@ export function scheduledApprovalSlugs(plan, requestedDay) {
 
   return plan
     .filter((entry) => entry?.status === "drafted")
-    .filter((entry) => String(entry.draftAfter || entry.date || "") === day)
+    .filter(
+      (entry) =>
+        String(entry.publishOn || entry.date || entry.draftAfter || "") === day
+    )
     .map((entry) => {
       const normalized = String(entry.draftPath || "").replace(/\\/gu, "/");
       const match = normalized.match(draftPath);
